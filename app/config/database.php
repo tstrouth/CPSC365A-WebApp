@@ -45,7 +45,12 @@ return array(
 	*/
 
 	'connections' => array(
-
+		"RCStats"=>array(
+			"database"=>"RCStats",
+			"host"=>"cs.roanoke.edu",
+			"username"=>"cs365_php",
+			"password"=>"bad_password_for_365"
+		),
 		'sqlite' => array(
 			'driver'   => 'sqlite',
 			'database' => __DIR__.'/../database/production.sqlite',
