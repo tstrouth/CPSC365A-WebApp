@@ -26,7 +26,7 @@ return array(
 	|
 	*/
 
-	'default' => 'mysql',
+	'default' => 'RCStats',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -46,10 +46,11 @@ return array(
 
 	'connections' => array(
 		"RCStats"=>array(
+			'driver'    => 'mysql',
 			"database"=>"RCStats",
-			"host"=>"cs.roanoke.edu",
+			"host"=>"localhost",
 			"username"=>"cs365_php",
-			"password"=>"bad_password_for_365"
+			"password"=>"bad_password_for_365",
 		),
 		'sqlite' => array(
 			'driver'   => 'sqlite',

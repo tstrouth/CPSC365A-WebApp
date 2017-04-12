@@ -15,3 +15,10 @@ Route::get('/', function()
 {
 	return View::make('hello');
 });
+
+
+Route::get("/api/user/create", "APIController@createUser");
+Route::get("/api/user/show/{id}", "APIController@getUser");
+Route::get("/api/user/types", "APIController@getUserTypes");
+Route::get("/api/room/show/{code}", "APIController@getRoom");
+Route::get("/api/response/create", "APIController@createResponse");
