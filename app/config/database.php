@@ -51,6 +51,8 @@ return array(
 			"host"=>"localhost",
 			"username"=>"cs365_php",
 			"password"=>"bad_password_for_365",
+			'charset'   => 'utf8',
+			'collation' => 'utf8_unicode_ci',
 		),
 		'sqlite' => array(
 			'driver'   => 'sqlite',

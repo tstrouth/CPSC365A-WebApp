@@ -19,10 +19,7 @@
 		]
 	},
 	"repositories": [
-		{
-			"type": "vcs",
-			"url": "git@bitbucket.org:rcwebdevelopers/dBug.git"
-		}
+			
 	],
 	"scripts": {
 		"post-install-cmd": [
