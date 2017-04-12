@@ -10,7 +10,7 @@ class StatController extends Controller {
     //needs an array and inputted test statisitc executes a python program and
     //returns the probability value  
     public function retrievepval($pArray, $teststat){
-        $df = len($pArray) - 1;
+        $df = count($pArray) - 1;
         $stringtt = sprintf("%5f", $teststat);
         $stringdf = sprintf("%1f", $df);
         $pval = exec('python3 getpval.py '.$stringtt.' '. $stringdf);
@@ -20,16 +20,18 @@ class StatController extends Controller {
    //inputs an array and a value from null hypothesis inputted by user
    //calculates the test statistic
     public function getteststat($pArray, $nullmean){
-        $tt = (mean($pArray) - $nullmean)/(sd($pArray)/sqrt(len($pArray)));
+        $tt = ((mean($pArray) - $nullmean)/
+        (std_dev($pArray)/sqrt(count($pArray))));
         return $tt;
     }
 
    //needs an inputted array of population data
    //calculates the confidence interval of the population data
     public function getconfinterval($pArray){
-        $standard_deviation_div_sqrtn = (sd($pArray)/sqrt(len($pArray)));
-        $tt = (mean($pArray) - $nullmean)/$standard_deviation_div_sqrtn;
+        $standard_deviation_div_sqrtn = ((std_devd($pArray)/
+        sqrt(count($pArray))));
         $mean = mean($pArray);
+        $tt = ($mean - $nullmean)/$standard_deviation_div_sqrtn;
         $lowerbound = $mean - $tt*$standard_deviation_div_sqrtn;
         $upperbound = $mean + $tt*$standard_deviation_div_sqrtn;
         echo ("the confidence interval is [",$lowerbound,
