@@ -8,42 +8,52 @@ class StatController extends Controller {
 	}
 
     //needs an array and inputted test statisitc executes a python program and
-    //returns the probability value  
-    public function retrievepval($pArray, $teststat){
+    //returns the probability value
+    function retrievepval($pArray, $teststat){
         $df = count($pArray) - 1;
-        $stringtt = sprintf("%5f", $teststat);
-        $stringdf = sprintf("%1f", $df);
-        $pval = exec('python3 getpval.py '.$stringtt.' '. $stringdf);
-        return $pval;
+        $stringtt = sprintf("%f", $teststat);
+        $stringdf = sprintf("%f", $df);
+        exec('python3 get_pval.py '.$stringtt.' '. $stringdf, $pval);
+        echo sprintf(" and the p value is %f \n", $pval[0]);
     }
 
-   //inputs an array and a value from null hypothesis inputted by user
-   //calculates the test statistic
-    public function getteststat($pArray, $nullmean){
-        $tt = ((mean($pArray) - $nullmean)/
-        (std_dev($pArray)/sqrt(count($pArray))));
+    //echo "passed first function \n";
+    //inputs an array and a value from null hypothesis inputted by user
+    //calculates the test statistic
+    function getteststat($pArray, $nullmean){
+        //echo 'in the function';
+        $n = count($pArray);
+        $tt = (mean($pArray) - $nullmean)/(std_dev($pArray)/sqrt($n));
         return $tt;
     }
 
-   //needs an inputted array of population data
-   //calculates the confidence interval of the population data
-    public function getconfinterval($pArray){
-        $standard_deviation_div_sqrtn = ((std_devd($pArray)/
-        sqrt(count($pArray))));
+    //echo "\n passed second function";
+
+    //needs an inputted array of population data
+    //calculates the confidence interval of the population data
+    function getconfinterval($pArray){
+        $standard_deviation_div_sqrtn = (std_dev($pArray)/sqrt(count($pArray)));
+        $stringdf = sprintf("%f", (count($pArray) - 1));
+        exec('python3 get_tval.py .025 '.$stringdf , $t);
         $mean = mean($pArray);
-        $tt = ($mean - $nullmean)/$standard_deviation_div_sqrtn;
-        $lowerbound = $mean - $tt*$standard_deviation_div_sqrtn;
-        $upperbound = $mean + $tt*$standard_deviation_div_sqrtn;
-        echo ("the confidence interval is [",$lowerbound,
-        " , "$upperbound, "] \n");
+        $lowerbound = $mean - $t[0]*$standard_deviation_div_sqrtn;
+        $upperbound = $mean + $t[0]*$standard_deviation_div_sqrtn;
+        echo "the confidence interval is [";
+        echo $lowerbound;
+        echo " , ";
+        echo $upperbound;
+        echo "] \n";
     }
 
-    public function main($pArray, $nullmean){
-        $teststat = getteststat($pArray, $nullmean=0);
-        echo ("the test statistic is ",$teststat,"\n"); //prints test stat
+   //echo "\n passed third function";
+
+    function main($pArray, $nullmean){
+        $teststat = (float) getteststat($pArray, $nullmean);
+        //echo 'made it to second line';
+        echo sprintf("the test statistic is %f\n", $teststat); //prints test stat
+        //echo "made it after the test stat";
         getconfinterval($pArray); //prints confidence interval
-        echo ("p value ",retrievepval($pArray, $teststat),"\n");
-        //prints p value
+        retrievepval($pArray, $teststat); //prints p value
     }
 }
 
