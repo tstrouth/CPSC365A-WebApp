@@ -19,8 +19,7 @@ Route::get('/', function()
 Route::get("/test", function(){
     echo "no";
 });
-
-
+Route::get("/histogram", "histogramController@whateveryouwant");
 Route::get("/api/user/create", "APIController@createUser");
 Route::get("/api/user/show/{id}", "APIController@getUser");
 Route::get("/api/user/types", "APIController@getUserTypes");
