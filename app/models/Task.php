@@ -1,6 +1,6 @@
 <?php
 
-class User extends Eloquent {
+class Task extends Eloquent {
 
 
 	/**
@@ -8,7 +8,7 @@ class User extends Eloquent {
 	 *
 	 * @var string
 	 */
-	protected $table = 'Users';
+	protected $table = 'Tasks';
 
 	public $timestamps = false;
 
