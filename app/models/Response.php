@@ -1,6 +1,6 @@
 <?php
 
-class Response extends Eloquent {
+class ResponseDB extends Eloquent {
 
 
 	/**
@@ -10,7 +10,7 @@ class Response extends Eloquent {
 	 */
 	protected $table = 'Responses';
 
-	public $timestamps = false;	
+	public $timestamps = false;
 
 
 }
