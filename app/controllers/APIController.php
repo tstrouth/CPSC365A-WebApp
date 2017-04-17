@@ -67,7 +67,7 @@ class APIController extends Controller {
       }
     }else{
       $new_response = new ResponseData;
-      $new_response->response_data = $d;
+      $new_response->response_data = $data;
       $new_response->response_fkey = $response->id;
       $new_response->save();
     }
