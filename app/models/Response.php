@@ -15,4 +15,5 @@ class ResponseDB extends Eloquent {
 	protected $primaryKey = 'id';
 
 
+
 }
