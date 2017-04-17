@@ -12,7 +12,7 @@ class ResponseDB extends Eloquent {
 
 	public $timestamps = false;
 
-	public $incrementing = true;
+	protected $primaryKey = 'id';
 
 
 }
