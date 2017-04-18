@@ -15,7 +15,8 @@
     <link type="text/css" rel="stylesheet" href="{{asset('assets/css/components.css')}}"/>
     <link type="text/css" rel="stylesheet" href="{{asset('assets/css/custom.css')}}"/>
     <link type="text/css" rel="stylesheet" href="{{asset('assets/css/skins/black_skin.css')}}"
-    <link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+    <link type="text/css" rel="stylesheet" href="{{asset('assets/css/pages/new_dashboard.css')}}"
     <link type="text/css" rel="stylesheet" href="#" id="skin_change"/>
     <!-- end of global styles-->
     @yield('header_styles')
@@ -128,7 +129,7 @@ z-index: 999999">
 <script type="text/javascript" src="{{asset('assets/js/components.js')}}"></script>
 <script type="text/javascript" src="{{asset('assets/js/custom.js')}}"></script>
 <!-- end of global scripts-->
-<script type="text/javascript" src="{{asset('js/pages/new_dashboard.js')}}"></script>
+<script type="text/javascript" src="{{asset('assets/js/pages/new_dashboard.js')}}"></script>
 <!-- page level js -->
 @yield('footer_scripts')
 <!-- end page level js -->
