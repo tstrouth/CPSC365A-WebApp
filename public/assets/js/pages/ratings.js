@@ -27,7 +27,7 @@ $(document).ready(function(){
         normalFill: "#A0A0A0"
     });
     $("#rateYo_ratedfill").rateYo({
-        ratedFill: "#EF6F6C",
+        ratedFill: "#ff8080",
         rating: 2.7
     });
     $("#rateYo_multicolor").rateYo({
@@ -35,8 +35,8 @@ $(document).ready(function(){
         spacing   : "5px",
         multiColor: {
 
-            "startColor": "#00cc99",
-            "endColor"  : "#EF6F6C"
+            "startColor": "#0fb0c0",
+            "endColor"  : "#ff8080"
         }
     });
     $("#rateYo_numstars").rateYo({
@@ -49,7 +49,7 @@ $(document).ready(function(){
         rating: getRandomRating(0, 1),
         onSet: updateCounter,
         onChange: updateCounter,
-        starWidth: "32px"
+        starWidth: "40px"
     });
     $("#rateYo_precission").rateYo({
         precision: 2,
@@ -95,7 +95,7 @@ $(document).ready(function(){
         onSet: function (rating, rateYoInstance) {
             swal({
                 title: "Rating is set to: " + rating,
-                confirmButtonColor: '#4fb7fe'
+                confirmButtonColor: '#00c0ef'
             }).done();
         }
     });
@@ -116,7 +116,7 @@ $(document).ready(function(){
         var rating = $rateYo.rateYo("rating");
         swal({
             title: "Its " + rating + " Yo!",
-            confirmButtonColor: '#4fb7fe'
+            confirmButtonColor: '#00c0ef'
         }).done();
     });
 

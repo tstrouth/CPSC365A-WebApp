@@ -1,56 +1,45 @@
-.form-group label{
-    margin-top: 5px;
-}
-/*multiselect*/
-.ms-container{
-    width: 100%;
-}
-.ms-selectable input,.ms-selection input{
-    width:100%;
-}
-.custom-header {
-    text-align: center;
-    padding: 3px;
-    background: #4fb7fe;
-    color: #fff;
-}
-#ms-multi_select3 .ms-list,#ms-multi_select4 .ms-list{
-    border-radius: 0;
-}
-#ms-multi_select4 input{
-    border-bottom-right-radius: 0;
-    border-bottom-left-radius: 0;
-}
-/*==================input fields==========*/
-.summer_note .btn-group,.wysihtml5-toolbar .btn-group,.note-color .btn-group{
-    display: inline-block;
-}
-.summer_note_display .wysihtml5-toolbar .dropdown-menu{
-    padding-left: 10px;
-}
-.modal-header {
+.modal-header
+{
     display: flex;
     flex-direction: row-reverse;
 }
 
+.form-group label{
+    margin-top: 5px;
+}
+.note-editor .btn-group{
+    display: inline-block;
+}
+    /*==================input fields==========*/
 .rounded_input
 {
     border-radius: 20px;
 }
 .focused_input
 {
-    border-color: #4fb7fe;;
+    border-color: #62a8ea;;
 }
 .input_top_align
 {
     margin-top: 20px;
 }
+
 .chosen-container-single .chosen-single
 {
     height: 32px;
     line-height: 30px;
 }
-.file_input .input-group .form-control:not(:last-child), .file_input .input-group-addon:not(:last-child), .file_input .input-group-btn:not(:last-child) > .btn, .file_input .input-group-btn:not(:last-child) > .btn-group > .btn, .file_input .input-group-btn:not(:last-child) > .file_input .dropdown-toggle, .file_input .input-group-btn:not(:first-child) > .btn:not(:last-child):not(.dropdown-toggle), .file_input .input-group-btn:not(:first-child) > .btn-group:not(:last-child) > .btn
+.file_input .input-group-btn
+{
+    display: inline;
+}
+
+.file_input .input-group-btn
+{
+    display: inline;
+}
+
+.file_input .input-group .form-control:not(:last-child), .file_input .input-group-addon:not(:last-child), .file_input .input-group-btn:not(:last-child) > .btn, .file_input .input-group-btn:not(:last-child) > .btn-group > .btn, .file_input .input-group-btn:not(:last-child) > .file_input dropdown-toggle, .file_input .input-group-btn:not(:first-child) > .btn:not(:last-child):not(.dropdown-toggle), .file_input .input-group-btn:not(:first-child) > .btn-group:not(:last-child) > .btn
 {
     height: 33px !important;
 }
@@ -71,7 +60,7 @@
 .check_align .input-group .form-control{
     margin-bottom: -13px;
 }
-.check_align .input-group .form-control-label{
+.check_align .input-group .col-form-label{
     margin-right: -6px;
 }
 .cus_control_indicator{
@@ -81,15 +70,13 @@
     width: 100% !important;
 }
 .input_text_fields div.tagsinput span.tag{
-    background: #00cc99 !important;
-    border: 1px solid #00cc99 !important;
+    background: #0fb0c0 !important;
+    border: 1px solid #0fb0c0 !important;
 }
 .input_text_fields div.tagsinput span.tag a,.input_text_fields div.tagsinput span.tag{
     color: #fff;
 }
-.btn-outline-primary{
-    color: #5a5a5a !important;
-}
+
 .form_input_fields {
     padding: 0 30px;
 }
@@ -113,26 +100,6 @@
 .button_file .fileinput-remove-button, .button_file .fileinput-upload-button
 {
     margin-bottom: 5px;
-}
-.link-dialog
-{
-    z-index: 10000;
-}
-.note-air-popover
-{
-    z-index: 10;
-}
-.file-caption-main .input-group-btn{
-    display: block;
-}
-.file-caption-main .btn-file{
-    font-size: 12px;
-}
-.file-thumb-progress .progress{
-    background-color: transparent;
-}
-.file-thumb-progress .progress .progress-bar{
-    color:#5a5a5a;
 }
 /*======================Form Editors=======================*/
 .summernote_editor .cke_chrome {
@@ -159,7 +126,7 @@
     display: none;
 }
 .note-btn-group .note-check li{
-    /*margin-left: -10px;*/
+    margin-left: -10px;
 }
 .note-style li {
     padding-left: 10px;
@@ -173,8 +140,7 @@
     display: none !important;
 }
 [data-original-title="Font Family"]{
-    width:115px;
-    font-size: 12px;
+    width:110px;
 }
 .dropdown-menu.note-check.dropdown-fontname{
     min-width:130px;
@@ -187,10 +153,7 @@
     color: #282828;
 }
 .tinymce_full #mceu_21{
-    z-index: 89;
-}
-.mce-fullscreen .tinymce_full #mceu_21{
-    z-index:99;
+    z-index: 1020;
 }
 div.mce-fullscreen{
     top:-1px !important;
@@ -201,28 +164,35 @@ div.mce-fullscreen{
     border-color: #00c0ef;
     color: #282828;
 }
-.modal .btn-primary.btn-outline-primary:hover{
-    color: #fff !important;
-}
-.wysihtml5-supported.modal-open .note-air-popover{
-    display: none !important;
-}
+
 .kv-upload-progress>.progress, .fileinput-cancel-button
 {
     display: none;
 }
+.summer_note .btn-group,.wysihtml5-toolbar .btn-group,.note-color .btn-group{
+               display: inline-block;
+           }
 .note-editable ul li img{
-    width: 100% !important;
+               width: 100% !important;
+           }
+.summer_note_display .wysihtml5-toolbar .dropdown-menu{
+    padding-left: 10px;
 }
-.wysihtml5-toolbar .dropdown .btn-outline-primary,.wysihtml5-toolbar .dropdown .btn-secondary{
-    background-color:transparent;
+.wysihtml5-toolbar .btn-outline-primary {
+    color: #5a5a5a !important;
 }
-@media (max-width:992px) {
-    .hidden-xs{
+.wysihtml5-toolbar .btn-outline-primary:hover{
+    background-color: transparent;
+}
+@media (max-width:992px)
+{
+    .hidden-xs
+    {
         display:none !important;
     }
-    .file-preview-image, .file-preview-text {
-        max-width: 100% !important;
+    .file-preview-image, .file-preview-text
+    {
+        width: 100% !important;
     }
 }
 
@@ -231,7 +201,7 @@ div.mce-fullscreen{
     width: 100%;
 }
 .note-popover .popover-content .note-para .dropdown-menu, .panel-heading.note-toolbar .note-para .dropdown-menu{
-    min-width:205px !important
+    min-width:185px !important
 }
 @media (max-width: 346px) {
     .note-popover .popover-content .note-color .dropdown-menu, .panel-heading.note-toolbar .note-color .dropdown-menu {

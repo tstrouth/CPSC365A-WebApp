@@ -7,16 +7,8 @@
 #left {
 	background-color:#825228;
 }
-.navbar-brand h4{
-	color: #fff;
-}
-.badge {
-	background-color: #9c6426;
-}
-.fixed_menu_navbar{
-	background-color: #825228;
-}
-#top .btn-default,#top .btn-default:hover {color: #9c6426;}
+
+.skin_txt {color: #9c6426;}
 
 .user-media .media-body ul.user-info li {color: #fff;}
 

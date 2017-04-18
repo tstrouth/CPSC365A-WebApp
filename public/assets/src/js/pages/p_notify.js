@@ -154,7 +154,7 @@ $(document).ready(function() {
         });
         notice.get().find('form.pf-form').on('click', '[name=cancel]', function () {
             notice.remove();
-        }).on("submit",function () {
+        }).submit(function () {
             var username = $(this).find('input[name=username]').val();
             if (!username) {
                 alert('Please provide a username.');
@@ -191,7 +191,7 @@ $(document).ready(function() {
     $(".notify_fromtop").on("click", function () {
         new PNotify({
             title: 'From the top! Effect',
-            text: 'I use effects from Animate.css. Such smooth CSS3 transitions make me feel like better.',
+            text: 'I use effects from Animate.css. Such smooth CSS3 transitions make me feel like butter.',
             type: 'warning',
             animate: {
                 animate: true,
@@ -204,7 +204,7 @@ $(document).ready(function() {
     $(".notify_zoom").on("click", function () {
         new PNotify({
             title: 'Zoom Effect',
-            text: 'I use effects from Animate.css. Such smooth CSS3 transitions make me feel like better.',
+            text: 'I use effects from Animate.css. Such smooth CSS3 transitions make me feel like butter.',
             type: 'info',
             animate: {
                 animate: true,
@@ -217,7 +217,7 @@ $(document).ready(function() {
     $(".notify_zippy").on("click", function () {
         new PNotify({
             title: 'Zippy Effect',
-            text: 'I use effects from Animate.css. Such smooth CSS3 transitions make me feel like better.',
+            text: 'I use effects from Animate.css. Such smooth CSS3 transitions make me feel like butter.',
             type: 'error',
             animate: {
                 animate: true,
@@ -230,7 +230,7 @@ $(document).ready(function() {
     $(".notify_off_handle").on("click", function () {
         new PNotify({
             title: 'Off the handle Effect',
-            text: 'I use effects from Animate.css. Such smooth CSS3 transitions make me feel like better.',
+            text: 'I use effects from Animate.css. Such smooth CSS3 transitions make me feel like butter.',
             type: 'success',
             animate: {
                 animate: true,
@@ -243,7 +243,7 @@ $(document).ready(function() {
     $(".notify_cards").on("click", function () {
         new PNotify({
             title: 'Shuffling cards Effect',
-            text: 'I use effects from Animate.css. Such smooth CSS3 transitions make me feel like better.',
+            text: 'I use effects from Animate.css. Such smooth CSS3 transitions make me feel like butter.',
             type: 'info',
             animate: {
                 animate: true,
@@ -272,7 +272,7 @@ $(document).ready(function() {
             animate_out = $('#animate_out').val();
         new PNotify({
             title: 'Animate.css Effect',
-            text: 'I use effects from Animate.css. Such smooth CSS3 transitions make me feel like better.',
+            text: 'I use effects from Animate.css. Such smooth CSS3 transitions make me feel like butter.',
             animate: {
                 animate: true,
                 in_class: animate_in,

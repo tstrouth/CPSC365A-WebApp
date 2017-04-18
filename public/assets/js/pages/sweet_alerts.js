@@ -4,7 +4,7 @@ $(document).ready(function () {
     $('.examples .message').on('click', function () {
         swal({
             title: 'Heres your text message in the sweet alert!',
-            confirmButtonColor: '#4fb7fe'
+            confirmButtonColor: '#00c0ef'
         }).done();
         return false;
     });
@@ -15,9 +15,9 @@ $(document).ready(function () {
             text: 'You will not be able to recover this imaginary file!',
             type: 'info',
             showCancelButton: true,
-            confirmButtonColor: '#4fb7fe',
+            confirmButtonColor: '#00c0ef',
             confirmButtonText: 'Primary!',
-            cancelButtonColor: '#EF6F6C'
+            cancelButtonColor: '#ff8080'
         }).done();
         return false;
     });
@@ -28,8 +28,8 @@ $(document).ready(function () {
             text: 'You will not be able to recover this imaginary file!',
             type: 'info',
             showCancelButton: true,
-            confirmButtonColor: '#347dff',
-            cancelButtonColor: '#EF6F6C',
+            confirmButtonColor: '#668cff',
+            cancelButtonColor: '#ff8080',
             confirmButtonText: 'Info!'
         }).done();
         return false;
@@ -41,8 +41,8 @@ $(document).ready(function () {
             text: 'You will not be able to recover this imaginary file!',
             type: 'warning',
             showCancelButton: true,
-            confirmButtonColor: '#ff9933',
-            cancelButtonColor: '#EF6F6C',
+            confirmButtonColor: '#ffb300',
+            cancelButtonColor: '#ff8080',
             confirmButtonText: 'Warning!'
         }).done();
         return false;
@@ -54,8 +54,8 @@ $(document).ready(function () {
             text: 'You will not be able to recover this imaginary file!',
             type: 'success',
             showCancelButton: true,
-            confirmButtonColor: '#00cc99',
-            cancelButtonColor: '#EF6F6C',
+            confirmButtonColor: '#00bf86',
+            cancelButtonColor: '#ff8080',
             confirmButtonText: 'Success!'
         }).done();
         return false;
@@ -67,8 +67,8 @@ $(document).ready(function () {
             text: 'You will not be able to recover this imaginary file!',
             type: 'error',
             showCancelButton: true,
-            confirmButtonColor: '#EF6F6C',
-            cancelButtonColor: '#ff9933',
+            confirmButtonColor: '#ff8080',
+            cancelButtonColor: '#ffb300',
             confirmButtonText: 'Danger!'
         }).done();
         return false;
@@ -82,8 +82,8 @@ $(document).ready(function () {
             input: 'email',
             showCancelButton: true,
             confirmButtonText: 'Submit',
-            confirmButtonColor: '#4fb7fe',
-            cancelButtonColor: '#EF6F6C',
+            confirmButtonColor: '#00c0ef',
+            cancelButtonColor: '#ff8080',
             width: 600,
             showLoaderOnConfirm: true,
             preConfirm: function (email) {
@@ -112,8 +112,8 @@ $(document).ready(function () {
             confirmButtonText: 'Next &rarr;',
             showCancelButton: true,
             animation: false,
-            cancelButtonColor: '#EF6F6C',
-            confirmButtonColor: '#4fb7fe',
+            cancelButtonColor: '#ff8080',
+            confirmButtonColor: '#00c0ef',
             progressSteps: ['1', '2', '3']
         });
 
@@ -139,7 +139,7 @@ $(document).ready(function () {
                 text: 'Your public IP will be received via AJAX request',
                 currentProgressStep: 0,
                 showLoaderOnConfirm: true,
-                confirmButtonColor: '#ff9933',
+                confirmButtonColor: '#ffa000',
                 preConfirm: function () {
                     return new Promise(function (resolve) {
                         $.get('https://api.ipify.org?format=json')
@@ -162,7 +162,7 @@ $(document).ready(function () {
             title: 'The Internet?',
             text: 'That thing is still around?',
             type: 'question',
-            confirmButtonColor: '#4fb7fe'
+            confirmButtonColor: '#00c0ef'
         }).done();
         return false;
     });
@@ -171,7 +171,7 @@ $(document).ready(function () {
             title: 'Good job!',
             text: 'You clicked the button!',
             type: 'success',
-            confirmButtonColor: '#4fb7fe'
+            confirmButtonColor: '#00c0ef'
         }).done();
         return false;
     });
@@ -180,7 +180,7 @@ $(document).ready(function () {
             title: 'Auto close alert!',
             text: 'I will close in 2 seconds.',
             timer: 2000,
-            confirmButtonColor: '#4fb7fe',
+            confirmButtonColor: '#00c0ef',
             showConfirmButton: false
         }).done();
         return false;
@@ -190,7 +190,7 @@ $(document).ready(function () {
             title: 'Oops...',
             text: 'Something went wrong!',
             type: 'error',
-            confirmButtonColor: '#4fb7fe'
+            confirmButtonColor: '#00c0ef'
         }).done();
         return false;
     });
@@ -204,7 +204,7 @@ $(document).ready(function () {
             showCloseButton: true,
             showCancelButton: true,
             confirmButtonText: '<i class="fa fa-thumbs-up"></i> Great!',
-            confirmButtonColor: '#4fb7fe',
+            confirmButtonColor: '#00c0ef',
             cancelButtonText: '<i class="fa fa-thumbs-down"></i>'
         }).done();
         return false;
@@ -217,7 +217,7 @@ $(document).ready(function () {
             title: 'Sweet!',
             text: 'Modal with a custom image.',
             imageUrl: 'img/authors/avatar1.jpg',
-            confirmButtonColor: '#4fb7fe',
+            confirmButtonColor: '#00c0ef',
             animation: false
         }).done();
         return false;
@@ -227,8 +227,8 @@ $(document).ready(function () {
             title: 'Custom width, padding, background.',
             width: 600,
             padding: 100,
-            confirmButtonColor: '#4fb7fe',
-            background: '#fff url(img/authors/bg1.jpg)'
+            confirmButtonColor: '#00c0ef',
+            background: '#fff url(img/authors/bg.jpg)'
         }).done();
         return false;
     });
@@ -238,15 +238,15 @@ $(document).ready(function () {
             text: 'You won\'t be able to revert this!',
             type: 'warning',
             showCancelButton: true,
-            confirmButtonColor: '#4fb7fe',
-            cancelButtonColor: '#EF6F6C',
+            confirmButtonColor: '#00c0ef',
+            cancelButtonColor: '#ff8080',
             confirmButtonText: 'Yes, delete it!'
         }).then(function () {
             swal({
                 title: 'Deleted!',
                 text: 'Your file has been deleted!',
                 type: 'success',
-                confirmButtonColor: '#ff9933'
+                confirmButtonColor: '#00c0ef'
             }).done();
         });
         return false;
@@ -257,8 +257,8 @@ $(document).ready(function () {
             text: 'Buttons below are styled with Bootstrap classes',
             type: 'warning',
             showCancelButton: true,
-            confirmButtonColor: '#4fb7fe',
-            cancelButtonColor: '#EF6F6C',
+            confirmButtonColor: '#00c0ef',
+            cancelButtonColor: '#ff8080',
             confirmButtonText: 'Yes, delete it!',
             cancelButtonText: 'No, cancel!',
             confirmButtonClass: 'btn btn-success',
@@ -268,7 +268,7 @@ $(document).ready(function () {
                 title: 'Deleted!',
                 text: 'Your file has been deleted!',
                 type: 'success',
-                confirmButtonColor: '#4fb7fe'
+                confirmButtonColor: '#00c0ef'
             }).done();
         }, function (dismiss) {
             if (dismiss === 'cancel') {
@@ -276,7 +276,7 @@ $(document).ready(function () {
                     title: 'Cancelled',
                     text: 'Your imaginary file is safe :)',
                     type: 'error',
-                    confirmButtonColor: '#4fb7fe'
+                    confirmButtonColor: '#00c0ef'
                 }).done();
             }
         });
@@ -285,7 +285,7 @@ $(document).ready(function () {
     $('.examples .jqueryhtml').on('click', function () {
         swal({
             title: 'jQuery HTML example',
-            confirmButtonColor: '#4fb7fe',
+            confirmButtonColor: '#00c0ef',
             html: $('<div>')
                 .addClass('some-class')
                 .text('jQuery is everywhere.')

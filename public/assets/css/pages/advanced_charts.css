@@ -5,8 +5,8 @@
       border: 1px solid #ccc;
       margin: 5px;
 }
-svg text, svg text tspan{
-	font-family: "Source Sans Pro", sans-serif;
+svg text{
+	font-family: "Source Sans Pro", "sans-serif" !important;
 }
 .c3 svg g{
       font: 12px "Source Sans Pro";

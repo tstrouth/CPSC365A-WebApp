@@ -11,7 +11,7 @@ $(document).ready(function() {
             max: 100,
             decimals: 0,
             valueFontFamily: "Source Sans Pro, sans-serif",
-            levelColors: ["#4fb7fe"],
+            levelColors: ["#00c0ef"],
             counter: true
         });
 
@@ -24,7 +24,7 @@ $(document).ready(function() {
             humanFriendly: false,
             valueFontFamily: "Source Sans Pro, sans-serif",
             decimals: 0,
-            levelColors: ["#00cc99"],
+            levelColors: ["#0fb0c0"],
             counter: true
         });
 
@@ -35,7 +35,7 @@ $(document).ready(function() {
             min: 0,
             max: 100,
             valueFontFamily: "Source Sans Pro, sans-serif",
-            levelColors: ["#347dff"],
+            levelColors: ["#668cff"],
             decimals: 1,
             counter: true
         });
@@ -47,7 +47,7 @@ $(document).ready(function() {
             min: 0,
             max: 100,
             decimals: 0,
-            levelColors: ["#EF6F6C"],
+            levelColors: ["#ff8080"],
             valueFontFamily: "Source Sans Pro, sans-serif",
             counter: true
         });
@@ -72,8 +72,8 @@ $(document).ready(function() {
             type: 'bar',
             colors: {
                 data1: '#0fb0c0',
-                data2: '#4fb7fe',
-                data3: '#00cc99'
+                data2: '#00c0ef',
+                data3: '#0fb0c0'
             },
             color: function(color, d) {
                 return d.id && d.id === 'data3' ? d3.rgb(color) : color;
@@ -95,7 +95,7 @@ $(document).ready(function() {
     setTimeout(function() {
         chart.transform('area-spline');
     }, 4000);
-    // End of stacked area chart
+     // End of stacked area chart
 
     // Scatter plot
     var chart3 = c3.generate({
@@ -136,7 +136,7 @@ $(document).ready(function() {
             title: "Iris Petal Width"
         },
         color: {
-            pattern: ['#4fb7fe', '#00cc99', '#347dff', '#ff9933', '#69B3BF']
+            pattern: ['#00c0ef', '#0fb0c0', '#668cff', '#ffb300', '#69B3BF']
         }
     });
 

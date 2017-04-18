@@ -5,7 +5,7 @@ $(document).ready(function() {
         type: 'bar',
         height: '40',
         barWidth: 4,
-        barColor: '#4fb7fe',
+        barColor: '#00c0ef',
         barSpacing: 2
     });
     $("#sparklinebar1").sparkline([73, 76, 75, 74, 76, 73, 76, 75, 74, 76, 73, 71, 75, 77, 74, 73, 76], {
@@ -150,7 +150,7 @@ $(document).ready(function() {
     }, {
         label: "Google+",
         data: 80,
-        color: '#00cc99'
+        color: '#0fb0c0'
     }, {
         label: "Linkedin",
         data: 110,

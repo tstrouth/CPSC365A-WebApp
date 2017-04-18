@@ -1,11 +1,11 @@
 "use strict";
 $(document).ready(function () {
-    $(window).on("load",function() {
+    $(window).on("load", function() {
         $('.preloader img').fadeOut();
         $('.preloader').fadeOut(1000);
     });
     var textfield = $("input[name=user]");
-    $('#index_submit').on('click',function(e) {
+    $('button[type="submit"]').on('click',function(e) {
         e.preventDefault();
         //little validation just to check username
         if (textfield.val() != "") {
@@ -22,7 +22,7 @@ $(document).ready(function () {
             $(".unlocked").removeClass("hidden");
             $('button[type="submit"]').html("CONTINUE")
                 .removeClass("btn-primary")
-                .addClass("btn-success").on("click",function(){
+                .addClass("btn-success").on("click", function(){
                 window.location.href = 'index.html';
             });
 

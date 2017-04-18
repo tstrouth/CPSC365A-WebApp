@@ -94,19 +94,19 @@
   right: auto;
 }
 .timeline-badge.primary {
-  background-color: #4fb7fe;
+  background-color: #00c0ef;
 }
 .timeline-badge.success {
-  background-color: #00cc99;
+  background-color: #00bf86;
 }
 .timeline-badge.warning {
-  background-color: #ff9933;
+  background-color: #ffa000;
 }
 .timeline-badge.danger {
-  background-color: #EF6F6C;
+  background-color: #ff8080;
 }
 .timeline-badge.info {
-  background-color: #347dff;
+  background-color: #668cff;
 }
 .timeline-title {
   margin-top: 0;
@@ -157,7 +157,7 @@
   margin-top: 0;
 }
 .tabbable-line > .nav-tabs > li.active {
-  border-bottom: 4px solid #f3565d;
+  border-bottom: 4px solid #ff8080;
   position: relative;
 }
 .tabbable-line > .nav-tabs > li.active > a {
@@ -191,7 +191,7 @@
 .tabbable-line.tabs-below > .nav-tabs > li.active {
   margin-bottom: -2px;
   border-bottom: 0;
-  border-top: 4px solid #f3565d;
+  border-top: 4px solid #ff8080;
 }
 .tabbable-line.tabs-below > .tab-content {
   margin-top: -10px;

@@ -17,7 +17,7 @@
 .preview-lg {
     width: 200px;
     height: 120px;
-    border: 2px solid #4fb7fe;
+    border: 2px solid #fff;
 }
 
 .preview-md {
@@ -68,15 +68,8 @@
 {
     width: 100%;
 }
-
 .btn-group > .btn, .btn-group-vertical > .btn{
     margin-bottom: 0;
 }
-@media (max-width: 424px){
-    .btn-group-crop{
-        display: block;
-    }
-    .btn-group-crop .btn{
-        margin-top: 10px;
-    }
-}
+
+

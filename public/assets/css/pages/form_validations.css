@@ -5,7 +5,7 @@
     margin-top: 5px;
 }
 .has-error label, .has-error span,.login_validator .help-block{
-    color: #EF6F6C;
+    color: #ff8080;
     font-size: 14px;
 }
 #form_inline_validator [data-bv-validator="notEmpty"]{
@@ -20,15 +20,18 @@
 .check_form_val{
     margin-top: 0!important;
 }
+.custom-control .custom-control-indicator{
+    margin-top: 2px !important;
+}
 .has-success .custom-control{
     color: #525252;
 }
 .datepicker table tr td.today, .datepicker table tr td.today:hover, .datepicker table tr td.today.disabled, .datepicker table tr td.today.disabled:hover{
-    background-image: linear-gradient(to bottom,#4fb7fe, #4fb7fe);
+    background-image: linear-gradient(to bottom,#00c0ef, #00c0ef);
     color: #fff !important;
 }
 .formError .formErrorContent, .formError .formErrorArrow div{
-    background-color: #EF6F6C !important;
+    background-color: #ff8080 !important;
 }
 .parentFormpopup-validation{
     opacity: 1 !important;

@@ -1,6 +1,6 @@
 'use strict';
 $(document).ready(function () {
-    $(".select_all_mail").on("change",function () {
+    $(".select_all_mail").change(function () {
         $(".mail_sent_all tr td [type='checkbox']").prop('checked', $(this).prop("checked"));
         if ($(this).prop("checked")) {
             $(".mail_sent_all table tr").addClass("mail_tr_background");
@@ -57,10 +57,10 @@ $(document).ready(function () {
         $(this).toggleClass("text-warning");
         return false;
     });
-    $('.contact_scroll').css('height',480);
-    $('.contact_scroll').jScrollPane({
-        autoReinitialise: true,
-        autoReinitialiseDelay: 100
+    $('.contact_scroll').slimScroll({
+        height: '430px',
+        size: '5px',
+        color: '#ccc'
     });
     $(".starred_mail").hide();
     $("#more_items").on('click',function () {

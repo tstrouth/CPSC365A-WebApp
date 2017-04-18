@@ -1,4 +1,24 @@
 /* calendar custome code */
+.color-primary, a.color-primary:hover
+{
+    background-color: #00c0ef;
+}
+.color-success, a.color-success:hover
+{
+    background-color: #00bf86;
+}
+.color-warning, a.color-warning:hover
+{
+    background-color: #ffa000;
+}
+.color-info, a.color-info:hover
+{
+    background-color: #668cff;
+}
+.color-danger, a.color-danger:hover
+{
+    background-color: #ff8080;
+}
 #color-chooser a{color:#FFF}
 .fc-event-inner{padding:2px 2px}
 .fc-event{background:#EF6F6C;border:none}
@@ -12,12 +32,9 @@
     height: 18px;
     border: none;
 }
-.dropdown-menu li{
-    cursor: pointer;
-}
-
-#myModal .cal_modal_type,#evt_modal .cal_modal_type{
-    left:-53px;
+.plus_btn:focus
+{
+    color: #000 !important;
 }
 /* Custom calendar */
 .external-event {
@@ -66,7 +83,7 @@
 .cal_modal_type .btn{
     border-radius: 0;
 }
-.cal_btn_hov a:not([href]):not([tabindex]){
+a:not([href]):not([tabindex]){
     color: #fff;
 }
 .fc-day-grid-event:focus,.fc-day-grid-event:hover{
@@ -82,7 +99,7 @@
     border-bottom-right-radius: 3px;
     border-bottom-left-radius: 3px;
 }
-#color-chooser{
+.color-chooser{
     min-width: 120% !important;
 }
 /*View user*/
@@ -106,7 +123,7 @@
     text-align: center;
 }
 .view_user_cal .event_popover,.view_user_cal .event_tooltip{
-    background-color:#4fb7fe !important;
+    background-color:#00c0ef !important;
 }
 .recent_feeds_header_img{
     width:27px;
@@ -124,10 +141,10 @@
     color: #fff;
 }
 .manual_popover{
-    background-color: #EF6F6C;
+    background-color: #ff8080;
 }
 .view_user_cal .event_tooltip a{
-    background-color: #ff9933;
+    background-color: #ffa000;
 }
 .view_user_cal .arrow_padding,.visualmonthyear{
     padding-top:12px;
@@ -135,7 +152,7 @@
 }
 .tab-content .editable{
     cursor: pointer;
-    border-bottom: 1px dotted #4fb7fe;
+    border-bottom: 1px dotted #00c0ef;
 }
 .editable_table button,.editable_table input{
     border-radius: 0 !important;
@@ -158,7 +175,6 @@
 .cal_btn_hov .btn.btn-link.btn-xs{
     margin-top: -4px;
 }
-
 @media (max-width: 340px){
     .manual_popover, .view_user_cal .event_tooltip a {
         width: 25px;
@@ -173,24 +189,4 @@
 }
 .fc-event-container:hover{
     color: #fff;
-}
-/*dropdown colors*/
-.cal_btn_hov .btn.btn-link.btn-xs:focus{
-    color: #2c2c2c;
-    box-shadow: none;
-}
-.color_primary,.color_primary:hover{
-    background-color: #4fb7fe;
-}
-.color_success,.color_success:hover{
-    background-color: #00cc99;
-}
-.color_info,.color_info:hover{
-    background-color: #347dff;
-}
-.color_warning,.color_warning:hover{
-    background-color: #ff9933;
-}
-.color_danger,.color_danger:hover{
-    background-color: #EF6F6C ;
 }

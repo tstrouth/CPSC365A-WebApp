@@ -5,6 +5,7 @@ $(document).ready(function() {
     $("#sample_5_wrapper table").removeClass("table-responsive");
     $(".dataTables_wrapper .dt-buttons .btn").addClass('btn-secondary').removeClass('btn-default');
     $(".dataTables_wrapper").removeClass("form-inline");
+    $(".dataTables_paginate .pagination").addClass("float-right");
 });
 var TableAdvanced = function() {
     // ===============table 1====================
@@ -153,6 +154,7 @@ var TableAdvanced = function() {
         var tableWrapper = $('#sample_6_wrapper'); // datatable creates the table wrapper by adding with id {your_table_jd}_wrapper
         tableWrapper.find('.dataTables_length select').select2(); // initialize select2 dropdown
     }
+    // =====================table 6======================
     var initTable7 = function() {
         var table = $('#row_details');
         /* Fixed header extension: http://datatables.net/extensions/keytable/ */
@@ -165,7 +167,6 @@ var TableAdvanced = function() {
         var tableWrapper = $('#row_details_wrapper'); // datatable creates the table wrapper by adding with id {your_table_jd}_wrapper
         tableWrapper.find('.dataTables_length select').select2(); // initialize select2 dropdown
     }
-    // =====================table 6======================
     return {
         //main function to initiate the module
         init: function() {
@@ -180,4 +181,3 @@ var TableAdvanced = function() {
         }
     };
 }();
-

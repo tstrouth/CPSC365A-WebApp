@@ -13,4 +13,5 @@ $(document).ready(function() {
     }); // initialize select2 dropdown
     $("#editable_table_wrapper .dt-buttons .btn").addClass('btn-secondary').removeClass('btn-default');
     $(".dataTables_wrapper").removeClass("form-inline");
+    $(".dataTables_paginate .pagination").addClass("float-right");
 });

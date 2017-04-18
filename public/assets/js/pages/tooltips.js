@@ -3,6 +3,9 @@ $(document).ready(function () {
     $('[data-toggle="popover"]').popover();
 
 //        Advanced tooltips
+    $("#tooltip_content2").tooltipster({
+        contentCloning: true
+    });
     $(".tipso").tipso();
     $(".tipso_tiny").tipso({
         size:'tiny'

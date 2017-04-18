@@ -126,32 +126,32 @@
     border-color: #0fb0c0;
 }
 .speech_bubbles .btn-info:hover{
-    background-color: #347dff;
-    border-color: #347dff;
+    background-color: #668cff;
+    border-color: #668cff;
 }
 .speech_bubbles .btn-primary:hover {
-    background-color: #4fb4fe;
-    border-color: #4fb4fe;
+    background-color: #00c0ef;
+    border-color: #00c0ef;
 }
 .speech_bubbles .btn-success:hover {
-    background-color: #00cc99;
-    border-color: #00cc99;
+    background-color: #00bf86;
+    border-color: #00bf86;
 }
 .speech_bubbles>.hvr-bubble-float-top:before  {
     border-color: transparent transparent #0fb0c0 transparent;
 }
 .speech_bubbles>.hvr-bubble-float-right:before  {
-    border-color: transparent transparent transparent #347dff;
+    border-color: transparent transparent transparent #668cff;
 }
 .speech_bubbles>.hvr-bubble-float-bottom:before  {
-    border-color: #4fb4fe transparent transparent transparent;
+    border-color: #00c0ef transparent transparent transparent;
 }
 .speech_bubbles>.hvr-bubble-float-left:before  {
-    border-color: transparent #00cc99 transparent transparent;
+    border-color: transparent #00bf86 transparent transparent;
 }
 .loading{
-     background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, rgba(0, 0, 0, 0) 25%, rgba(0, 0, 0, 0) 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0));
-     background-size: 40px 40px;
+    background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, rgba(0, 0, 0, 0) 25%, rgba(0, 0, 0, 0) 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0));
+    background-size: 40px 40px;
     animation: 2s linear 0s normal none infinite progress-bar-stripes;
     -webkit-animation: progress-bar-stripes 2s linear infinite;
 }

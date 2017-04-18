@@ -1,6 +1,7 @@
 "use strict";
 $(document).ready(function() {
 
+
     /* Toastr notifications */
 
     var i = -1;
@@ -206,7 +207,7 @@ $(document).ready(function() {
         var deleteButton = " <a href='' class='tododelete redcolor'><span class='fa fa-trash'></span></a>";
         var striks = " <span class='dividor'>|</span> ";
         var editButton = " <a href='#' class='todoedit'><span class='fa fa-pencil'></span></a>";
-        var checkBox = "<input type='checkbox' class='striked' />";
+        var checkBox = "<p><input type='checkbox' class='striked form-control' autocomplete='off' /></p>";
         var twoButtons = "<div class='col-3 showbtns todoitembtns'>" + editButton + striks + deleteButton + "</div>";
         var badgeClass = $('#btn_color').data('badge');
         $(".list_of_items").prepend("<div class='todolist_list showactions px-3'>" + "<div class='row'><div class='col-9 nopad custom_textbox1'> <div class='todo_mintbadge " + badgeClass + "'> </div> <div class='todoitemcheck'>" + checkBox + "</div>" + "<div class='todotext todoitem'>" + $("#custom_textbox").val() + "</div> </div>" +   twoButtons + "<span class='seperator'></span></div>");
@@ -279,10 +280,11 @@ $(document).ready(function() {
         size: '5px',
         opacity: 0.2
     });
-    $(".content").css("height",300);
-    $('.content').jScrollPane({
-        autoReinitialise: true,
-        autoReinitialiseDelay: 100
+    // slimscroll for notes section
+    $('.content').slimscroll({
+        height: '300px',
+        size: '5px',
+        opacity: 0.2
     });
 
     //server load

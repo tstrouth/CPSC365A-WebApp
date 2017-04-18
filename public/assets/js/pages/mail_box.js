@@ -48,10 +48,10 @@ $(document).ready(function () {
         $(this).toggleClass("text-warning");
         return false;
     });
-    $('.contact_scroll').css('height',480);
-    $('.contact_scroll').jScrollPane({
-        autoReinitialise: true,
-        autoReinitialiseDelay: 100
+    $('.contact_scroll').slimScroll({
+        height: '430px',
+        size: '5px',
+        color: '#ccc'
     });
     $(".starred_mail").hide();
     $("#more_items").on('click',function () {
@@ -73,7 +73,11 @@ $(document).ready(function () {
     $(".wysihtml5-toolbar li:nth-child(5) span").addClass("fa fa-share");
     $(".wysihtml5-toolbar li:nth-child(6) span").addClass("fa fa-picture-o");
     $(".wysihtml5-toolbar li:first-child a:first-child").removeClass('btn-default').addClass('btn-secondary');
-    $(".wysihtml5-toolbar li:nth-child(2) a,.wysihtml5-toolbar li:nth-child(3) a,.wysihtml5-toolbar li:nth-child(4) a,.wysihtml5-toolbar li:nth-child(5) a,.wysihtml5-toolbar li:nth-child(6) a").removeClass('btn-default').addClass('btn-secondary');
+    $(".wysihtml5-toolbar li:nth-child(2) a").removeClass('btn-default').addClass('btn-secondary');
+    $(".wysihtml5-toolbar li:nth-child(3) a").removeClass('btn-default').addClass('btn-secondary');
+    $(".wysihtml5-toolbar li:nth-child(4) a").removeClass('btn-default').addClass('btn-secondary');
+    $(".wysihtml5-toolbar li:nth-child(5) a").removeClass('btn-default').addClass('btn-secondary');
+    $(".wysihtml5-toolbar li:nth-child(6) a").removeClass('btn-default').addClass('btn-secondary');
     $("[data-wysihtml5-command='formatBlock'] span").removeClass("glyphicon glyphicon-quote").addClass("fa fa-quote-left");
     // ====================Mail View===========================
     $(".mail_view_wysi").hide();

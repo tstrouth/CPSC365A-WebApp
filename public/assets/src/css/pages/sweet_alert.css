@@ -4,11 +4,13 @@
 .swal2-modal .swal2-cancel, .swal2-modal .swal2-confirm{
     margin: 5px !important;
 }
+.swal2-progresssteps .swal2-progresscircle.swal2-activeprogressstep,.swal2-progresssteps .swal2-progressline,
+.swal2-progresssteps .swal2-progresscircle{
+    background:#00c0ef;
+}
+
 .card h5{
     margin-bottom: 0;
-}
-.examples .btn{
-    margin-top: 10px;
 }
 @media (min-width:1270px){
     .wrapper{

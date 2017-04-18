@@ -1,12 +1,12 @@
 'use strict';
 $(document).ready(function() {
-    $('.editable').editable({
-        type: 'text',
-        name: 'username',
-        url: '/post',
-        title: 'Edit username'
+         $('.editable').editable({
+         type: 'text',
+         name: 'username',
+         url: '/post',
+         title: 'Edit username'
 
-    });
+     });
 
     $('#status').editable({
         prepend: "not selected",
@@ -16,27 +16,27 @@ $(document).ready(function() {
             {value: 3, text: 'Deleted'}
         ],
         display: function(value, sourceData) {
-            var colors = {1: "text-success", 2: "text-warning", 3: "text-danger"},
-                elem = $.grep(sourceData, function(o){return o.value == value;});
+             var colors = {1: "text-success", 2: "text-warning", 3: "text-danger"},
+                 elem = $.grep(sourceData, function(o){return o.value == value;});
+                 
+             if(elem.length) {
+                 $(this).text(elem[0].text).removeClass('text-success text-warning text-danger');     
+                 $(this).text(elem[0].text).addClass(colors[value]); 
+             }
+        }   
+    });     
 
-            if(elem.length) {
-                $(this).text(elem[0].text).removeClass('text-success text-warning text-danger');
-                $(this).text(elem[0].text).addClass(colors[value]);
-            }
-        }
-    });
+     //ajax emulation
+     $.mockjax({
+         url: '/post',
+         responseTime: 200
+        
+     });
 
-    //ajax emulation
-    $.mockjax({
-        url: '/post',
-        responseTime: 200
-
-    });
-
-    $('#slim1').slimscroll({
-        height: '655px',
-        size: '5px',
-        color: '#bbb',
-        opacity: 1
-    });
+         $('#slim1').slimscroll({
+             height: '655px',
+             size: '5px',
+             color: '#bbb',
+             opacity: 1
+         });
 });

@@ -1,3 +1,7 @@
+
+.diff_colored_checkbox .btn, .diff_colored_radio .btn{
+    margin-right:-2px;
+}
 .diff_colored_checkbox .btn span.fa {
     opacity: 0;
 }
@@ -13,17 +17,16 @@
 .sub_title{
     line-height: 25px;
 }
-.diff_colored_radio .btn,.diff_colored_checkbox .btn{
-    margin-right:-2px;
-}
 .checkbox label:after,
 .radio label:after {
     content: '';
     display: table;
     clear: both;
 }
+
 .checkbox .cr,
 .radio .cr {
+    margin-top: 3px;
     position: relative;
     display: inline-block;
     border: 1px solid #a9a9a9;
@@ -87,6 +90,9 @@
 .small_font_check{
     font-size: 0.7em;
 }
+.custom-control .custom-control-indicator{
+    margin-top: 2px !important;
+}
 @media (max-width: 767px){
     .radio_header_top{
         margin-top: 25px;
@@ -102,24 +108,23 @@
 
 .custom-radio .custom-control-input:checked ~ .custom_checkbox_success,
 .custom-checkbox .custom-control-input:checked ~ .custom_checkbox_success{
-    background-color: #00cc99 !important; }
+    background-color: #00bf86 !important; }
 
 .custom-radio .custom-control-input:checked ~ .custom_checkbox_info,
 .custom-checkbox .custom-control-input:checked ~ .custom_checkbox_info{
-    background-color: #347dff !important; }
+    background-color: #668cff !important; }
 
 .custom-radio .custom-control-input:checked ~ .custom_checkbox_warning,
 .custom-checkbox .custom-control-input:checked ~ .custom_checkbox_warning{
-    background-color: #ff9933 !important; }
+    background-color: #ffa000 !important; }
 
 .custom-radio .custom-control-input:checked ~ .custom_checkbox_primary,
 .custom-checkbox .custom-control-input:checked ~ .custom_checkbox_primary{
-    background-color: #4fb7fe !important; }
+    background-color: #00c0ef !important; }
 
 .custom-radio .custom-control-input:checked ~ .custom_checkbox_danger,
 .custom-checkbox .custom-control-input:checked ~ .custom_checkbox_danger{
-    background-color: #EF6F6C !important; }
-
+    background-color: #ff8080 !important; }
 .radio_Checkbox_size2{
     font-size: 1.5em;
 }
@@ -142,5 +147,9 @@
 @media (max-width: 991px) {
     .transition_radio_media{
         margin-top: 15px;
+    }
+    .radio_check_top_align
+    {
+        margin-top: 20px !important;
     }
 }

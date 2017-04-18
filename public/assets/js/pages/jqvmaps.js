@@ -8,7 +8,7 @@ $(document).ready(function () {
         backgroundColor: '#eaeaea',
         color: '#ffffff',
         hoverOpacity: 0.7,
-        selectedColor: '#EF6F6C',
+        selectedColor: '#ff8080',
         values: sample_data,
         scaleColors:['#feEda0','#ff6491'],
         normalizeFunction: 'polynomial',
@@ -28,9 +28,9 @@ $(document).ready(function () {
     $('#russia_map').vectorMap({
         map: 'russia_en',
         backgroundColor: '#eaeaea',
-        color: '#ff9933',
-        selectedColor: '#EF6F6C',
-        hoverColor: '#4fb7fe',
+        color: '#ffb300',
+        selectedColor: '#ff8080',
+        hoverColor: '#00c0ef',
         onRegionClick: function(element, code, region)
         {
             var message = 'You clicked "'
@@ -47,12 +47,12 @@ $(document).ready(function () {
     $('#usa_map').vectorMap({
         map: 'usa_en',
         backgroundColor: '#eaeaea',
-        color: '#4fb7fe',
-        selectedColor: '#EF6F6C',
-        hoverColor: '#ff9933',
+        color: '#00c0ef',
+        selectedColor: '#ff8080',
+        hoverColor: '#ffb300',
         colors: {
-            mo: '#EF6F6C',
-            fl: '#00cc99',
+            mo: '#ff8080',
+            fl: '#0fb0c0',
             or: '#0fb0c0'
         },
         onRegionClick: function(element, code, region)
@@ -71,9 +71,9 @@ $(document).ready(function () {
     $('#canada_map').vectorMap({
         map: 'canada_en',
         backgroundColor: '#eaeaea',
-        color: '#347dff',
-        selectedColor: '#EF6F6C',
-        hoverColor: '#ff9933',
+        color: '#668cff',
+        selectedColor: '#ff8080',
+        hoverColor: '#ffb300',
         onRegionClick: function(element, code, region)
         {
             var message = 'You clicked "'
@@ -90,9 +90,9 @@ $(document).ready(function () {
     $('#europe_map').vectorMap({
         map: 'europe_en',
         backgroundColor: '#eaeaea',
-        color: '#00cc99',
-        selectedColor: '#EF6F6C',
-        hoverColor: '#ff9933',
+        color: '#0fb0c0',
+        selectedColor: '#ff8080',
+        hoverColor: '#ffb300',
         onRegionClick: function(element, code, region)
         {
             var message = 'You clicked "'
@@ -105,9 +105,9 @@ $(document).ready(function () {
     });
     // End of europe map
 
-    $("#menu-toggle,.toggle-right").on("click",function(e) {
+    $("#menu-toggle,.toggle-right").on("click", function(e) {
         setTimeout(function(){
-            $(window).trigger('resize');
-        },250);
+        $(window).trigger('resize');    
+    },250);
     });
 });

@@ -4,11 +4,23 @@
 }
 
 #left {
-background-color: #fff;
+background-color: #575757;
 }
-#top .navbar-brand h4,#top .toggle-left,#top button,#top .btn-group,#top .btn-default,#top .btn-default:hover{
-	color: #fff !important;
+
+.skin_txt {color: #77b300;}
+
+.btn-default {
+color: #fff;
+background-color: #7F9E40;
+
 }
-.fixed_menu_navbar{
-	background-color: #7f9e40;
+
+.btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active, .open>.dropdown-toggle.btn-default {
+color: #fff;
+background-color: #6b843a;
+
+}
+#top .nav > li:hover, #top .nav > li.active
+{
+	background-color: #6b843a;
 }

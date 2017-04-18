@@ -14,10 +14,11 @@
     <!-- global styles-->
     <link type="text/css" rel="stylesheet" href="{{asset('assets/css/components.css')}}"/>
     <link type="text/css" rel="stylesheet" href="{{asset('assets/css/custom.css')}}"/>
-    <link type="text/css" rel="stylesheet" href="{{asset('assets/css/skins/black_skin.css')}}"
-
-    <link type="text/css" rel="stylesheet" href="{{asset('assets/css/pages/new_dashboard.css')}}"
-    <link type="text/css" rel="stylesheet" href="#" id="skin_change"/>
+    <link type="text/css" rel="stylesheet" href="{{asset('assets/css/skins/black_skin.css')}}" />
+<link type="text/css" rel="stylesheet" href="{{asset('assets/css/pages/new_dashboard.css')}}"/>
+<link type="text/css" rel="stylesheet" href="{{asset('assets/vendors/c3/css/c3.min.css')}}"/>
+<link type="text/css" rel="stylesheet" href="{{asset('assets/vendors/toastr/css/toastr.min.css')}}"/>
+    <link type="text/css" rel="stylesheet" href="{{asset('assets/vendors/switchery/css/switchery.min.css')}}"/>
     <!-- end of global styles-->
     @yield('header_styles')
 </head>
@@ -129,6 +130,21 @@ z-index: 999999">
 <script type="text/javascript" src="{{asset('assets/js/components.js')}}"></script>
 <script type="text/javascript" src="{{asset('assets/js/custom.js')}}"></script>
 <!-- end of global scripts-->
+<script type="text/javascript" src="{{asset('assets/vendors/raphael/js/raphael-min.js')}}"></script>
+<script type="text/javascript" src="{{asset('assets/vendors/d3/js/d3.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('assets/vendors/c3/js/c3.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('assets/vendors/toastr/js/toastr.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('assets/vendors/switchery/js/switchery.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('assets/vendors/flotchart/js/jquery.flot.js')}}" ></script>
+<script type="text/javascript" src="{{asset('assets/vendors/flotchart/js/jquery.flot.resize.js')}}"></script>
+<script type="text/javascript" src="{{asset('assets/vendors/flotchart/js/jquery.flot.stack.js')}}"></script>
+<script type="text/javascript" src="{{asset('assets/vendors/flotchart/js/jquery.flot.time.js')}}"></script>
+<script type="text/javascript" src="{{asset('assets/vendors/flotspline/js/jquery.flot.spline.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('assets/vendors/flotchart/js/jquery.flot.categories.js')}}"></script>
+<script type="text/javascript" src="{{asset('assets/vendors/flotchart/js/jquery.flot.pie.js')}}"></script>
+<script type="text/javascript" src="{{asset('assets/vendors/flot.tooltip/js/jquery.flot.tooltip.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('assets/vendors/jquery_newsTicker/js/newsTicker.js')}}"></script>
+<script type="text/javascript" src="{{asset('assets/vendors/countUp.js/js/countUp.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('assets/js/pages/new_dashboard.js')}}"></script>
 <!-- page level js -->
 @yield('footer_scripts')

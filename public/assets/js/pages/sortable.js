@@ -3,9 +3,6 @@ $(document).ready(function() {
     $('.editable_section').slimScroll({
         height: '134px'
     });
-    $("#bar .btn").on("click",function (e) {
-        $(this).removeAttr('draggable');
-    });
     var byId = function(id) {
             return document.getElementById(id);
         },
@@ -202,6 +199,9 @@ $(document).ready(function() {
 
         setNoiseBackground(document.getElementsByTagName('body')[0], 50, 50, 0.02);
     }, false);
+
 });
 
+
+// slimscroll for editable list
 

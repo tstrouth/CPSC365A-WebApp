@@ -34,4 +34,5 @@ $(document).ready(function(){
     } );
     // End of advanced Table
     $(".dataTables_wrapper").removeClass("form-inline");
+    $(".dataTables_paginate .pagination").addClass("float-right");
 });

@@ -1,7 +1,7 @@
 'use strict';
 $(document).ready(function() {
     new WOW().init();
-    $(window).on("load",function() {
+    $(window).on("load", function() {
         $('.preloader img').fadeOut();
         $('.preloader').fadeOut(1000);
     });

@@ -7,9 +7,6 @@
 	width:27px;
 	height:27px
 }
-.mail .table-bordered{
-	padding: 11px;
-}
 .web-mail ul {
 	margin: 0 !important;
 	width: 100%;
@@ -77,10 +74,17 @@ border:1px solid #ddd;
 .dropdown_list_hover .btn-group  {
     margin:0 5px 0 0;
 }
-.status_height {line-height: 30px;}
+.status_height {line-height: 30px;
+}
 
 .mail_inbox_text_col{
 	color: #fff !important;
+}
+.mail .table-bordered{
+	padding: 11px;
+}
+.mail table td .custom-control-indicator{
+	margin-top: -5px;
 }
 /*============common css===================*/
 .custom-control-indicator{
@@ -123,7 +127,7 @@ border:1px solid #ddd;
 	margin-bottom: 0;
 }
 .mail .checker {
-	margin-top: -3px;
+	margin-top: 5px;
 }
 .inbox_search_height{
 	height: 37px;
@@ -146,6 +150,7 @@ border:1px solid #ddd;
 
 .tabs .nav-tabs li.active a, .tabs .nav-tabs li.active a:hover {
 	border: 1px solid transparent;
+	border-bottom: 2px solid #0fb0c0;
 	color: #fff;
 	font-weight: 700;
 }
@@ -191,10 +196,6 @@ border:1px solid #ddd;
 	margin: 20px 10px;
 	cursor: pointer;
 }
-.mail_compose_list .section_border{
-	border-top-right-radius:5px;
-	border-top-left-radius:5px;
-}
 /*===============Mail Inbox========================*/
 #social2 .nav-link{
 	margin-left: -2px;
@@ -209,9 +210,6 @@ border:1px solid #ddd;
 .mail_compose .wysihtml5-toolbar li:nth-child(4) a{
 	padding: 7px;
 }
-.modal-footer a:nth-child(2){
-	/*margin-top: 20px;*/
-}
 .modal-header {
 	display: flex;
 	flex-direction: row-reverse;
@@ -224,6 +222,9 @@ border:1px solid #ddd;
 	font-size: 14px !important;
 }
 @media (min-width: 768px){
+	/*.mail_compose_list ul li:hover,.dropdown_list_hover ul li:hover {*/
+		/*background-color: #ffc;*/
+	/*}*/
 	.mail table tr:hover {
 		background-color: #ffc !important;
 	}

@@ -38,37 +38,35 @@
     margin-bottom: 0;
 }
 .opacity .btn-warning{
-    background-color: rgba(255,153,51,0.7);
+    background-color: rgba(255,160,0,0.7);
 }
 .opacity .btn-success{
-    background-color: rgba(0, 204, 153,0.7);
-    border-color: #009973;
+    background-color: rgba(0,191,134,0.7);
 }
 .opacity .btn-info{
-    background-color: rgba(52,125,255,0.7);
+    background-color: rgba(102,140,255,0.7);
 }
 .opacity .btn-danger{
-    background-color: rgba(255, 102, 102,0.7);
+    background-color: rgba(255,128,128,0.7);
 }
 .opacity .btn-mint{
-    background-color: rgba(	15, 176, 192,0.7);
-    border:1px solid #0B8591 !important;
+    background-color: rgba(15,176,192,0.7);
 }
 .alert-warning{
-    background-color: rgba(255,153,51,0.9);
-    border: 1px solid #FF8000;
+    background-color: rgba(255,160,0,0.9);
+    border: 1px solid #e59000;
 }
 .alert-success{
-    background-color: rgba(0, 204, 153,0.9);
-    border: 1px solid #009973;
+    background-color: rgba(0,191,134,0.9);
+    border: 1px solid #00ab78;
 }
 .alert-info{
-    background-color: rgba(52,125,255,0.9);
-    border: 1px solid #015CFF;
+    background-color: rgba(102,140,255,0.9);
+    border: 1px solid #5b7ee5;
 }
 .alert-danger{
-    background-color: rgba(255, 102, 102,0.9);
-    border: 1px solid #FF3333;
+    background-color: rgba(255,128,128,0.9);
+    border: 1px solid #e57373;
 }
 .source{
     width: 90%;

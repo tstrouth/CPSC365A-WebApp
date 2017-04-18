@@ -29,13 +29,12 @@ svg:not(:root) {
 #chart_5 .x_tick:nth-child(8){
     margin-left: 31px;
 }
-#legend_chart2, #legend_chart3
-{
+#legend_chart2, #legend_chart3 {
     font-family: "Source Sans Pro", sans-serif;
 }
 @media (max-width:992px){
-    .md_top_align
-    {
-        margin-top: 35px;
-    }
+.md_top_align
+{
+    margin-top: 35px;
+}
 }

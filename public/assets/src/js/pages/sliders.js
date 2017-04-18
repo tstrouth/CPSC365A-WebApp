@@ -95,7 +95,7 @@ $(document).ready(function () {
         .data('slider');
     /* Example 5 */
     $("#bootstrap_slider5").slider();
-    $("#destroyEx5Slider").on("click",function() {
+    $("#destroyEx5Slider").on("click", function() {
         $("#bootstrap_slider5").slider('destroy');
     });
 
@@ -107,7 +107,7 @@ $(document).ready(function () {
 
     /* Example 7 */
     $("#bootstrap_slider7").slider();
-    $("#ex7-enabled").on("click",function() {
+    $("#ex7-enabled").on("click", function() {
         if (this.checked) {
             $("#bootstrap_slider7").slider("enable");
             $("#enable_text").text('Disable');
@@ -129,8 +129,8 @@ $(document).ready(function () {
         step: 0.01,
         value: 8.115
     });
-    $("#bootstrap_slider10").slider();
+    $("#bootstrap_slider10").slider({});
     $(".slider").on("mouseenter mouseleave",function(){
         $(this).find(".tooltip.tooltip-main").toggleClass("show").removeClass("in");
     });
-});
+})

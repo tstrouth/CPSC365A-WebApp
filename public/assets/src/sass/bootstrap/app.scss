@@ -1,4 +1,9 @@
-@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro|Hind:500);
+//@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro|Raleway:700);
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro|Roboto:500);
+
+html {
+  font-size: 14px;
+}
 
 @import "variables";
 @import "../../vendors/bootstrap/scss/bootstrap";

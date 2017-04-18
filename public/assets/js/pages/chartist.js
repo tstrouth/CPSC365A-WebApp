@@ -25,6 +25,7 @@ $(document).ready(function(){
                     from: -pathLength + 'px',
                     to:  '0px',
                     easing: Chartist.Svg.Easing.easeOutQuint,
+
                     fill: 'freeze'
                 }
             };
@@ -347,7 +348,4 @@ $(document).ready(function(){
             new Chartist.Bar('#multi_line', data6, options6);
         }, 500);
     });
-
-
-
 });

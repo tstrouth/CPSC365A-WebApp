@@ -37,11 +37,18 @@ $(document).ready(function() {
     $('.summernote_editor').summernote({
         height:200
     });
-    $(".wysihtml5-toolbar li:nth-child(3) a,.wysihtml5-toolbar li:nth-child(4) a,.wysihtml5-toolbar li:nth-child(5) a,.wysihtml5-toolbar li:nth-child(6) a").addClass("btn-outline-primary");
-    $(".wysihtml5-toolbar .btn-group:eq(1) a:first-child,.wysihtml5-toolbar .btn-group:eq(3) a:first-child").addClass("fa fa-list");
-    $(".wysihtml5-toolbar .btn-group:eq(1) a:nth-child(2),.wysihtml5-toolbar .btn-group:eq(3) a:nth-child(2)").addClass("fa fa-th-list");
-    $(".wysihtml5-toolbar .btn-group:eq(1) a:nth-child(3),.wysihtml5-toolbar .btn-group:eq(3) a:nth-child(3)").addClass("fa fa-align-left");
-    $(".wysihtml5-toolbar .btn-group:eq(1) a:nth-child(4),.wysihtml5-toolbar .btn-group:eq(3) a:nth-child(4)").addClass("fa fa-align-right");
+    $(".wysihtml5-toolbar li:nth-child(3) a").addClass("btn-outline-primary");
+    $(".wysihtml5-toolbar li:nth-child(4) a").addClass("btn-outline-primary");
+    $(".wysihtml5-toolbar li:nth-child(5) a").addClass("btn-outline-primary");
+    $(".wysihtml5-toolbar li:nth-child(6) a").addClass("btn-outline-primary");
+    $(".wysihtml5-toolbar .btn-group:eq(1) a:first-child").addClass("fa fa-list");
+    $(".wysihtml5-toolbar .btn-group:eq(1) a:nth-child(2)").addClass("fa fa-th-list");
+    $(".wysihtml5-toolbar .btn-group:eq(1) a:nth-child(3)").addClass("fa fa-align-left");
+    $(".wysihtml5-toolbar .btn-group:eq(1) a:nth-child(4)").addClass("fa fa-align-right");
+    $(".wysihtml5-toolbar .btn-group:eq(3) a:first-child").addClass("fa fa-list");
+    $(".wysihtml5-toolbar .btn-group:eq(3) a:nth-child(2)").addClass("fa fa-th-list");
+    $(".wysihtml5-toolbar .btn-group:eq(3) a:nth-child(3)").addClass("fa fa-align-left");
+    $(".wysihtml5-toolbar .btn-group:eq(3) a:nth-child(4)").addClass("fa fa-align-right");
     $(".wysihtml5-toolbar li:nth-child(5) span").addClass("fa fa-share");
     $(".wysihtml5-toolbar li:nth-child(6) span").addClass("fa fa-picture-o");
     $("[data-wysihtml5-command='formatBlock'] span").css("position","relative").css("top","-5px").css("left","-5px");

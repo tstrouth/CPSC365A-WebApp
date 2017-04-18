@@ -202,6 +202,9 @@ $(document).ready(function() {
 
         setNoiseBackground(document.getElementsByTagName('body')[0], 50, 50, 0.02);
     }, false);
+
 });
 
+
+// slimscroll for editable list
 

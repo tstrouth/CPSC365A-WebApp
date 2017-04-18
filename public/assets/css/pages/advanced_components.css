@@ -17,20 +17,20 @@
 	cursor: pointer !important;
 }
 .md-content-yellow {
-	background: #ff9933;
+	background: #ffa000;
 }
 .md-content-primary {
-	background: #4fb7fe;
+	background: #00c0ef;
 }
 .md-content-red {
-	background: #EF6F6C;
+	background: #ff8080;
 }
 .md-content-purple {
-	background: #bd7bde;
+	background: #668cff;
 }
 .md-content-green {
 	color: #2B2E33;
-	background:#00cc99;
+	background:#0fb0c0;
 }
 .md-content-white {
 	color: #2B2E33;
@@ -211,8 +211,6 @@
 .dd3-handle:hover {
 	background: #ddd;
 }
-/*modals animations*/
-
 .expandOpen {
 	animation-name: expandOpen;
 	animation-duration: 1.2s;
@@ -800,7 +798,7 @@ opacity: 1;
 	border-top-left-radius:5px ;
 	border-top-right-radius: 5px;
 }
-@media (max-width: 575px){
+@media screen and (max-width: 540px){
 	.adv_com_fade_bottom{
 		margin-bottom: -12px;
 	}
@@ -814,6 +812,6 @@ opacity: 1;
 #accordion_example_markup .prettyprint{
 	padding-bottom: 15px;
 }
-@media (max-width: 32em) {
+@media screen and (max-width: 32em) {
 	body { font-size: 100% !important; }
 }

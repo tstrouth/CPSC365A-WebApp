@@ -36,11 +36,11 @@ $(document).ready(function () {
     var plot = $.plot(basicflot, [{
         data: sales,
         label: "Sales",
-        color: "#4fb7fe"
+        color: "#00c0ef"
     }, {
         data: profit,
         label: "Profit",
-        color: "#EF6F6C",
+        color: "#ff8080",
         opacity: "1"
     }], {
         series: {
@@ -71,7 +71,7 @@ $(document).ready(function () {
             labelMargin: 5,
             backgroundColor: '#fff'
         },
-        colors: ["#4fb7fe", "#EF6F6C"],
+        colors: ["#00c0ef", "#ff8080"],
         xaxis: {},
         yaxis: {
             ticks: 4
@@ -79,7 +79,7 @@ $(document).ready(function () {
     });
 
     var previousPoint1 = null;
-    basicflot.on("bind","plothover", function(event, pos, item) {
+    basicflot.bind("plothover", function(event, pos, item) {
         $("#x").text(pos.x.toFixed(2));
         $("#y").text(pos.y.toFixed(2));
 
@@ -102,7 +102,7 @@ $(document).ready(function () {
 
     });
 
-    basicflot.on("bind","plotclick", function(event, pos, item) {
+    basicflot.bind("plotclick", function(event, pos, item) {
         if (item) {
             plot.highlight(item.series, item.datapoint);
         }
@@ -132,7 +132,7 @@ $(document).ready(function () {
     }, {
         label: "Total Sales",
         data: d2,
-        color: "#ff9933"
+        color: "#ffb300"
     }];
 
     Options = {
@@ -234,7 +234,7 @@ $(document).ready(function () {
     $.plot("#bar-chart-stacked", [{
         data: d11,
         label: "New Visitor",
-        color: "#4fb7fe"
+        color: "#00c0ef"
     },{
         data: d12,
         label: "Returning Visitor",
@@ -278,11 +278,11 @@ $(document).ready(function () {
     var datax = [{
         label: "Profile",
         data: 150,
-        color: '#4fb7fe'
+        color: '#00c0ef'
     }, {
         label: "Facebook ",
         data: 130,
-        color: '#00cc99'
+        color: '#0fb0c0'
     }, {
         label: "Twitter ",
         data: 190,
@@ -290,11 +290,11 @@ $(document).ready(function () {
     }, {
         label: "Google+",
         data: 180,
-        color: '#EF6F6C'
+        color: '#ff8080'
     }, {
         label: "Linkedin",
         data: 120,
-        color: '#ff9933'
+        color: '#ffb300'
     }];
 
     $.plot($("#donut"), datax, {
@@ -345,7 +345,7 @@ $(document).ready(function () {
         legend: {
             show: false
         },
-        colors: [ '#00cc99', '#4fb7fe', '#347dff', '#ff9933', '#0fb0c0']
+        colors: [ '#0fb0c0', '#00c0ef', '#668cff', '#ffb300', '#0fb0c0']
     });
 
     $("#footer").prepend("Flot " + $.plot.version + " &ndash; ");
@@ -386,7 +386,7 @@ $(document).ready(function () {
         legend: {
             show: false
         },
-        colors: [ '#00cc99', '#4fb7fe', '#0fb0c0', '#ff9933', '#347dff']
+        colors: [ '#0fb0c0', '#00c0ef', '#0fb0c0', '#ffb300', '#668cff']
     });
 
     $("#footer").prepend("Flot " + $.plot.version + " &ndash; ");
@@ -420,7 +420,7 @@ $(document).ready(function () {
 
 // setup plot
     var options = {
-        colors: ["#4fb7fe"],
+        colors: ["#00c0ef"],
         series: {
             shadowSize: 0,
             lines: {
@@ -464,11 +464,11 @@ $(document).ready(function () {
     $.plot("#area-chart", [{
         data: da1,
         label: "Product 1",
-        color: "#00cc99"
+        color: "#0fb0c0"
     },{
         data: da2,
         label: "product 2",
-        color: "#ff9933"
+        color: "#ffb300"
     }], {
         series: {
             lines: {
@@ -510,7 +510,7 @@ $(document).ready(function () {
     },{
         data: ds2,
         label: "product 2",
-        color: "#ff9933"
+        color: "#ffb300"
     }], {
         series: {
             lines: {

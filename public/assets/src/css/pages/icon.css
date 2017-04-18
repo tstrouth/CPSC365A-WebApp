@@ -41,7 +41,7 @@
     -moz-osx-font-smoothing: grayscale;
 }
 .page-header {
-    margin-top: 25px;
+    margin-top: 20px;
     margin-bottom: 20px;
     padding-bottom: 10px;
     border-bottom: 1px solid #eceeef;
@@ -55,7 +55,7 @@
     letter-spacing: 0.04em;
 }
 .label-success {
-    background-color: #1bb99a;
+    background-color: #00bf86;
 }
 .label {
     display: inline-block;

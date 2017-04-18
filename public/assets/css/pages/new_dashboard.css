@@ -13,15 +13,14 @@ body
 {
     padding:0 !important;
 }
-.head{
-    margin-bottom: 0;
-}
 
 .graph {
     height: 242px !important;
     overflow: hidden;
 }
-
+.outer{
+    margin-top: 0;
+}
 .graph_top button {
     float: right;
     margin-right: 10px;
@@ -64,10 +63,6 @@ body
 }
 .icon_margin_left{
     margin: 0 ;
-}
-
-.outer{
-    margin-top: 0;
 }
 /*==========twitter section=====*/
 
@@ -170,7 +165,7 @@ body
 .weekly_report {
     color: #FFF;
     text-align: center;
-    margin: 0 0 -12px 0;
+    margin: 0 0 -7px 0;
     font-size: 18px;
 }
 
@@ -182,7 +177,9 @@ body
     height:302px;
     z-index: 1;
 }
-.flotChart4{
+.flotChart4
+
+{
     width: 100%;
     height:282px;
     z-index: 1;
@@ -212,7 +209,7 @@ body
 #area-chart .legend>div{
     right: 1px !important;
 }
-#clothing-nav .nav-tabs
+.nav-tabs
 {
     margin: -1px 0 0 -1px;
 }
@@ -222,8 +219,8 @@ body
 }
 .nav-tabs .nav-link.active, .nav-tabs .nav-link.active:focus, .nav-tabs .nav-link.active:hover, .nav-tabs .nav-item.open .nav-link, .nav-tabs .nav-item.open .nav-link:focus, .nav-tabs .nav-item.open .nav-link:hover{
     color: #fff !important;
-    background-color: #4fb7fe;
-    border: 1px solid #4fb7fe;
+    background-color: #91d2fe;
+    border: 1px solid #78C8FE;
 
 }
 .nav-tabs:not(.nav-link.active) {
@@ -255,7 +252,7 @@ body
 .notes::after {
     content: '';
     position: absolute;
-    width: 0;
+    width: 0px;
     top: 0;
     left: 39px;
     bottom: 0;
@@ -271,6 +268,7 @@ body
     width: 9em;
     height: 6em;
     font-size: 1em;
+    /* control icon size here */
     color: #fff;
 }
 
@@ -479,6 +477,10 @@ body
     font-weight: bolder;
     line-height: 0;
 }
+
+
+/*.sub:hover, .sales_hover:hover, .visit_icon:hover, .revenue_icon:hover{*/
+
 .top_cards:hover .fa-stack-1x {
     transition: 0.2s;
     font-size: 1.3em;
@@ -520,7 +522,7 @@ body
 .todolist_list {
     display: inline-block;
     width: 100%;
-    padding-top: 4px;
+    padding: 4px 5px 0 4px;
     background: #fff;
     float: left;
 }
@@ -698,9 +700,9 @@ body
 
     #pieLabel1
     {
-        left: 80% !important;
+    left: 80% !important;
 
-    }
+}
 
 }
 @media (min-width:991px) and (max-width:1150px) {

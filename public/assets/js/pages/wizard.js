@@ -158,8 +158,8 @@ $(document).ready(function() {
             }
             return $validator.isValid();
         },
-        'onPrevious': function(tab, navigation, index) {
-            $(".userprofile_tab2").removeClass("tab_clr");
+            'onPrevious': function(tab, navigation, index) {
+                    $(".userprofile_tab2").removeClass("tab_clr");
         },
         onTabClick: function(tab, navigation, index) {
             return false;

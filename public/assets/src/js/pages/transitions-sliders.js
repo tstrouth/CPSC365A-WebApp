@@ -1,6 +1,6 @@
 'use strict';
 $(document).ready(function(){
-    function testAnim(x, str) {
+function testAnim(x, str) {
         $('#animationSandbox' + str).removeClass().addClass(x + ' animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
             $(this).removeClass();
         });

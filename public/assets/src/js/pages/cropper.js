@@ -1,5 +1,9 @@
+
 'use strict';
+
 $(document).ready(function(){
+
+
 
     var console = window.console || { log: function () {} };
     var $image = $('#image');
@@ -24,6 +28,11 @@ $(document).ready(function(){
             $dataScaleY.val(e.scaleY);
         }
     };
+
+
+//    // Tooltip
+//    $('[data-toggle="tooltip"]').tooltip();
+
 
     // Cropper
     $image.on({
@@ -175,7 +184,7 @@ $(document).ready(function(){
     var blobURL;
 
     if (URL) {
-        $inputImage.on("change",function () {
+        $inputImage.change(function () {
             var files = this.files;
             var file;
 

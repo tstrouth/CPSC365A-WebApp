@@ -123,7 +123,7 @@ $(document).ready(function() {
         lat: -12.043333,
         lng: -77.028333,
         mapTypeControlOptions: {
-            mapTypeIds: ["terrain", "osm", "cloudmade","hybrid","satellite"]
+            mapTypeIds: ["terrain", "osm", "cloudmade","hybrid","satellite"]                
         }
     });
     maptypes.addMapType("osm", {
@@ -153,7 +153,7 @@ $(document).ready(function() {
         lng: -79.380699,
         zoom: 3
     });
-    $('#geocoding_form').on("submit",function(e) {
+    $('#geocoding_form').submit(function(e) {
         e.preventDefault();
         GMaps.geocode({
             address: $('#address').val().trim(),

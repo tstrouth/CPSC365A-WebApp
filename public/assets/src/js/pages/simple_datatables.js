@@ -33,4 +33,5 @@ $(document).ready(function() {
         }
     } );
     $(".dataTables_wrapper").removeClass("form-inline");
+    $(".dataTables_paginate .pagination").addClass("float-right");
 } );

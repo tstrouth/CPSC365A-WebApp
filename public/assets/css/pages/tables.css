@@ -1,10 +1,11 @@
 .flip-scroll table {
     width: 100%;
 }
-
-.dataTables_paginate .pagination{
+.dataTables_paginate .pagination
+{
     float: right;
 }
+
 @media (max-width: 768px) {
     /* 768px */
     .flip-scroll .flip-content:after {
@@ -157,7 +158,8 @@ Custom tables
 .pagination>.active>span:hover,
 .pagination>.active>a:focus,
 .pagination>.active>span:focus {
-    background-color: #ff9933;
+    background-color: #ffa000;
+    /*border-color: #ff8800;*/
     color: #cc6000;
 }
 
@@ -171,7 +173,7 @@ Custom tables
 .pagination>.active>span:hover,
 .pagination>.active>a:focus,
 .pagination>.active>span:focus {
-    background-color: #4fb7fe;
+    background-color: #00c0ef;
     border-color: #2a9fd6;
     color: #2180ac;
 }
@@ -186,6 +188,9 @@ Custom tables
 .pagination>.active>span:hover,
 .pagination>.active>a:focus,
 .pagination>.active>span:focus {
+    /*background-color: #668cff;*/
+    /*border-color: #9933cc;*/
+    /*color: #7a29a3;*/
     color: #fff;
 }
 
@@ -226,20 +231,20 @@ Custom tables
     border-radius: 3px;
 }
 .btn.info-stripe {
-    border-left: 3px solid #347dff;
+    border-left: 3px solid #668cff;
 }
 
 .btn.green-stripe {
-    border-left: 3px solid #00cc99;
+    border-left: 3px solid #0fb0c0;
 }
 
 .btn.red-stripe {
-    border-left: 3px solid #EF6F6C;
+    border-left: 3px solid #ff8080;
 }
 
 
 .label-danger {
-    background-color: #EF6F6C;
+    background-color: #ff8080;
 }
 
 .table-advance tr td {
@@ -255,23 +260,23 @@ Custom tables
 }
 
 .table-advance td.highlight div.primary {
-    border-left: 2px solid #4fb7fe;
+    border-left: 2px solid #00c0ef;
 }
 
 .table-advance td.highlight div.success {
-    border-left: 2px solid #00cc99;
+    border-left: 2px solid #0fb0c0;
 }
 
 .table-advance td.highlight div.info {
-    border-left: 2px solid #bd7bde;
+    border-left: 2px solid #668cff;
 }
 
 .table-advance td.highlight div.warning {
-    border-left: 2px solid #ff9933;
+    border-left: 2px solid #ffa000;
 }
 
 .table-advance td.highlight div.danger {
-    border-left: 2px solid #EF6F6C;
+    border-left: 2px solid #ff8080;
 }
 
 @media (max-width: 767px) {
@@ -280,7 +285,11 @@ Custom tables
         margin-left: 8px;
     }
 }
-
+@media (max-width: 830px) and (min-width: 768px){
+div.dataTables_wrapper div.dataTables_filter input {
+    width: 75%;
+}
+}
 
 /***
 Datatables Plugin(in v1.3)
@@ -831,7 +840,7 @@ Select2 Plugin
 }
 
 .table>tbody>tr.success>td {
-    background-color: #00cc99;
+    background-color: #0fb0c0;
 }
 
 .table-hover>tbody>tr.success:hover>td {
@@ -839,7 +848,7 @@ Select2 Plugin
 }
 
 .table>tbody>tr.primary>td {
-    background-color: #4fb7fe;
+    background-color: #00c0ef;
 }
 
 .table-hover>tbody>tr.primary:hover>td {
@@ -847,7 +856,7 @@ Select2 Plugin
 }
 
 .table>tbody>tr.info>td {
-    background-color: #bd7bde;
+    background-color: #668cff;
 }
 
 .table-hover>tbody>tr.info:hover>td {
@@ -855,7 +864,7 @@ Select2 Plugin
 }
 
 .table>tbody>tr.warning>td {
-    background-color: #ff9933;
+    background-color: #ffa000;
 }
 
 .table-hover>tbody>tr.warning:hover>td {
@@ -863,7 +872,7 @@ Select2 Plugin
 }
 
 .table>tbody>tr.danger>td {
-    background-color: #EF6F6C;
+    background-color: #ff8080;
 }
 
 .table-hover>tbody>tr.danger:hover>td {
@@ -918,11 +927,11 @@ a[data-title]:hover:after {
 
 .dataTables_paginate > ul > .active a:hover {
     color: #fff;
-    background-color: #4fb7fe;
+    background-color: #00c0ef;
 }
 
 #editable_table_new {
-    background-color: #4fb7fe !important;
+    background-color: #00c0ef !important;
     color: #fff;
 }
 
@@ -937,7 +946,7 @@ a[data-title]:hover:after {
 
 .users_grid_tools .tools a,
 .users_grid_tools .tools a:hover {
-    background-color: #4fb7fe !important;
+    background-color: #00c0ef !important;
     border: 1px solid #fff !important;
     color: #fff;
     padding: 8px;
@@ -1030,7 +1039,7 @@ div.dataTables_paginate ul.pagination {
 
 .dataTables_paginate >ul> li:first-child,
 .dataTables_paginate >ul> li:last-child {
-    background-color: #4fb7fe;
+    background-color: #00c0ef;
 }
 
 .dataTables_paginate >ul> li:first-child>a,
@@ -1039,7 +1048,7 @@ div.dataTables_paginate ul.pagination {
 }
 
 .dataTables_paginate >ul> .active {
-    background-color: #4fb7fe;
+    background-color: #00c0ef;
 }
 
 .dataTables_paginate >ul> .active a {
@@ -1065,7 +1074,7 @@ div.dataTables_paginate ul.pagination {
 }
 
 .tabletools-dropdown-on-portlet a {
-    background-color: #4fb7fe !important;
+    background-color: #00c0ef !important;
     color: #fff !important;
 }
 
@@ -1098,6 +1107,7 @@ div.dataTables_paginate ul.pagination {
 .data_tables .tools {
     margin-top: 50px;
 }
+
 /*row details*/
 #row_details.dataTable{
     width:100% !important;
@@ -1153,7 +1163,6 @@ tr.selected {
     }
 
 }
-
 /*==================simple datatables=====================*/
 @media (max-width:380px){
     .simple .dataTables_paginate > ul > li{
@@ -1167,8 +1176,5 @@ tr.selected {
 @media (min-width: 768px) and (max-width: 830px) {
     .simple #example2_paginate .pagination{
         margin-left: -32px;
-    }
-    div.dataTables_wrapper div.dataTables_filter input{
-        width: 75%;
     }
 }
