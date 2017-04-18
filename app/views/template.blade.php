@@ -14,7 +14,7 @@
     <!-- global styles-->
     <link type="text/css" rel="stylesheet" href="{{asset('assets/css/components.css')}}"/>
     <link type="text/css" rel="stylesheet" href="{{asset('assets/css/custom.css')}}"/>
-    <link type="text/css" rel="stylesheet" href="{{asset('assets/css/skins/white_skin.css')}}"
+    <link type="text/css" rel="stylesheet" href="{{asset('assets/css/skins/black_skin.css')}}"
     <link type="text/css" rel="stylesheet" href="#" id="skin_change"/>
     <!-- end of global styles-->
     @yield('header_styles')
@@ -74,7 +74,44 @@ z-index: 999999">
     <div class="wrapper">
 
     <div id="left">
-        @yield('left-nav')
+      <div class="media user-media bg-dark dker">
+          <div class="user-media-toggleHover">
+              <span class="fa fa-user"></span>
+          </div>
+          <div class="user-wrapper bg-dark">
+              <a class="user-link" href="">
+                  <img class="media-object img-thumbnail user-img rounded-circle admin_img3" alt="User Picture"
+                       src="img/admin.jpg">
+                  <p class="text-white user-info">Welcome Micheal</p>
+              </a>
+              <div class="search_bar col-lg-12">
+                  <div class="input-group">
+                      <input type="search" class="form-control" placeholder="search">
+                      <span class="input-group-btn">
+<button class="btn without_border" type="button"><span class="fa fa-search">
+</span></button>
+</span>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <!-- #menu -->
+      <ul id="menu" class="bg-blue dker">
+          <li class="active">
+              <a href="#CreateRooms">
+
+                  <span class="link-title">&nbsp;Create Room</span>
+              </a>
+          </li>
+          <li class="">
+              <a href="#PreviousRooms">
+
+                  <span class="link-title">&nbsp;View Previous Rooms</span>
+              </a>
+          </li>
+          @yield("menu_elements")
+      </ul>
+      <!-- /#menu -->
     </div>
     <!-- /#left -->
 
@@ -92,6 +129,7 @@ z-index: 999999">
 <script type="text/javascript" src="{{asset('assets/js/components.js')}}"></script>
 <script type="text/javascript" src="{{asset('assets/js/custom.js')}}"></script>
 <!-- end of global scripts-->
+<script type="text/javascript" src="{{asset('js/pages/new_dashboard.js')}}"></script>
 <!-- page level js -->
 @yield('footer_scripts')
 <!-- end page level js -->
