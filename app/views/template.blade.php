@@ -15,6 +15,7 @@
     <link type="text/css" rel="stylesheet" href="{{asset('assets/css/components.css')}}"/>
     <link type="text/css" rel="stylesheet" href="{{asset('assets/css/custom.css')}}"/>
     <link type="text/css" rel="stylesheet" href="{{asset('assets/css/skins/black_skin.css')}}"
+    <link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
     <link type="text/css" rel="stylesheet" href="#" id="skin_change"/>
     <!-- end of global styles-->
     @yield('header_styles')
@@ -53,7 +54,8 @@ z-index: 999999">
                         <i class="fa fa-bars text-white"></i>
                     </span>
                 </div>
-
+                <div class="topnav dropdown-menu-right float-right">
+                </div>
                 <!-- Toggle Button -->
                 <div class="text-xs-right xs_menu">
                     <button class="navbar-toggler hidden-xs-up" type="button" data-toggle="collapse" data-target="#nav-content">
@@ -80,9 +82,7 @@ z-index: 999999">
           </div>
           <div class="user-wrapper bg-dark">
               <a class="user-link" href="">
-                  <img class="media-object img-thumbnail user-img rounded-circle admin_img3" alt="User Picture"
-                       src="img/admin.jpg">
-                  <p class="text-white user-info">Welcome Micheal</p>
+                  <p class="text-white user-info">Welcome!</p>
               </a>
               <div class="search_bar col-lg-12">
                   <div class="input-group">
@@ -97,9 +97,8 @@ z-index: 999999">
       </div>
       <!-- #menu -->
       <ul id="menu" class="bg-blue dker">
-          <li class="active">
+          <li class="">
               <a href="#CreateRooms">
-
                   <span class="link-title">&nbsp;Create Room</span>
               </a>
           </li>
