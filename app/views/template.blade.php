@@ -45,7 +45,7 @@ z-index: 999999">
         <nav class="navbar navbar-static-top">
             <div class="container-fluid">
                 <a class="navbar-brand text-xs-center" href="{{ URL::to('index') }} ">
-                    <h4 class="text-white"><img src="{{asset('assets/img/logow.png')}}" class="admin_img" alt="logo"> Stat PlaceHolder Name</h4>
+                    <h4 class="text-white"><img src="{{asset('assets/img/logow.png')}}" class="admin_img" alt="logo"> RCStats</h4>
                 </a>
                 <div class="menu">
                     <span class="toggle-left" id="menu-toggle">
@@ -61,9 +61,9 @@ z-index: 999999">
                 </div>
                 <!-- Nav Content -->
                 <!-- Brand and toggle get grouped for better mobile display -->
-                
+
                 @yield('top-nav')
-                
+
             </div>
 
             <!-- /.container-fluid --> </nav>
