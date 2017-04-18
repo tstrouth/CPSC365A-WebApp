@@ -14,6 +14,7 @@
     <!-- global styles-->
     <link type="text/css" rel="stylesheet" href="{{asset('assets/css/components.css')}}"/>
     <link type="text/css" rel="stylesheet" href="{{asset('assets/css/custom.css')}}"/>
+    <link type="text/css" rel="stylesheet" href="{{asset('assets/css/skins/white_skin.css')}}"
     <link type="text/css" rel="stylesheet" href="#" id="skin_change"/>
     <!-- end of global styles-->
     @yield('header_styles')
