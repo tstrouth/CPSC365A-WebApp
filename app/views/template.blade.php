@@ -47,15 +47,16 @@ z-index: 999999">
     <div id="top">
         <!-- .navbar -->
         <nav class="navbar navbar-static-top">
-            <div class="container-fluid">
-                <a style="float:right" class="navbar-brand text-xs-center" href="{{ URL::to('index') }} ">
-                    <h4 class="text-white"><img src="{{asset('assets/img/logow.png')}}" class="admin_img" alt="logo"> RCStats</h4>
-                </a>
+            <div class="container-fluid" style="margin-left:0">
                 <div class="menu">
                     <span class="toggle-left" id="menu-toggle">
                         <i class="fa fa-bars text-white"></i>
                     </span>
                 </div>
+                <a style="float:right" class="navbar-brand text-xs-center" href="{{ URL::to('index') }} ">
+                    <h4 class="text-white"><img src="{{asset('assets/img/logow.png')}}" class="admin_img" alt="logo"> RCStats</h4>
+                </a>
+
                 <div class="topnav dropdown-menu-right float-right">
                 </div>
                 <!-- Toggle Button -->
