@@ -20,7 +20,7 @@
 <link type="text/css" rel="stylesheet" href="{{asset('assets/vendors/toastr/css/toastr.min.css')}}"/>
     <link type="text/css" rel="stylesheet" href="{{asset('assets/vendors/switchery/css/switchery.min.css')}}"/>
 
-    <link type="text/css" rel="stylesheet" href="{{asset('assets/css/pages/advanced_components.css'}}"/>
+    <link type="text/css" rel="stylesheet" href="{{asset('assets/css/pages/advanced_components.css')}}"/>
     <!-- end of global styles-->
     @yield('header_styles')
 </head>
