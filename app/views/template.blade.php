@@ -48,7 +48,7 @@ z-index: 999999">
         <!-- .navbar -->
         <nav class="navbar navbar-static-top">
             <div class="container-fluid">
-                <a class="navbar-brand text-xs-center" href="{{ URL::to('index') }} ">
+                <a style="float:right" class="navbar-brand text-xs-center" href="{{ URL::to('index') }} ">
                     <h4 class="text-white"><img src="{{asset('assets/img/logow.png')}}" class="admin_img" alt="logo"> RCStats</h4>
                 </a>
                 <div class="menu">
@@ -84,7 +84,7 @@ z-index: 999999">
           </div>
           <div class="user-wrapper bg-dark">
               <a class="user-link" href="">
-                  <p class="text-white user-info">Welcome!</p>
+                  <p style="margin-left:15px" class="text-white user-info">Welcome!</p>
               </a>
               <div class="search_bar col-lg-12">
                   <div class="input-group">
@@ -108,6 +108,12 @@ z-index: 999999">
               <a href="#PreviousRooms">
 
                   <span class="link-title">&nbsp;View Previous Rooms</span>
+              </a>
+          </li>
+          <li class="">
+              <a href="#Admin">
+
+                  <span class="link-title">&nbsp;Admin Control</span>
               </a>
           </li>
           @yield("menu_elements")
