@@ -19,6 +19,8 @@
 <link type="text/css" rel="stylesheet" href="{{asset('assets/vendors/c3/css/c3.min.css')}}"/>
 <link type="text/css" rel="stylesheet" href="{{asset('assets/vendors/toastr/css/toastr.min.css')}}"/>
     <link type="text/css" rel="stylesheet" href="{{asset('assets/vendors/switchery/css/switchery.min.css')}}"/>
+
+    <link type="text/css" rel="stylesheet" href="{{asset('assets/css/pages/advanced_components.css'}}"/>
     <!-- end of global styles-->
     @yield('header_styles')
 </head>
@@ -150,6 +152,8 @@ z-index: 999999">
 <script type="text/javascript" src="{{asset('assets/vendors/flot.tooltip/js/jquery.flot.tooltip.min.js')}}"></script> -->
 <script type="text/javascript" src="{{asset('assets/vendors/jquery_newsTicker/js/newsTicker.js')}}"></script>
 <script type="text/javascript" src="{{asset('assets/vendors/countUp.js/js/countUp.min.js')}}"></script>
+
+<script type="text/javascript" src="{{asset('assets/js/pages/modals.js')}}"></script>
 <script type="text/javascript" src="{{asset('assets/js/pages/new_dashboard.js')}}"></script>
 <!-- page level js -->
 @yield('footer_scripts')

@@ -15,6 +15,9 @@ Route::get('/', function()
 {
 	return View::make('dashboard');
 });
+Route::get("/admin", function(){
+	return View::make("admin");
+})
 
 Route::get("/test", function(){
     echo "no";
