@@ -23,6 +23,13 @@ Route::get("/test", function(){
     echo "no";
 });
 
+Route::get("/createroom", function(){
+	return View::make("create");
+});
+
+Route::get("/showroom/{id}", function($id){
+	return View::make("showRooms");
+});
 
 Route::get("/api/user/create", "APIController@createUser");
 Route::get("/api/user/show/{id}", "APIController@getUser");

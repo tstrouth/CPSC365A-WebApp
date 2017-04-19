@@ -27,9 +27,10 @@
                     <input type="password" class="form-control form-control-warning"
                            id="password">
                   </div>
-
-                  <button class="btn btn-raised btn-secondary" >Save
-                  </button>
+                  <div class="col-lg-12 input_field_sections">
+                    <button class="btn btn-raised btn-secondary" >Save
+                    </button>
+                  </div>
               </form>
             </div>
             <div class="modal-footer">
