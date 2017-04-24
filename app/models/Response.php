@@ -1,6 +1,6 @@
 <?php
 
-class Response extends Eloquent {
+class ResponseTable extends Eloquent {
 
 
 	/**
