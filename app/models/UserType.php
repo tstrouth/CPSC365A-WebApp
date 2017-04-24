@@ -11,5 +11,6 @@ class UserType extends Eloquent {
 	protected $table = 'UserTypes';
 
 	public $timestamps = false;
+	protected $primaryKey = 'id';
 
 }
