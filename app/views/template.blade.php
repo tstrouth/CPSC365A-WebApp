@@ -5,12 +5,11 @@
     <meta charset="UTF-8">
     <title>
         @section('title')
-            Roanoke College | Stats
+            Roanoke College | StatsOnStats
         @show
     </title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="{{asset('assets/img/logo1.ico')}}"/>
     <!-- global styles-->
     <link type="text/css" rel="stylesheet" href="{{asset('assets/css/components.css')}}"/>
     <link type="text/css" rel="stylesheet" href="{{asset('assets/css/custom.css')}}"/>
@@ -51,8 +50,8 @@ z-index: 999999">
         <nav class="navbar navbar-static-top">
             <div class="container-fluid" style="margin-left:0">
 
-                <a  class="navbar-brand text-xs-center" href="{{ URL::to('index') }} ">
-                    <h4 class="text-white"><img src="{{asset('assets/img/logow.png')}}" class="admin_img" alt="logo"> RCStats</h4>
+                <a  class="navbar-brand text-xs-center" href="{{ URL::to('dashboard') }} ">
+                    <h4 class="text-white">StatsOnStats</h4>
                 </a>
                 <div class="menu" style="margin-left:0px;margin-right:16px">
                     <span class="toggle-left" id="menu-toggle">
@@ -83,36 +82,23 @@ z-index: 999999">
           <div class="user-media-toggleHover">
               <span class="fa fa-user"></span>
           </div>
-          <div class="user-wrapper bg-dark">
-              <a class="user-link" href="">
-                  <p style="margin-left:15px" class="text-white user-info">Welcome!</p>
-              </a>
-              <div class="search_bar col-lg-12">
-                  <div class="input-group">
-                      <input type="search" class="form-control" placeholder="search">
-                      <span class="input-group-btn">
-<button class="btn without_border" type="button"><span class="fa fa-search">
-</span></button>
-</span>
-                  </div>
-              </div>
-          </div>
+
       </div>
       <!-- #menu -->
       <ul id="menu" class="bg-blue dker">
-          <li class="">
-              <a href="#CreateRooms">
+          <li id="createroom" class="">
+              <a href="{{URL::to('createroom')}}">
                   <span class="link-title">&nbsp;Create Room</span>
               </a>
           </li>
-          <li class="">
-              <a href="#PreviousRooms">
+          <li id="showroom" class="">
+              <a href="{{URL::to('showroom')}}">
 
                   <span class="link-title">&nbsp;View Previous Rooms</span>
               </a>
           </li>
-          <li class="">
-              <a href="#Admin">
+          <li id="admin" class="">
+              <a href="{{URL::to('admin')}}">
 
                   <span class="link-title">&nbsp;Admin Control</span>
               </a>
@@ -155,6 +141,7 @@ z-index: 999999">
 
 <script type="text/javascript" src="{{asset('assets/js/pages/modals.js')}}"></script>
 <script type="text/javascript" src="{{asset('assets/js/pages/new_dashboard.js')}}"></script>
+<script type="text/javascript" src="{{asset('class-custom.js')}}"></script>
 <!-- page level js -->
 @yield('footer_scripts')
 <!-- end page level js -->

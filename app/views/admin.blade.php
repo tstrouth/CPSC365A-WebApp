@@ -16,15 +16,15 @@
                 </button>
             </div>
             <div class="modal-body">
-              <form>
+              <form action="{{URL::to('new_admin')}}" method="post">
                   <div class="col-lg-12 input_field_sections">
                     <h5>Username</h5>
-                    <input type="text" class="form-control" name="default"
-                           value="Default text"/>
+                    <input type="text" class="form-control" name="username"
+                           value=""/>
                   </div>
                   <div class="col-lg-12 input_field_sections">
                     <h5>Password</h5>
-                    <input type="password" class="form-control form-control-warning"
+                    <input type="password" name="password" class="form-control form-control-warning"
                            id="password">
                   </div>
                   <div class="col-lg-12 input_field_sections">

@@ -1,7 +1,7 @@
 'use strict';
 $(document).ready(function() {
     $(window).on("load", function() {
-        $('.preloader img').fadeOut();
+
         $('.preloader').fadeOut(1000);
     });
     new WOW().init();
@@ -10,11 +10,7 @@ $(document).ready(function() {
             username: {
                 validators: {
                     notEmpty: {
-                        message: 'The email address is required'
-                    },
-                    regexp: {
-                        regexp: /^\S+@\S{1,}\.\S{1,}$/,
-                        message: 'The input is not a valid email address'
+                        message: 'The username is required'
                     }
                 }
             },
@@ -27,5 +23,5 @@ $(document).ready(function() {
             }
         }
     });
-    
+
 });

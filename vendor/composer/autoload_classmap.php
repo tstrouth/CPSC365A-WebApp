@@ -13,7 +13,7 @@ return array(
     'HomeController' => $baseDir . '/app/controllers/HomeController.php',
     'IlluminateQueueClosure' => $vendorDir . '/laravel/framework/src/Illuminate/Queue/IlluminateQueueClosure.php',
     'Normalizer' => $vendorDir . '/patchwork/utf8/src/Normalizer.php',
-    'Response' => $baseDir . '/app/models/Response.php',
+    'ResponseDB' => $baseDir . '/app/models/Response.php',
     'ResponseData' => $baseDir . '/app/models/ResponseData.php',
     'Room' => $baseDir . '/app/models/Room.php',
     'SessionHandlerInterface' => $vendorDir . '/symfony/http-foundation/Resources/stubs/SessionHandlerInterface.php',

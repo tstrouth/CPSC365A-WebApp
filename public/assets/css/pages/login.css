@@ -31,10 +31,7 @@
     border-radius: 5px 5px 0 0;
 }
 body {
-    background-image: url(../../img/login.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
+    background-color:#4682B4;
 }
 .login_button {
     border: none;

@@ -18,18 +18,25 @@ Route::get('/', function()
 Route::get("/admin", function(){
 	return View::make("admin");
 });
-
-Route::get("/test", function(){
-    echo "no";
+Route::get("/dashboard", function(){
+	return View::make("dashboard");
 });
 
 Route::get("/createroom", function(){
 	return View::make("create");
 });
 
-Route::get("/showroom/{id}", function($id){
+Route::get("/showroom/{id?}", function($id=-1){
 	return View::make("showRooms");
 });
+
+Route::get("/login", function(){
+	return View::make("login");
+});
+
+Route::post("new_admin", "AdminController@createAdmin");
+
+Route::post("/login_auth", "AdminController@login");
 
 Route::get("/api/user/create", "APIController@createUser");
 Route::get("/api/user/show/{id}", "APIController@getUser");
