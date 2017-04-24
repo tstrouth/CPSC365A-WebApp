@@ -23,7 +23,9 @@ Route::get("/dashboard", function(){
 });
 
 Route::get("/createroom", function(){
-	return View::make("create");
+	$tasks = Task::all();
+	echo ($tasks->toArray());
+	//return View::make("create");
 });
 
 Route::get("/showroom/{id?}", function($id=-1){
