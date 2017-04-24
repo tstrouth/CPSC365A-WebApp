@@ -24,7 +24,7 @@ Route::get("/dashboard", function(){
 
 Route::get("/createroom", function(){
 	$tasks = Task::all();
-	echo ($tasks->toArray());
+	var_dump ($tasks->toArray());
 	//return View::make("create");
 });
 
