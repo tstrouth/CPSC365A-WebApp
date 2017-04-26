@@ -1,7 +1,7 @@
 node_modules/
 
 # Laravel 4 specific
-
+/vendor
 # Laravel 5 & Lumen specific
 bootstrap/cache/
 .env.*.php
