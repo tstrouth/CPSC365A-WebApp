@@ -1,4 +1,4 @@
-@extends('template.blade.php')
+@extends('template')
 
 
 @section('content')

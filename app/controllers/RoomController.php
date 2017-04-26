@@ -5,12 +5,12 @@ class RoomController extends Controller {
     // Open rooms
     public function create() {
         $tasks = Task::all()->lists('task_name', 'id'); // cols: id, task_name
-        return view::make('createRoom', array('tasks') );
+        return View::make('createRoom', compact('tasks') );
     }
 
     public function store() {
         $newRoom = new Room;
-        $newRoom->createdBy = Auth::user()->id;
+        //$newRoom->created_by = Auth::user()->id; //JOSH TODO
         $newRoom->task_fkey = Input::get('task');
         $existingKeys = Room::all()->list('room_code');
         // generate random, unique string for room code
@@ -21,17 +21,18 @@ class RoomController extends Controller {
         }
         $newRoom->room_code = $key;
         $newRoom->save();
-        return Redirect::action('RoomController@viewOpenRooms');
+        return Redirect::action('RoomController@viewOpenRooms'); // show open rooms
     }
 
     // Close Rooms
     public function viewOpenRooms() {
-        $rooms = Room::where('created_by', Auth::user()->id)->where('open', 1)->get();
+        //$rooms = Room::where('created_by', Auth::user()->id)->where('open', 1)->get(); // JOSH TODO
+        $rooms = Room::where('open', 1)->get();
         $openRooms = [];
         foreach ($rooms as $currentRoom){
             $openRooms[$room->id] = 'Created At '.$room->created_at;
         }
-        return view::make('closeRooms', array('openRooms'));
+        return View::make('closeRooms', compact('openRooms'));
     }
 
     public function close() {
@@ -51,7 +52,7 @@ class RoomController extends Controller {
         foreach($rooms as $currentRoom){
             $currentRoom->setAttribute('task', Task::where('id', $currentRoom->task_fkey)->first()->task_name);
         }
-        return view::make('roomSelect', $rooms);
+        return View::make('roomSelect', compact('rooms'));
     }
 
     public function viewRoomData($roomId) {
@@ -59,7 +60,7 @@ class RoomController extends Controller {
         foreach($roomResponses as $currentResponse){
             $currentResponse->setAttribute('responseData', ResponseData::where('response_fkey', $currentResponse->id)->first());
         }
-        return view::make('roomData', compact('roomResponses'));
+        return View::make('roomData', compact('roomResponses'));
     }
 
     public function deleteRoomData($roomId, $reponseId) {
@@ -67,7 +68,7 @@ class RoomController extends Controller {
         $currentData = ResponseData::where('response_fkey', $responseId)->first();
         $currentResponse->delete();
         $currentData->delete();
-        return Redirect::action('RoomControler@viewRoomData', ["roomId"=>$roomId]);
+        return Redirect::action('RoomController@viewRoomData', ["roomId"=>$roomId]);
     }
 
 }

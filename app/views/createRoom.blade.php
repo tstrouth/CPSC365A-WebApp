@@ -1,12 +1,16 @@
-@extends('template.blade.php')
+@extends('template')
 
 @section('content')
-    {{Form::open(array('method' => 'post', 'action' => array('RoomController@store'), true))}}
-    <div class="form-group">
-        {{Form::label('task', 'Task')}}
-        {{Form::select('task', $tasks, null, ['class'=>'form-control'])}}
+    {{Form::open(array('method' => 'post', 'action' => 'RoomController@store'))}}
 
-        {{Form::submit('submit')}}
+    <div class="form-group">
+	<div class="row">
+	    {{Form::label('task', 'Tasks')}}
+            {{Form::select('task', $tasks, null, ['class'=>'form-control'])}}
+	</div>
+	<div class="row">
+            {{Form::submit('submit')}}
+	</div>
     </div>
     {{Form::close()}}
 @endsection
