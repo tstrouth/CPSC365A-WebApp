@@ -1,0 +1,19 @@
+<html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=1024">
+      <title>Histogram Test</title> <!-- title of the web tab-->
+      <link rel="stylesheet" href="csstest.css">
+      <link rel="stylesheet" href="csstest2.css">
+   </head>
+
+   <body>
+      <div id="wrapper">
+        <h3>Time taken for drawing activity</h3>
+      </div>
+      <script src="google.js"></script>
+      <script src="test.js"></script>
+    
+   </body>
+</html>

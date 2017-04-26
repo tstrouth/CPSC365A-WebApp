@@ -1,0 +1,44 @@
+<html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=1024">
+      <title>Histogram Test</title> <!-- title of the web tab-->
+      <link rel="stylesheet" href="assets/css/csstest.css">
+      <link rel="stylesheet" href="assets/css/csstest2.css">
+   </head>
+
+   <body>
+      <div id="wrapper">
+      <div class="chart">
+        <h3>Time taken for drawing activity</h3>
+     <table id="data-table" border="1" cellpadding="10" cellspacing="0">
+     <thead>
+                  <tr>
+                     <td>&nbsp;</td>
+                     <th scope="col">1</th>
+                     <th scope="col">2</th>
+                     <th scope="col">3</th>
+                     <th scope="col">4</th>
+                     <th scope="col">5</th>
+                  </tr>
+               </thead>
+
+     <tbody>
+                  <tr>
+     <th scope="row">Maze</th>
+     <?php
+     for ($i=0;$i<9;$i++){
+         echo "<td>" . ($draw_data[$i]) . "</td>";
+     }
+     ?>
+                  </tr> 
+               </tbody>
+            </table>
+          </div>
+      </div>
+      <script src="assets/js/google.js"></script>
+      <script src="assets/js/test.js"></script>
+    
+   </body>
+</html>
