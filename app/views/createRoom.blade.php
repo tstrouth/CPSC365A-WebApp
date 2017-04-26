@@ -2,7 +2,6 @@
 
 @section('content')
     {{Form::open(array('method' => 'post', 'action' => 'RoomController@store'))}}
-
     <div class="form-group">
 	<div class="row">
 	    {{Form::label('task', 'Tasks')}}

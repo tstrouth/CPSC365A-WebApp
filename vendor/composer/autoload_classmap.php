@@ -1114,6 +1114,7 @@ return array(
     'ResponseData' => $baseDir . '/app/models/ResponseData.php',
     'ResponseTable' => $baseDir . '/app/models/Response.php',
     'Room' => $baseDir . '/app/models/Room.php',
+    'RoomController' => $baseDir . '/app/controllers/RoomController.php',
     'SessionHandlerInterface' => $vendorDir . '/symfony/http-foundation/Resources/stubs/SessionHandlerInterface.php',
     'Stack\\Builder' => $vendorDir . '/stack/builder/src/Stack/Builder.php',
     'Stack\\StackedHttpKernel' => $vendorDir . '/stack/builder/src/Stack/StackedHttpKernel.php',

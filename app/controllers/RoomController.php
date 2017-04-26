@@ -4,7 +4,7 @@ class RoomController extends Controller {
 
     // Open rooms
     public function create() {
-        $tasks = Task::all()->lists('task_name', 'id'); // cols: id, task_name
+        $tasks = Task::all()->lists('task_name', 'id'); 
         return View::make('createRoom', compact('tasks') );
     }
 
@@ -12,7 +12,9 @@ class RoomController extends Controller {
         $newRoom = new Room;
         //$newRoom->created_by = Auth::user()->id; //JOSH TODO
         $newRoom->task_fkey = Input::get('task');
-        $existingKeys = Room::all()->list('room_code');
+        echo (Input::get('task'));
+        die(); 
+        $existingKeys = Room::all()->lists('room_code');
         // generate random, unique string for room code
         $uniqueKey = false;
         while(!$uniqueKey) {

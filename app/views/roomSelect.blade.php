@@ -1,6 +1,6 @@
-@extends('template')
 
-@section('js')
+
+
     <script>
         @foreach($rooms as $room)
             $("#room{{$room->id}}").click(function(){
@@ -8,9 +8,8 @@
             });
         @endforeach
     </script>
-@endsection
 
-@section('content')
+
     <div class="row">
         <table>
             <tr>
@@ -30,4 +29,4 @@
             <table
         </table>
     </div>
-@endsection
+

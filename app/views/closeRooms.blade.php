@@ -1,6 +1,6 @@
-@extends('template')
 
-@section('content')
+
+
 
     {{Form::open(array('method' => 'post', 'action' => array('RoomController@close'), true))}}
     <div class="form-group">
@@ -14,4 +14,4 @@
     </div>
     {{Form::close()}}
 
-@endsection
+
