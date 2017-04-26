@@ -23,9 +23,9 @@ Route::get("/dashboard", function(){
 });
 
 Route::get("/createroom", function(){
-	$tasks = Task::all();
-	var_dump ($tasks->toArray());
-	//return View::make("create");
+	$tasks = Task::all()->orderBy("task_name");
+	//var_dump ($tasks->toArray());
+	return View::make("create");
 });
 
 Route::get("/showroom/{id?}", function($id=-1){
