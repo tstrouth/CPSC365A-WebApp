@@ -634,6 +634,7 @@ return array(
     'Net_SSH1' => $vendorDir . '/phpseclib/phpseclib/phpseclib/Net/SSH1.php',
     'Net_SSH2' => $vendorDir . '/phpseclib/phpseclib/phpseclib/Net/SSH2.php',
     'Normalizer' => $vendorDir . '/patchwork/utf8/src/Normalizer.php',
+
     'PHPParser_Autoloader' => $vendorDir . '/nikic/php-parser/lib/PHPParser/Autoloader.php',
     'PHPParser_Builder' => $vendorDir . '/nikic/php-parser/lib/PHPParser/Builder.php',
     'PHPParser_BuilderAbstract' => $vendorDir . '/nikic/php-parser/lib/PHPParser/BuilderAbstract.php',
@@ -1107,6 +1108,9 @@ return array(
     'React\\Promise\\PromisorInterface' => $vendorDir . '/react/promise/src/PromisorInterface.php',
     'React\\Promise\\RejectedPromise' => $vendorDir . '/react/promise/src/RejectedPromise.php',
     'React\\Promise\\UnhandledRejectionException' => $vendorDir . '/react/promise/src/UnhandledRejectionException.php',
+
+    'ResponseDB' => $baseDir . '/app/models/Response.php',
+
     'ResponseData' => $baseDir . '/app/models/ResponseData.php',
     'ResponseTable' => $baseDir . '/app/models/Response.php',
     'Room' => $baseDir . '/app/models/Room.php',
@@ -1731,7 +1735,11 @@ return array(
     'Whoops\\Provider\\Silex\\WhoopsServiceProvider' => $vendorDir . '/filp/whoops/src/Whoops/Provider/Silex/WhoopsServiceProvider.php',
     'Whoops\\Provider\\Zend\\ExceptionStrategy' => $vendorDir . '/filp/whoops/src/deprecated/Zend/ExceptionStrategy.php',
     'Whoops\\Provider\\Zend\\RouteNotFoundStrategy' => $vendorDir . '/filp/whoops/src/deprecated/Zend/RouteNotFoundStrategy.php',
+
     'Whoops\\Run' => $vendorDir . '/filp/whoops/src/Whoops/Run.php',
     'Whoops\\Util\\Misc' => $vendorDir . '/filp/whoops/src/Whoops/Util/Misc.php',
     'Whoops\\Util\\TemplateHelper' => $vendorDir . '/filp/whoops/src/Whoops/Util/TemplateHelper.php',
+
+    'histogramController' => $baseDir . '/app/controllers/histogramController.php',
+
 );

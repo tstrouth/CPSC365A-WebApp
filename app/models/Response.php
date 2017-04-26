@@ -1,6 +1,7 @@
 <?php
 
-class ResponseTable extends Eloquent {
+class ResponseDB extends Eloquent {
+
 
 
 	/**
@@ -10,7 +11,10 @@ class ResponseTable extends Eloquent {
 	 */
 	protected $table = 'Responses';
 
-	public $timestamps = false;	
+	public $timestamps = false;
+
+	protected $primaryKey = 'id';
+
 
 
 }
