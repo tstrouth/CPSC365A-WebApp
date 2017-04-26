@@ -47,3 +47,7 @@ Route::get("/api/user/show/{id}", "APIController@getUser");
 Route::get("/api/user/types", "APIController@getUserTypes");
 Route::get("/api/room/show/{code}", "APIController@getRoom");
 Route::get("/api/response/create", "APIController@createResponse");
+
+
+Route::get("/hypothesis", "StatController@hypoTestView");
+Route::post("/hypothesis/test", "StatController@hypoTest");

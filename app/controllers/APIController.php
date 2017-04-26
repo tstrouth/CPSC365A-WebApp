@@ -51,7 +51,9 @@ class APIController extends Controller {
       return Response::json(array("Error"=>"No user found"));
     }
 
+
     $response = new ResponseDB;
+
     $response->user_fkey = $user_fkey;
     $response->room_fkey = $room_fkey;
     $response->task_fkey = $room->task_fkey;

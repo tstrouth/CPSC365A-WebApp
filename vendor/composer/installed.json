@@ -2033,6 +2033,7 @@
         ]
     },
     {
+
         "name": "d11wtq/boris",
         "version": "v1.0.8",
         "version_normalized": "1.0.8.0",
@@ -2069,6 +2070,7 @@
         "notification-url": "https://packagist.org/downloads/"
     },
     {
+
         "name": "swiftmailer/swiftmailer",
         "version": "v5.4.7",
         "version_normalized": "5.4.7.0",
