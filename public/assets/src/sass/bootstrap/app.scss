@@ -1,6 +1,10 @@
 //@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro|Raleway:700);
 @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro|Roboto:500);
 
+html {
+  font-size: 14px;
+}
+
 @import "variables";
 @import "../../vendors/bootstrap/scss/bootstrap";
 //regular buttons
@@ -20,11 +24,11 @@
 }
 
 //labels
-.tag-mint {
-  @include tag-variant($brand-mint);
+.badge-mint {
+  @include badge-variant($brand-mint);
 }
-.tag-gray {
-  @include tag-variant($brand-gray);
+.badge-gray {
+  @include badge-variant($brand-gray);
 }
 
 //alerts
@@ -35,13 +39,6 @@
   @include alert-variant($brand-gray, $brand-gray, $white);
 }
 
-//progress-bars
-.progress-mint {
-  @include progress-variant($brand-mint);
-}
-.progress-gray {
-  @include progress-variant($brand-gray);
-}
 
 //list group
 @include list-group-item-variant(mint, $brand-mint, $state-success-text);

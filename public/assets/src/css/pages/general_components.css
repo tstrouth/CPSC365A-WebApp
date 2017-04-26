@@ -1,4 +1,10 @@
 /*Lite &amp; Dark Colors of Color Pallet*/
+.nav-link {
+    display: block;
+    padding: 0.5em 0.6em;
+}
+
+
         .border_box {
             border: 1px solid #eee;
             padding-bottom:7%;
@@ -170,4 +176,7 @@
 .list-group-flush .list-group-item{
     border-left:0;
     border-right: 0;
+}
+.list-group .list-group-item{
+    display:block;
 }

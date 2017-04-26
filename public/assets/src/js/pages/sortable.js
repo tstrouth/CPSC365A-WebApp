@@ -3,6 +3,9 @@ $(document).ready(function() {
     $('.editable_section').slimScroll({
         height: '134px'
     });
+    $("#bar .btn").on("click",function (e) {
+        $(this).removeAttr('draggable');
+    });
     var byId = function(id) {
             return document.getElementById(id);
         },
@@ -136,7 +139,7 @@ $(document).ready(function() {
             alert("Please Enter some text")
         }
         else{
-            $("#editable").prepend('<li class="row"><div class="col-xs-10">' + name + '</div><div class="col-xs-2 sortable_close"><i class="fa fa-close"></i></div></li>');
+            $("#editable").prepend('<li class="row"><div class="col-10">' + name + '</div><div class="col-2 sortable_close"><i class="fa fa-close"></i></div></li>');
             $("#myModal").modal('hide');
         }
     };

@@ -33,7 +33,7 @@ class APIController extends Controller {
   public function getRoom($code){
     $room = Room::where("room_code", $code)->first();
     if(count($room) > 0){
-      return Response::json($user);
+      return Response::json($room);
     }else{
       return Response::json(array("Error"=>"No room found"));
     }
@@ -51,7 +51,7 @@ class APIController extends Controller {
       return Response::json(array("Error"=>"No user found"));
     }
 
-    $response = new Response;
+    $response = new ResponseDB;
     $response->user_fkey = $user_fkey;
     $response->room_fkey = $room_fkey;
     $response->task_fkey = $room->task_fkey;
@@ -67,7 +67,7 @@ class APIController extends Controller {
       }
     }else{
       $new_response = new ResponseData;
-      $new_response->response_data = $d;
+      $new_response->response_data = $data;
       $new_response->response_fkey = $response->id;
       $new_response->save();
     }

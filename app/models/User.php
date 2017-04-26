@@ -11,5 +11,6 @@ class User extends Eloquent {
 	protected $table = 'Users';
 
 	public $timestamps = false;
+	protected $primaryKey = 'id';
 
 }
