@@ -26,3 +26,13 @@ Route::get("/api/user/show/{id}", "APIController@getUser");
 Route::get("/api/user/types", "APIController@getUserTypes");
 Route::get("/api/room/show/{code}", "APIController@getRoom");
 Route::get("/api/response/create", "APIController@createResponse");
+
+// Rooms
+Route::resource('rooms', 'RoomController');
+Route::get("/rooms/create", "RoomController@create");
+Route::post("/rooms/store", "RoomController@store");
+Route::get("/rooms/viewopen", "RoomController@viewOpenRooms");
+Route::post("rooms/close", "RoomController@close");
+Route::get("rooms/viewclosed", "RoomController@viewClosedRooms");
+Route::get("rooms/roomdata/{roomId}", "RoomController@viewRoomData");
+Route::post("rooms/deletedata/{roomId}/{responseId}", "RoomController@deleteRoomData")
