@@ -193,3 +193,4 @@
 
 	//resets graph
 	resetGraph();
+}
