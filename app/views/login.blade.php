@@ -36,6 +36,14 @@
                         </h3>
                     </div>
                     <div class="bg-white login_content login_border_radius">
+                        @if($error != "")
+                          <div class="alert alert-danger alert-dismissable">
+                              <button type="button" class="close" data-dismiss="alert"
+                                      aria-hidden="true">×
+                              </button>
+                              Login Failed
+                          </div>
+                        @endif
                         <form action="{{URL::to('login_auth')}}" id="login_validator" method="post" class="login_validator">
                             <div class="form-group">
                                 <label for="username" class="col-form-label"> Username</label>
