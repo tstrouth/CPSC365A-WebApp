@@ -22,11 +22,6 @@ Route::get("/dashboard", function(){
 	return View::make("dashboard");
 });
 
-Route::get("/createroom", function(){
-	$tasks = Task::all()->orderBy("task_name");
-	//var_dump ($tasks->toArray());
-	return View::make("create");
-});
 
 Route::get("/showroom/{id?}", function($id=-1){
 	return View::make("showRooms");
@@ -47,7 +42,7 @@ Route::get("/api/response/create", "APIController@createResponse");
 
 
 // Rooms
-Route::get("/rooms/create", "RoomController@create");
+Route::get("/rooms/create", array("as"=>"createroom", "uses"=>"RoomController@create"));
 Route::post("/rooms/store", "RoomController@store");
 Route::get("/rooms/viewopen", "RoomController@viewOpenRooms");
 Route::get("rooms/close/{roomId}", "RoomController@close");

@@ -93,7 +93,7 @@ z-index: 999999">
       <!-- #menu -->
       <ul id="menu" class="bg-blue dker">
           <li id="createroom" class="">
-              <a href="{{URL::to('createroom')}}">
+              <a href="{{route('createroom')}}">
                   <span class="link-title">&nbsp;Create Room</span>
               </a>
           </li>

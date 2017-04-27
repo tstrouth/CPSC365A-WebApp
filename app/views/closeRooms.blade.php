@@ -2,9 +2,20 @@
 
 
 @section('content')
-    <table>
+    <div class="outer">
+  <div class="inner bg-container">
+    <div class="row">
+      <div class="col-12  col-xl-12">
+        <div class="card">
+          <div class="card-header bg-white">
+              Current Rooms
+          </div>
+          <div class="card-block">
+    <div class="table-responsive m-t-35">
+    <table class="table">
         <tr>
             <th>Task</th>
+    <th>Room Code</th>
             <th>Created At</th>
 	    <th></th>
         </tr>
@@ -12,6 +23,7 @@
             @foreach($openRooms as $currentRoom)
                 <tr>
                     <td>{{$currentRoom->task}}</td>
+<td>{{$currentRoom->room_code}}</td>
 		    <td>{{$currentRoom->created_at->format('d-m-Y h:m')}}</td>
                     <td>
                         <a href="{{action('RoomController@close', ['roomId'=>$currentRoom->ID])}}" class="btn btn-danger pull-right" style="margin-top:13px">Close</a>
@@ -21,5 +33,11 @@
         </tbody>
         <table
         </table>
-
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
 @endsection
