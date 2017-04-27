@@ -53,7 +53,7 @@
                           {{$user->username}}
                         </td>
                         <td>
-                          {{$user->user_type}}
+                          {{$user->type->type}}
                         </td>
                       </tr>
                       @endforeach

@@ -13,4 +13,8 @@ class User extends Eloquent {
 	public $timestamps = false;
 	protected $primaryKey = 'ID';
 
+	public function type(){
+    return $this->hasMany("UserType", "id", "user_type");
+  }
+
 }
