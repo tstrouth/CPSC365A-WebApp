@@ -33,7 +33,7 @@
 
   function updateValues(id){
     $.ajax({
-      url:"{{route('getStatData')}}/" + id
+      url:"./getstatdata/" + id
     })
     .done(function(data){
       $("#mean").html(data.mean);
@@ -57,7 +57,7 @@
     // data_object.test = 1;
 
     $.ajax({
-      url:"{{route('getStatTest')}}/"+id,
+      url:"./getstattest/"+id,
       data: data_object
     })
     .done(function(data){
