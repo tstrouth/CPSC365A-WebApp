@@ -20,7 +20,7 @@ class StatController extends Controller {
         $data = ResponseData::get()->lists("response_data");
         //var_dump($data);
         if($choice == 0){
-            
+
         }else if($choice == 1){
             $data_array_2 = $data;
             shuffle($data_array_2);
@@ -44,10 +44,10 @@ class StatController extends Controller {
             }
             echo "<h2> Results </h2>";
             $this->two_sided_pval($data, $alpha_value, $null_value);
-            
+
         }
 
-        
+
     }
     //needs an array and inputted test statisitc executes a python program and
     //returns the probability value
@@ -83,7 +83,7 @@ class StatController extends Controller {
     }
 
     //computes the sum of ((x_x -x\bar) -((yi-y\bar)) ^ 2
-    //part of the matched pairs t-test formula 
+    //part of the matched pairs t-test formula
     public function two_sample_std_dev($pArray1, $pArray2){
         $sum = 0;
         $mean1 = $this->mean($pArray1);
@@ -94,7 +94,7 @@ class StatController extends Controller {
             $sum = $sum + ($x_i - $y_i)**2;
         }
         return $sum;
-    
+
     }
 
     //computes the test statistic for the paired t-test
@@ -135,7 +135,7 @@ class StatController extends Controller {
         if ($prob < $palpha){echo "We reject the null hypothesis";}
         else{echo "we fail to reject the null hypothesis";}
     }
-    
+
     //takes two arrays same length and forms a new array from the difference between each values
     //and returns array of differences
     public function find_difference($pArray1, $pArray2){
@@ -144,7 +144,7 @@ class StatController extends Controller {
             array_push($diff, $pArray1[$index] - $pArray2[$index]);
         }
         return $diff;
-    } 
+    }
 
   public function mean($an_array){
       $sum = 0;
@@ -167,13 +167,14 @@ class StatController extends Controller {
       $median = (double) 0;
       $half = count($anArray) / 2;
       if (count($anArray)%2 == 0){
-          $median = (double) ($anArray[$half] + $anArray[$half - 1]) / 2; 
+          $median = (double) ($anArray[$half] + $anArray[$half - 1]) / 2;
       }
       else{
           $median = (double) $anArray[$half];
       }
       return $median
   }
+
   public function fiveNumber($anArray){
       $sorted = sort($anArray);
       $lower = $sorted[0];
@@ -196,8 +197,60 @@ class StatController extends Controller {
       $fiveNumber = [$lower, $q1, $median, $q3, $upper];
       return $fiveNumber;
   }
-  
+
+  public function BuildHistogram()
+  {
+      $return_string = "";
+      $return_string .= "<thead><tr><td>&nbsp;</td>";
+      $max_val=0; // maximum value to use for spacing
+      $min_val=$draw_data[0]; //minimum value to use for spacing
+      $intervals=array(); //array that will be used to establish intervals
+      //finds the maximum and minimum values in the database array
+      for ($i=0;$i<count($draw_data);$i++){
+               if ($max_val<$draw_data[$i])
+                   $max_val=$draw_data[$i];
+               if ($min_val>$draw_data[$i])
+                   $min_val=$draw_data[$i];
+
+           }
+      $mean=($max_val+$min_val)/5;
+      //sets up the 5 intervals to use in the histogram
+      array_push($intervals, $min_val);
+      for ($i=0;$i<5;$i++){
+          if ($i<4){
+          $return_string .= "<th scope=col>" . $min_val,"-",$min_val+$mean . "</th>";
+          $min_val=$min_val+$mean;
+          }
+          else{
+          $return_string .= "<th scope=col>" . $min_val,"+" . "</th>";
+          }
+          array_push($intervals, $min_val);
+      }
+
+
+      $hold_val=array(); //sets the 5 spaces in hold_val to 0
+      for ($i=0;$i<count($intervals);$i++){
+          $hold_val[$i]=0;
+      }
+
+      //figures out how many people fell within each interval
+      for ($i=0;$i<count($draw_data);$i++){
+          $interval_index=0;
+          while ($draw_data[$i]>$intervals[$interval_index+1] and
+          $interval_index<count($intervals)-2){
+              $interval_index++;
+          }
+
+          $hold_val[$interval_index]++;
+
+      }
+
+      $return_string .= "</tr></thead><tbody><tr><th scope='row'>Maze</th>";
+      for($i=0;$i<count($hold_val);$i++){
+              $return_string .= "<td>" . $hold_val[$i] . "</td>";
+      }
+      $return_string .= "</tr></tbody>";
+      return $return_string;
+  }
 
 }
-
-

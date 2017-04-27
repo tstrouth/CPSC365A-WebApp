@@ -20,6 +20,12 @@
     <link type="text/css" rel="stylesheet" href="{{asset('assets/vendors/switchery/css/switchery.min.css')}}"/>
 
     <link type="text/css" rel="stylesheet" href="{{asset('assets/css/pages/advanced_components.css')}}"/>
+
+    <style>
+      .row {
+        margin-bottom: 20px;
+      }
+    </style>
     <!-- end of global styles-->
     @yield('header_styles')
 </head>
@@ -108,6 +114,8 @@ z-index: 999999">
       <!-- /#menu -->
     </div>
     <!-- /#left -->
+
+
 
     <div id="content" class="bg-container">
         <!-- Content -->

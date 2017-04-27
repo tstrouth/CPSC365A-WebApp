@@ -19,7 +19,7 @@
      <?php
 
 $max_val=0; // maximum value to use for spacing
-$min_val=$draw_data[0]; //minimum value to use for spacing 
+$min_val=$draw_data[0]; //minimum value to use for spacing
 $intervals=array(); //array that will be used to establish intervals
 //finds the maximum and minimum values in the database array
 for ($i=0;$i<count($draw_data);$i++){
@@ -27,7 +27,7 @@ for ($i=0;$i<count($draw_data);$i++){
              $max_val=$draw_data[$i];
          if ($min_val>$draw_data[$i])
              $min_val=$draw_data[$i];
-         
+
      }
 $mean=($max_val+$min_val)/5;
 //sets up the 5 intervals to use in the histogram
@@ -56,9 +56,9 @@ for ($i=0;$i<count($draw_data);$i++){
     $interval_index<count($intervals)-2){
         $interval_index++;
     }
-    
+
     $hold_val[$interval_index]++;
-    
+
 }
      ?>
                   </tr>
@@ -74,13 +74,13 @@ for ($i=0;$i<count($draw_data);$i++){
     }
 	   ?>
 
-                  </tr> 
+                  </tr>
                </tbody>
             </table>
           </div>
       </div>
       <script src="assets/js/google.js"></script>
       <script src="assets/js/test.js"></script>
-    
+
    </body>
 </html>
