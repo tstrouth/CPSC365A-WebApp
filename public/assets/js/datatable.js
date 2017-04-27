@@ -1,7 +1,7 @@
 
 
     // Create graph from data table and specify a container for the graph
-    createGraph('#data-table', '.chart');
+    
     function createGraph(data, container){
 	// Declaration of variables
 	var bars=[];

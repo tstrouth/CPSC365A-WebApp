@@ -7,7 +7,7 @@
 
 @section("footer_scripts")
   <script type="text/javascript" src="{{asset('assets/vendors/chosen/js/chosen.jquery.js')}}"></script>
-
+  <script type="text/javascript" src="{{asset('assets/js/datatable.js')}}"></script>
   <script>
     $(".chzn-select").chosen({allow_single_deselect: true});
     $('#room_select .chzn-select').val({{$roomId}}).trigger("chosen:updated");
@@ -29,7 +29,7 @@
       var five_string = data.five_number[0] + ", " + data.five_number[1] + ", " + data.five_number[2] + ", " + data.five_number[3] + ", " + data.five_number[4];
       $("#five-number").html(five_string);
       $("#data-table").html(data.histo);
-      resetGraph();
+      createGraph('#data-table', '.chart');
     });
     updateStatistical();
   }
@@ -53,7 +53,6 @@
   }
 
   </script>
-    <script type="text/javascript" src="{{asset('assets/js/datatable.js')}}"></script>
 @endsection
 
 
@@ -140,9 +139,11 @@
           <div class="card-block">
             <div class="row">
               <div class="col-lg-12">
-                <table id="data-table" border="1" cellpadding="10" cellspacing="0">
+                <div class="chart">
+                  <table id="data-table" border="1" cellpadding="10" cellspacing="0">
 
-                </table>
+                  </table>
+                </div>
               </div>
             </div>
           </div>
