@@ -13,7 +13,9 @@
 
 App::before(function($request)
 {
-	//
+	View::composers([
+        "AuthComposer"=>["closeRooms", "createRoom", "admin", "dashboard", "roomData", "roomSelect", "showRooms"]
+    ]);
 });
 
 
@@ -35,16 +37,20 @@ App::after(function($request, $response)
 
 Route::filter('auth', function()
 {
-	if (Auth::guest())
-	{
-		if (Request::ajax())
-		{
-			return Response::make('Unauthorized', 401);
+	$found = false;
+	if(isset($_COOKIE["stats_username"])){
+		$users = User::where("user_type", "!=", 1)->get();
+		foreach($users as $user){
+			$found = Hash::check($user->username, $_COOKIE["stats_username"]);
+			if($found){
+				$auth = 1;
+				break;
+			}
 		}
-		else
-		{
-			return Redirect::guest('login');
-		}
+	}
+
+	if(!$found){
+		return Redirect::action("AdminController@loginView");
 	}
 });
 

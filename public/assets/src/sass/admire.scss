@@ -22,6 +22,7 @@
 /*
 /* ================ 1.Reset css========================== */
 
+
 .card-header
 {
   font-family: "Roboto", sans-serif;
@@ -39,9 +40,6 @@
 .custom-control-indicator{
   pointer-events: all !important;
 }
-.custom-control .custom-control-indicator{
-  margin-top: 2px;
-}
 .custom-radio .custom-control-input:checked ~ .custom-control-indicator {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-3 -4 7 9'%3E%3Ccircle r='3' fill='%23fff'/%3E%3C/svg%3E");
 }
@@ -53,8 +51,14 @@
 .btn
 {
   outline: none !important;
+  cursor: pointer;
 }
-
+a.btn:focus{
+  color: #fff;
+}
+a.btn-secondary:focus {
+  color: #000;
+}
 /*====================Reset css end============================*/
 /*========================2.Pre Loader========================*/
 
@@ -133,11 +137,12 @@
 
 #top .navbar-brand {
   padding-top: 16px;
+  font-size: 18px !important;
 }
 .user-info li {color: #ccc;}
 
 .top_menubar li {
-  padding: 9px 0;
+  padding: 4px 5px;
 }
 .top_menubar li a   {
   padding: 9px 7px;
@@ -180,7 +185,7 @@
 {
   margin-top: 6px;
 }
-.calendar_tag
+.calendar_badge
 {
   margin-right: 10px;
 }
@@ -270,7 +275,7 @@
   }
 }
 .head .main-bar {
-  padding:5px 10px;
+  padding:5px 22px;
 }
 .head .main-bar h3 {
   margin-top: 0;
@@ -358,9 +363,6 @@
   left: auto;
   right: 100%;
 }
-.user-wrapper .user-info{
-  margin-top:5px;
-}
 #menu, #menu ul, #menu li, #menu a {
   padding: 0;
   margin: 0;
@@ -439,10 +441,10 @@
 #menu .active > a > .fa.arrow:before {
   content: "\f107";
 }
-.tag{
+.badge{
   padding: 0.4em 0.4em;
 }
-.tag-pill{
+.badge-pill{
   padding-left: 0.6em;
   padding-right: 0.6em;
 }
@@ -628,6 +630,10 @@
 .bg-white{
   background-color: #fff;
 }
+.b-r-0
+{
+  border-radius: 0;
+}
 .m-r-0{
  margin: 0;
 }
@@ -652,7 +658,6 @@
 .m-t-35{
   margin-top: 35px;
 }
-
 .m-t-40{
   margin-top: 40px;
 }
@@ -709,6 +714,14 @@
 }
 .has-error label, .has-error span, .has-error small{
   color: #ff8080;
+}
+.search_bar input
+{
+  border: 1px solid #fff;
+}
+.navbar-brand h4
+{
+  font-size: 18px;
 }
 /*===========================common css end=============================*/
 
@@ -789,6 +802,10 @@ a.list-group-item {
 .form_div> div{
   padding: 10px;
 }
+#search input
+{
+  width: 67%;
+}
 /*grid css end*/
 /*=========================users css end===========================*/
 
@@ -805,7 +822,7 @@ a.list-group-item {
   margin-top: 53px !important;
   min-height: 0 !important;
 }
-@media screen and (max-width: 539px){
+@media  (max-width: 539px){
   .fixed-header_menu {
     margin-top: 100px !important;
   }
@@ -830,13 +847,13 @@ a.list-group-item {
   margin: 0;
 }
 #get_route,#back,#forward{
-  margin: 10px 0;
+  margin: 10px 5px 10px 0;
 }
 //jqvmaps
 .vector_maps{
   height: 400px;
 }
-@media screen and (max-width: 424px) {
+@media  (max-width: 424px) {
   .vector_maps{
     height: 250px;
   }
@@ -856,9 +873,11 @@ a.list-group-item {
 /*====================8 Content & header right section==============*/
 #content {
   transition: width 0.4s;
+  padding-bottom: 15px;
 }
 .outer {
   padding: 10px;
+  margin-top: 25px;
 }
 .outer:before, .outer:after {
   content: " ";
@@ -885,9 +904,7 @@ body.error .logo h1 {
   font-size: 100px;
   text-shadow: 0 1px 0 #cccccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbbbbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaaaaa, 0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.2), 0 20px 20px rgba(0, 0, 0, 0.15);
 }
-.badge {
-  background-color: #777;
-}
+
 
 .skin_txt {color: #4f4d4d;}
 
@@ -913,7 +930,7 @@ body.error .logo h1 {
 .notifications .dropdown-menu {
   width: 250px;
   left: -33%;
-  top: 36px;
+  top: 35px;
 }
 
 .messages .dropdown-menu{
@@ -927,7 +944,7 @@ body.error .logo h1 {
 }
 .notifications .data {
   border-bottom: 1px solid #ddd;
-  padding: 10px 5px 3px 0;
+  padding: 10px 15px 3px 15px;
   display: inline-block;
   width: 100%;
   margin-top: -5px;
@@ -1095,7 +1112,7 @@ table.dataTable thead .sorting_asc:before, table.dataTable thead .sorting_desc:a
 
 /*================================end tables=============================*/
 /*=============================10 Media queries=========================*/
-@media screen and (max-width: 546px){
+@media  (max-width: 546px){
   .preloader_img{
     left: 46%;
     top: 47%;
@@ -1151,9 +1168,12 @@ table.dataTable thead .sorting_asc:before, table.dataTable thead .sorting_desc:a
   .head .main-bar h3 {
     margin-top: 5px;
   }
+  .no_header.fixed_menu .rightsidebar-without-nav {
+    margin-top: 0 !important;
+  }
 }
 
-@media screen and (max-width: 1240px) {
+@media  (max-width: 1240px) {
   .sidebar-right-opened #nav-content{
     width:30%;
   }
@@ -1173,16 +1193,16 @@ table.dataTable thead .sorting_asc:before, table.dataTable thead .sorting_desc:a
     border-radius: 3px 0 0 3px;
   }
   #top .topnav {
-    margin: 7px 0 3px 0;
+    margin: 5px 0 3px 0;
   }
 }
-@media only screen and (max-width: 967px) {
+ @media  (max-width: 967px) {
   .advancnced_customized_fade{
     padding-top: 30px !important;
   }
 }
 
-@media only screen and (max-width: 768px){
+ @media  (max-width: 768px){
   .flip-scroll th {
     padding:11px ;
   }
@@ -1199,12 +1219,12 @@ table.dataTable thead .sorting_asc:before, table.dataTable thead .sorting_desc:a
     margin-top: 53px;
   }
 }
-@media only screen and (min-width: 767px) {
+ @media  (min-width: 767px) {
   .fixed_header_menu_conainer{
     margin-left: 250px;
   }
 }
-@media only screen and (min-width: 422px) {
+ @media  (min-width: 422px) {
   .xs_skin_hide{
   display:none;
   }
@@ -1219,12 +1239,12 @@ table.dataTable thead .sorting_asc:before, table.dataTable thead .sorting_desc:a
     padding: 6px 9px;
   }
 }
-@media screen and (max-width: 991px) and (min-width: 498px) {
+@media  (max-width: 991px) and (min-width: 498px) {
   .user-settings .dropdown-menu {
     top: 34px !important;
   }
 }
-@media screen and (max-width: 496px){
+@media  (max-width: 496px){
   .notifications .dropdown-menu,.user-settings .dropdown-menu{
     top: 33px !important;
   }
@@ -1238,7 +1258,7 @@ table.dataTable thead .sorting_asc:before, table.dataTable thead .sorting_desc:a
 @media (min-width: 1024px){
   .top_menu {
     margin-top: 1px;
-    padding: 0 0 2px 45px;
+    padding: 0 0 2px 30px;
   }
 }
 @media (max-width: 1199px) and (min-width: 992px) {
@@ -1251,25 +1271,32 @@ table.dataTable thead .sorting_asc:before, table.dataTable thead .sorting_desc:a
     top: 34px !important;
   }
 }
-@media screen and (max-width: 504px) {
+@media  (max-width: 504px) {
   .menu{
     float: right;
   }
 }
 /*boxed layouts*/
-@media screen and (max-width: 1200px){
+@media  (max-width: 1200px){
   .boxed_top_menu{
     padding: 0 0 2px 31px !important;
   }
 }
-@media screen and (max-width: 991px) {
+@media  (max-width: 991px) {
   .media_max_991{
     margin-top: 35px;
   }
 }
-@media screen and (max-width: 573px){
+@media  (max-width: 573px){
   .media_max_573{
     margin-top: 35px;
+  }
+}
+@media (min-width:768px)
+{
+  .boxed.fixed_header #top{
+    left:5%;
+    right:5%;
   }
 }
 /*================================media queries end======================*/

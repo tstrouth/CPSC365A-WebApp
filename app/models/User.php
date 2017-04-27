@@ -11,5 +11,10 @@ class User extends Eloquent {
 	protected $table = 'Users';
 
 	public $timestamps = false;
+	protected $primaryKey = 'ID';
+
+	public function type(){
+    return $this->hasOne("UserType", "ID", "user_type");
+  }
 
 }

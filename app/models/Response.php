@@ -1,7 +1,10 @@
 <?php
 
-class Response extends Eloquent {
+use Illuminate\Database\Eloquent\SoftDeletingTrait;
 
+class ResponseDB extends Eloquent {
+
+    use SoftDeletingTrait;
 
 	/**
 	 * The database table used by the model.
@@ -10,7 +13,12 @@ class Response extends Eloquent {
 	 */
 	protected $table = 'Responses';
 
-	public $timestamps = false;	
+	public $timestamps = false;
 
+	protected $primaryKey = 'id';
+
+  public function data(){
+    return $this->hasMany("ResponseData", "response_fkey", "id");
+  }
 
 }

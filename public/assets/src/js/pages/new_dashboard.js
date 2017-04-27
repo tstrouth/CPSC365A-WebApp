@@ -208,9 +208,9 @@ $(document).ready(function() {
         var striks = " <span class='dividor'>|</span> ";
         var editButton = " <a href='#' class='todoedit'><span class='fa fa-pencil'></span></a>";
         var checkBox = "<p><input type='checkbox' class='striked form-control' autocomplete='off' /></p>";
-        var twoButtons = "<div class='col-lg-3 col-sm-4 col-xs-3 showbtns todoitembtns'>" + editButton + striks + deleteButton + "</div>";
+        var twoButtons = "<div class='col-3 showbtns todoitembtns'>" + editButton + striks + deleteButton + "</div>";
         var badgeClass = $('#btn_color').data('badge');
-        $(".list_of_items").prepend("<div class='todolist_list showactions'>  " + "<div class='col-lg-8 col-sm-8 col-xs-8 nopad custom_textbox1'> <div class='todo_mintbadge " + badgeClass + "'> </div> <div class='todoitemcheck'>" + checkBox + "</div>" + "<div class='todotext todoitem'>" + $("#custom_textbox").val() + "</div> </div>" +   twoButtons + "<span class='seperator'></span>");
+        $(".list_of_items").prepend("<div class='todolist_list showactions px-3'>" + "<div class='row'><div class='col-9 nopad custom_textbox1'> <div class='todo_mintbadge " + badgeClass + "'> </div> <div class='todoitemcheck'>" + checkBox + "</div>" + "<div class='todotext todoitem'>" + $("#custom_textbox").val() + "</div> </div>" +   twoButtons + "<span class='seperator'></span></div>");
         $("#custom_textbox").val('');
         $('#btn_color').css("color", "#fff");
         return false;
@@ -393,7 +393,6 @@ $(document).ready(function() {
     var progressBarContainer = $('#progress-bar');
     var progressBar = {
         chain: [],
-        progress: progressBarContainer.children('progress'),
         progressBar: progressBarContainer.find('.progress-bar'),
         progressInfo: progressBarContainer.children('.progress-info'),
         set: function(value, info, noPush) {
@@ -413,14 +412,14 @@ $(document).ready(function() {
             this.progressInfo.text(info);
             var self = this;
             var interval = setInterval(function() {
-                var curr = self.progress.attr('value');
+                var curr = self.progressBar.attr('aria-valuenow');
                 if (curr >= value) {
                     clearInterval(interval);
-                    self.progress.attr('value', value);
+                    self.progressBar.attr('aria-valuenow', value);
                     self.progressBar.css('width', value + '%');
                     self.chain.shift()
                 } else {
-                    self.progress.attr('value', ++curr);
+                    self.progressBar.attr('aria-valuenow', ++curr);
                     self.progressBar.css('width', curr + '%');
                 }
             }, 10)
@@ -434,7 +433,6 @@ $(document).ready(function() {
     var progressBarContainer12 = $('#progress-bar1');
     var progressBar = {
         chain: [],
-        progress: progressBarContainer12.children('progress'),
         progressBar: progressBarContainer12.find('.progress-bar'),
         progressInfo: progressBarContainer12.children('.progress-primary'),
         set: function(value, info, noPush) {
@@ -454,14 +452,14 @@ $(document).ready(function() {
             this.progressInfo.text(info);
             var self = this;
             var interval = setInterval(function() {
-                var curr = self.progress.attr('value');
+                var curr = self.progressBar.attr('aria-valuenow');
                 if (curr >= value) {
                     clearInterval(interval);
-                    self.progress.attr('value', value);
+                    self.progressBar.attr('aria-valuenow', value);
                     self.progressBar.css('width', value + '%');
                     self.chain.shift()
                 } else {
-                    self.progress.attr('value', ++curr);
+                    self.progressBar.attr('aria-valuenow', ++curr);
                     self.progressBar.css('width', curr + '%');
                 }
             }, 10)
@@ -475,7 +473,6 @@ $(document).ready(function() {
     var progressBarContainer2 = $('#progress-bar2');
     var progressBar = {
         chain: [],
-        progress: progressBarContainer2.children('progress'),
         progressBar: progressBarContainer2.find('.progress-bar'),
         progressInfo: progressBarContainer2.children('.progress-primary'),
         set: function(value, info, noPush) {
@@ -495,14 +492,14 @@ $(document).ready(function() {
             this.progressInfo.text(info);
             var self = this;
             var interval = setInterval(function() {
-                var curr = self.progress.attr('value');
+                var curr = self.progressBar.attr('aria-valuenow');
                 if (curr >= value) {
                     clearInterval(interval);
-                    self.progress.attr('value', value);
+                    self.progressBar.attr('aria-valuenow', value);
                     self.progressBar.css('width', value + '%');
                     self.chain.shift()
                 } else {
-                    self.progress.attr('value', ++curr);
+                    self.progressBar.attr('aria-valuenow', ++curr);
                     self.progressBar.css('width', curr + '%');
                 }
             }, 10)
@@ -516,7 +513,6 @@ $(document).ready(function() {
     var progressBarContainer1 = $('#progress-bar3');
     var progressBar = {
         chain: [],
-        progress: progressBarContainer1.children('progress'),
         progressBar: progressBarContainer1.find('.progress-bar'),
         progressInfo: progressBarContainer1.children('.progress-info'),
         set: function(value, info, noPush) {
@@ -536,14 +532,14 @@ $(document).ready(function() {
             this.progressInfo.text(info);
             var self = this;
             var interval = setInterval(function() {
-                var curr = self.progress.attr('value');
+                var curr = self.progressBar.attr('aria-valuenow');
                 if (curr >= value) {
                     clearInterval(interval);
-                    self.progress.attr('value', value);
+                    self.progressBar.attr('aria-valuenow', value);
                     self.progressBar.css('width', value + '%');
                     self.chain.shift()
                 } else {
-                    self.progress.attr('value', ++curr);
+                    self.progressBar.attr('aria-valuenow', ++curr);
                     self.progressBar.css('width', curr + '%');
                 }
             }, 10)
@@ -557,7 +553,6 @@ $(document).ready(function() {
     var progressBarContainer = $('#progress-bar4');
     var progressBar = {
         chain: [],
-        progress: progressBarContainer.children('progress'),
         progressBar: progressBarContainer.find('.progress-bar'),
         progressInfo: progressBarContainer.children('.progress-info'),
         set: function(value, info, noPush) {
@@ -577,14 +572,14 @@ $(document).ready(function() {
             this.progressInfo.text(info);
             var self = this;
             var interval = setInterval(function() {
-                var curr = self.progress.attr('value');
+                var curr = self.progressBar.attr('aria-valuenow');
                 if (curr >= value) {
                     clearInterval(interval);
-                    self.progress.attr('value', value);
+                    self.progressBar.attr('aria-valuenow', value);
                     self.progressBar.css('width', value + '%');
                     self.chain.shift()
                 } else {
-                    self.progress.attr('value', ++curr);
+                    self.progressBar.attr('aria-valuenow', ++curr);
                     self.progressBar.css('width', curr + '%');
                 }
             }, 10)
@@ -598,7 +593,6 @@ $(document).ready(function() {
     var progressBarContainer = $('#progress-bar5');
     var progressBar = {
         chain: [],
-        progress: progressBarContainer.children('progress'),
         progressBar: progressBarContainer.find('.progress-bar'),
         progressInfo: progressBarContainer.children('.progress-info'),
         set: function(value, info, noPush) {
@@ -618,14 +612,14 @@ $(document).ready(function() {
             this.progressInfo.text(info);
             var self = this;
             var interval = setInterval(function() {
-                var curr = self.progress.attr('value');
+                var curr = self.progressBar.attr('aria-valuenow');
                 if (curr >= value) {
                     clearInterval(interval);
-                    self.progress.attr('value', value);
+                    self.progressBar.attr('aria-valuenow', value);
                     self.progressBar.css('width', value + '%');
                     self.chain.shift()
                 } else {
-                    self.progress.attr('value', ++curr);
+                    self.progressBar.attr('aria-valuenow', ++curr);
                     self.progressBar.css('width', curr + '%');
                 }
             }, 10)

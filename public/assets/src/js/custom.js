@@ -68,11 +68,14 @@ $(document).ready(function() {
     });
 
     // slim scroll for header and right sections
-    $('.right_content').slimscroll({
-        height: $(window).height(),
-        size: '5px',
-        opacity: 0.2
-    });
+    function right_content(){
+        $('.right_content').slimscroll({
+            height: $(window).height(),
+            size: '5px',
+            opacity: 0.2
+        });
+    }
+    right_content();
 
     $('#messages').slimscroll({
         height: '222px',
@@ -84,6 +87,20 @@ $(document).ready(function() {
         height: '235px',
         size: '5px',
         opacity: 0.2
+    });
+    function headerResize() {
+        if($(window).width()>767){
+            $(".fixed_header #top").addClass("fixed-top");
+            var fixedHeaderTop=$("#top").height();
+            $(".fixed_header .wrapper").css("margin-top",fixedHeaderTop);
+        }else{
+            $("#top").removeClass("fixed-top");
+            $(".fixed_header .wrapper").css("margin-top",0);
+        }
+    }
+    headerResize();
+    $(window).on("resize",function () {
+        headerResize();
     });
 
 });
@@ -112,7 +129,7 @@ $(document).ready(function() {
                 $this.find("li.active").has("ul").children("ul").collapse("show");
                 $this.find("li").not(".active").has("ul").children("ul").collapse("hide");
             } else {
-                $this.find("li.active").has("ul").children("ul").addClass("collapse in");
+                $this.find("li.active").has("ul").children("ul").addClass("collapse show");
                 $this.find("li").not(".active").has("ul").children("ul").addClass("collapse");
             }
             //add the "doubleTapToGo" class to active items if needed
@@ -130,10 +147,16 @@ $(document).ready(function() {
                         return;
                     }
                 }
-                $(this).parent("li").toggleClass("active").children("ul").collapse("toggle");
+                $(this).parent("li").toggleClass("active").children("ul").collapse({
+                    toggle: true,
+                    animate: false
+                });
+                $this.find("li.active").has("ul").children("ul").addClass("collapse show");
 
                 if ($toggle) {
-                    $(this).parent("li").siblings().removeClass("active").children("ul.in").collapse("hide");
+                    $(this).parent("li").siblings().removeClass("active").children("ul.show").collapse("hide");
+                    $this.find("li.active").has("ul").children("ul").addClass("collapse show");
+                    $this.find("li").not(".active").has("ul").children("ul").removeClass("show");
                 }
             });
         },

@@ -18,7 +18,9 @@ body
     height: 242px !important;
     overflow: hidden;
 }
-
+.outer{
+    margin-top: 0;
+}
 .graph_top button {
     float: right;
     margin-right: 10px;
@@ -163,7 +165,7 @@ body
 .weekly_report {
     color: #FFF;
     text-align: center;
-    margin: 0 0 -21px 0;
+    margin: 0 0 -7px 0;
     font-size: 18px;
 }
 
@@ -712,10 +714,15 @@ body
     }
 
 }
-@media screen and (max-width: 992px)
+@media (max-width: 992px)
 {
     .md_align_section
     {
         margin-top: 35px;
+    }
+}
+@media (min-width: 768px) and (max-width: 800px){
+    .icon_padd_left{
+        margin-left: -1px;
     }
 }
