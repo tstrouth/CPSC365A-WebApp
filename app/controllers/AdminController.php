@@ -41,7 +41,8 @@ class AdminController extends Controller {
       if(count($hashedPassword) > 0){
         $hashedPassword = $hashedPassword->hashpassword;
         if (Hash::check($password, $hashedPassword)) {
-          return "it worked";
+          setcookie("stats_username", Hash::make($username), time()+60*60);
+          return Redirect::route("dashboard");
         }
         else {
           return  Redirect::action("AdminController@loginView")->with("error", "Login Failed");
