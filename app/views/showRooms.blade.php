@@ -107,6 +107,7 @@
   </div>
 </div>
 
+<!-- Basic Stats -->
 <div class="outer">
   <div class="inner bg-container">
     <div class="row">
