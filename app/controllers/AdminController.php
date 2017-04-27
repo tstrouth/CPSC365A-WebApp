@@ -38,8 +38,8 @@ class AdminController extends Controller {
 
   public function authAdmin($username, $password){
       $hashedPassword = User::where('username', $username)->where("user_type", "!=", 1)->first();
-      if(count($hashPassword) > 0){
-        $hashPassword = $hashPassword->hashpassword;
+      if(count($hashedPassword) > 0){
+        $hashedPassword = $hashedPassword->hashpassword;
         if (Hash::check($password, $hashedPassword)) {
           return "it worked";
         }
