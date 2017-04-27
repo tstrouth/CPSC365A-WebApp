@@ -236,9 +236,9 @@ class StatController extends Controller {
               $right[$index] = $sorted[$index + $half+ 1];
           }
       }
-      $median = findMedian($sorted);
-      $q1 = findMedian($left);
-      $q3 = findMedian($right);
+      $median = $this->findMedian($sorted);
+      $q1 = $this->findMedian($left);
+      $q3 = $this->findMedian($right);
       $fiveNumber = [$lower, $q1, $median, $q3, $upper];
       return $fiveNumber;
   }
