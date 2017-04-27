@@ -11,6 +11,7 @@ class AdminController extends Controller {
     $username = Input::get("username");
     $password = Input::get("password");
     $adminFound = $this->authAdmin($username, $password);
+    return $adminFound;
   }
 
 
@@ -32,10 +33,10 @@ class AdminController extends Controller {
   public function authAdmin($username, $password){
       $hashedPassword = User::where('username', $username)->where("user_type", "!=", 1)->get();
       if (Hash::check($password, $hashedPassword)) {
-        echo "We worked";
+        return "it worked";
       }
       else {
-          Redirect::action("AdminController@loginView")->with("error", "Login Failed");
+        return  Redirect::action("AdminController@loginView")->with("error", "Login Failed");
       }
   }
 
