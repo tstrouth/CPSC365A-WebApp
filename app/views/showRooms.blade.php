@@ -38,19 +38,19 @@
 
   function updateStatistical(){
     var data_object = {};
-    //data_object.alpha = $("#alpha").val();
-    //data_object.null = $("#null-mean").val();
-    //data_object.test = $("#test-choice").chosen().val();
-    data_object.alpha = 1;
-    data_object.null = 2;
-    data_object.test = 1;
+    data_object.alpha = $("#alpha").val();
+    data_object.null = $("#null-mean").val();
+    data_object.test = $("#test-choice").chosen().val();
+    // data_object.alpha = 1;
+    // data_object.null = 2;
+    // data_object.test = 1;
 
     $.ajax({
       url:"{{route('getStatTest', $roomId)}}",
       data: data_object
     })
     .done(function(data){
-      console.log(data);
+      $("#stat-tests").html(data["response"]);
     });
   }
 

@@ -195,7 +195,7 @@ class StatController extends Controller {
     //NOTE: this is TWO SIDED not TWO SAMPLES
     public function two_sided_pval($pArray, $palpha, $null){
         $return_string = "";
-        $return_string .= "Null hypothesis: mean is" . $null . "<br>";
+        $return_string .= "Null hypothesis: mean is " . $null . "<br>";
         $teststat = $this->getteststat($pArray, $null);
         $return_string .= "Test Stat:" . $teststat;
         $return_string .= $this->getconfinterval($pArray, $palpha);
@@ -203,7 +203,7 @@ class StatController extends Controller {
         $return_string.= "p-value:".$prob." <br>";
         $return_string.="with alpha value of ".$palpha." <br>";
         if ($prob < $palpha){$return_string.= "We reject the null hypothesis";}
-        else{$return_string.= "we fail to reject the null hypothesis";}
+        else{$return_string.= "We fail to reject the null hypothesis";}
         return ($return_string);
     }
 
