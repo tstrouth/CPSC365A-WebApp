@@ -39,20 +39,36 @@ class StatController extends Controller {
     $null = Input::get("null");
     $alpha = Input::get("alpha");
     $test = Input::get("test");
-
     $room_data = ResponseDB::where("room_fkey", $id)->with("data")->get();
-    $all_responses = [];
-    foreach($room_data as $entry){
-      foreach($entry->data as $response){
-        $all_responses[] = $response->response_data;
+    $return_data = 0;
+    if(count($room_data) > 0){
+      if($test == 1){
+        if(count($room_data[0]->data) > 1){
+          $array1 = [];
+          $array2 = [];
+          foreach($room_data as $data){
+            $array1[] = $data->data[0];
+            $array2[] = $data->data[1];
+          }
+          $paired_data = $this-> find_difference($array1, $array2);
+          $return_data = [];
+          $return_data["response"] = $this->two_sided_pval($paired_data, $alpha, $null);
+        }
+      }else if($test == 2){
+        $all_responses = [];
+        foreach($room_data as $entry){
+          foreach($entry->data as $response){
+            $all_responses[] = $response->response_data;
+          }
+        }
+        $return_data = [];
+        $return_data["response"] = $this->two_sided_pval($all_responses, $alpha, $null);
       }
     }
-    $all_responses[2000] = $null;
-    $all_responses[2001] = $alpha;
-    $all_responses[2002] = $test;
 
 
-    return Response::json($all_responses);
+
+    return Response::json($return_data);
   }
 
 
@@ -131,8 +147,8 @@ class StatController extends Controller {
         $mean = $this->mean($pArray);
         $lowerbound = $mean - $t[0]*$standard_deviation_div_sqrtn;
         $upperbound = $mean + $t[0]*$standard_deviation_div_sqrtn;
-        printf("<br> the confidence interval is [ %f, %f] <br>", $lowerbound,
-        $upperbound);
+        $return_string = "<br> the confidence interval is [".$lowerbound.", ".$upperbound."] <br>";
+        return ($return_string);
     }
 
     //computes the sum of ((x_x -x\bar) -((yi-y\bar)) ^ 2
@@ -178,15 +194,17 @@ class StatController extends Controller {
 
     //NOTE: this is TWO SIDED not TWO SAMPLES
     public function two_sided_pval($pArray, $palpha, $null){
-        printf("Null hypothesis: mean is %f <br>", $null);
+        $return_string = "";
+        $return_string .= "Null hypothesis: mean is" . $null . "<br>";
         $teststat = $this->getteststat($pArray, $null);
-        printf("Test Stat: %f", $teststat);
-        $this->getconfinterval($pArray, $palpha);
+        $return_string .= "Test Stat:" . $teststat;
+        $return_string .= $this->getconfinterval($pArray, $palpha);
         $prob = $this->retrievepval($pArray, $teststat);
-        printf("p-value: %f <br>", $prob);
-        printf("with alpha value of %f <br>", $palpha);
-        if ($prob < $palpha){echo "We reject the null hypothesis";}
-        else{echo "we fail to reject the null hypothesis";}
+        $return_string.= "p-value:".$prob." <br>";
+        $return_string.="with alpha value of ".$palpha." <br>";
+        if ($prob < $palpha){$return_string.= "We reject the null hypothesis";}
+        else{$return_string.= "we fail to reject the null hypothesis";}
+        return ($return_string);
     }
 
     //takes two arrays same length and forms a new array from the difference between each values

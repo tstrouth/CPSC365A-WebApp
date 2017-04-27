@@ -32,7 +32,6 @@
       $("#five-number").html(five_string);
       $("#data-table").html(data.histo);
       createGraph('#data-table', '.chart');
-      console.log(data);
     });
     updateStatistical();
   }
@@ -124,26 +123,24 @@
               </div>
             </div>
             <div class="row">
-              <div class="col-lg-12">
-                <h5 >Test Statistic: <span id="t-statistic">#</span></h5>
-                <h5 >Confidence Interval: <span id="c-interval">#</span></h5>
-                <h5 >P value: <span id="p-value">#</span></h5>
-                <h5 >Reject/OrPass: <span id="reject-pass">#</span></h5>
+              <div class="col-lg-12" id="stat-tests">
+                <h5 >Test Statistic: #</h5>
+                <h5 >Confidence Interval: #</h5>
+                <h5 >P value: #</h5>
+                <h5 >Reject/OrPass: #</h5>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="col-12 col-xl-12">
+      <div class="col-12 col-xl-6">
         <div class="card">
           <div class="card-header bg-white">
               Histogram
           </div>
           <div class="card-block">
             <div class="row">
-              <div class="col-lg-6 offset-lg-3">
+              <div class="col-lg-12">
                 <div class="chart">
                   <table id="data-table" border="1" cellpadding="10" cellspacing="0">
 
