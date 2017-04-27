@@ -22,14 +22,16 @@ class RoomController extends Controller {
         $newRoom->room_code = $key;
         $newRoom->open = 1;
         $newRoom->created_at = new DateTime();
+        $newRoom->created_by = $_COOKIE["stats_id"];
         $newRoom->save();
         return Redirect::action('RoomController@viewOpenRooms'); // show open rooms
     }
 
     // Close Rooms
     public function viewOpenRooms() {
-        //$openRooms = Room::where('created_by', Auth::user()->id)->where('open', 1)->get(); // JOSH TODO
-        $openRooms = Room::where('open', 1)->get();
+
+        $openRooms = Room::where('created_by', $_COOKIE["stats_id"])->where('open', 1)->get(); // JOSH TODO
+        //$openRooms = Room::where('open', 1)->get();
         //var_dump($openRooms->toArray()); die();
         foreach($openRooms as $currentRoom){
             $currentRoom->setAttribute('task', Task::where('id', $currentRoom->task_fkey)->first()->task_name);
@@ -48,7 +50,7 @@ class RoomController extends Controller {
     }
 
     public function showData($roomId=-1){
-      $all_rooms = Room::where('open', 0)->get();
+      $all_rooms = Room::where('created_by', $_COOKIE["stats_id"])->where('open', 0)->get();
 
 
       return View::make("showRooms", compact("all_rooms", "roomId"));
@@ -63,7 +65,7 @@ class RoomController extends Controller {
     // Remove responses from closed rooms
     public function viewClosedRooms() {
         $tasks = Task::all()->lists('task_name', 'id');
-        $rooms = Room::where('open', 0)->get();
+        $rooms = Room::where('created_by', $_COOKIE["stats_id"])->where('open', 0)->get();
         foreach($rooms as $currentRoom){
             $currentRoom->setAttribute('task', Task::where('id', $currentRoom->task_fkey)->first()->task_name);
         }
