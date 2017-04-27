@@ -39,7 +39,7 @@ Route::filter('auth', function()
 {
 	$found = false;
 	if(isset($_COOKIE["stats_username"])){
-		$users = User::where("user_type", "!=", 1);
+		$users = User::where("user_type", "!=", 1)->get();
 		foreach($users as $user){
 			$found = Hash::check($user->username, $_COOKIE["stats_username"]);
 			if($found){
