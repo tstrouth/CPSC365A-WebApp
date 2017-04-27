@@ -40,13 +40,23 @@
             <div class="table-responsive m-t-35">
                 <table class="table">
                     <thead>
+
                     <tr>
                         <th>Username</th>
                         <th>User Type</th>
                     </tr>
                     </thead>
                     <tbody>
-
+                      @foreach($users as $user)
+                      <tr>
+                        <td>
+                          {{$user->username}}
+                        </td>
+                        <td>
+                          {{$user->user_type}}
+                        </td>
+                      </tr>
+                      @endforeach
                     </tbody>
                 </table>
           </div>

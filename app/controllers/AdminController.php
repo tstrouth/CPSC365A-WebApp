@@ -5,7 +5,8 @@ class AdminController extends Controller {
   public function adminDashboard(){
     $user = User::find($_COOKIE["stats_id"]);
     if($user->user_type == 3){
-      return View::make("admin");
+      $users = User::where("user_type", "!=", 1)->get();
+      return View::make("admin", compact("users"));
     }
     else{
       return  Redirect::action("AdminController@loginView");
