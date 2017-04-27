@@ -12,11 +12,6 @@
 */
 
 
-Route::get("/admin", function(){
-	return View::make("admin");
-});
-
-
 Route::get('/', function()
 {
 	return View::make('dashboard');
@@ -27,6 +22,7 @@ Route::get("/dashboard", function(){
 Route::get("/showroom/{id?}", "RoomController@showData");
 Route::get("/login", "AdminController@loginView");
 Route::post("/login_auth", "AdminController@login");
+Route::get("/admin", "AdminController@adminDashboard");
 Route::post("new_admin", "AdminController@createAdmin");
 
 Route::get("/getstatdata/{id}", array("as"=>"getStatData", "uses"=>"StatController@getData"));
