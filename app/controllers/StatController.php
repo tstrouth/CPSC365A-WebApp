@@ -221,7 +221,8 @@ class StatController extends Controller {
   }
 
   public function fiveNumber($anArray){
-      $sorted = sort($anArray);
+      $sorted = $anArray;
+      sort($sorted);
       $lower = $sorted[0];
       $upper = $sorted[count($sorted) - 1];
       $half = count($sorted) / 2;
