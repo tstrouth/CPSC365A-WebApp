@@ -10,6 +10,7 @@
   <script type="text/javascript" src="{{asset('assets/js/datatable.js')}}"></script>
   <script>
     $(".chzn-select").chosen({allow_single_deselect: true});
+    $('.chzn-select').val({{roomId}}).trigger("chosen:updated");
   </script>
 @endsection
 
@@ -29,15 +30,11 @@
                           <h3>Previous Room Choice</h3>
                           <select value={{$roomId}} id="room-choice" class="form-control chzn-select" tabindex="2">
                             @foreach($all_rooms as $room)
-                              @if($room->ID == $roomId)
-                                <option selected="selected" id="{{$room->ID}}">
-                                  Room {{$room->ID}} - {{$room->created_at}}
-                                </option>
-                              @else
+
                                 <option id="{{$room->ID}}">
                                   Room {{$room->ID}} - {{$room->created_at}}
                                 </option>
-                              @endif
+
                             @endforeach
                           </select>
                       </div>
