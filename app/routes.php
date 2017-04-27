@@ -30,6 +30,10 @@ Route::get("/login", function(){
 });
 Route::post("new_admin", "AdminController@createAdmin");
 Route::post("/login_auth", "AdminController@login");
+
+Route::get("/getstatdata/{id}", array("as"=>"getStatData", "uses"=>"StatController@getData"));
+Route::get("/getstattest/{id}", array("as"=>"getStatTest", "uses"=>"StatController@getStatTest"));
+
 Route::get("/api/user/create", "APIController@createUser");
 Route::get("/api/user/show/{id}", "APIController@getUser");
 Route::get("/api/user/types", "APIController@getUserTypes");

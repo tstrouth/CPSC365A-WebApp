@@ -17,6 +17,8 @@ class ResponseDB extends Eloquent {
 
 	protected $primaryKey = 'id';
 
-
+  public function data(){
+    return $this->hasMany("ResponseData", "id", "response_fkey");
+  }
 
 }

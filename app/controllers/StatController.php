@@ -2,10 +2,21 @@
 
 class StatController extends Controller {
 
-    public function showWelcome()
-	{
-		return View::make('hello');
-	}
+  public function getData($id){
+    $room_data = ResponseDB::where("room_fkey", $id)->with("data")->get();
+
+    return Response::json($room_data);
+  }
+
+  public function getStatTest($id){
+    $room_data = ResponseDB::where("room_fkey", $id)->with("data")->get();
+
+    return Response::json($room_data);
+  }
+
+
+
+
 
 
     public function hypoTestView(){
@@ -49,6 +60,7 @@ class StatController extends Controller {
 
 
     }
+
     //needs an array and inputted test statisitc executes a python program and
     //returns the probability value
     public function retrievepval($pArray, $teststat){

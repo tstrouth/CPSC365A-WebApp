@@ -11,6 +11,37 @@
   <script>
     $(".chzn-select").chosen({allow_single_deselect: true});
     $('.chzn-select').val({{$roomId}}).trigger("chosen:updated");
+
+
+  $(document).ready(function(){
+    if({{$roomId}} > 0){
+      updateValues();
+    }
+  });
+
+  function updateValues(){
+    $.ajax({
+      url:"{{route('getStatData', $roomId)}}"
+    })
+    .done(function(data)){
+      console.log(data);
+    }
+  }
+
+  function updateStatistical(){
+    var data_object;
+    data_object.alpha = $("#alpha").val();
+    data_object.null = $("#null-mean").val();
+    data_object.test = $("#test-choice").chosen().val();
+    $.ajax({
+      url:"{{route('getStatTest', $roomId)}}",
+      data: JSON.stringify(data_object)
+    })
+    .done(function(data)){
+      console.log(data);
+    }
+  }
+
   </script>
 @endsection
 
@@ -30,11 +61,9 @@
                           <h3>Previous Room Choice</h3>
                           <select value={{$roomId}} id="room-choice" class="form-control chzn-select" tabindex="2">
                             @foreach($all_rooms as $room)
-
                                 <option value={{$room->ID}} id="{{$room->ID}}">
                                   Room {{$room->ID}} - {{$room->created_at}}
                                 </option>
-
                             @endforeach
                           </select>
                       </div>
