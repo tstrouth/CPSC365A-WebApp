@@ -18,6 +18,15 @@
     if({{$roomId}} > 0){
       updateValues();
     }
+
+    $("#room-choice").change(function(){
+      console.log("change");
+    });
+
+    $("#updatebtn").click(function(){
+      updateStatistical();
+    });
+
   });
 
   function updateValues(){
@@ -119,7 +128,7 @@
             </div>
             <div class="row">
               <div class="col-lg-12">
-                <button class="btn btn-primary pull-right" style="margin-right:0">Update Values</button>
+                <button id="updatebtn" class="btn btn-primary pull-right" style="margin-right:0">Update Values</button>
               </div>
             </div>
             <div class="row">
@@ -141,7 +150,7 @@
           <div class="card-block">
             <div class="row">
               <div class="col-lg-12">
-                <div class="chart">
+                <div class="chart" style="margin-left:10px;">
                   <table id="data-table" border="1" cellpadding="10" cellspacing="0">
 
                   </table>
