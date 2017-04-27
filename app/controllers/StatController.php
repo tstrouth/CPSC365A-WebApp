@@ -191,7 +191,7 @@ class StatController extends Controller {
         for ($index = 0; $index < count($an_array); $index++) {
             $sum = $sum + ((double) $an_array[$index] - $mean)**2;
         }
-        return (sqrt($sum /(count($an_array) - 1)));
+        return (sqrt((floatval($sum)) /floatval((count($an_array) - 1))));
     }
 
     //NOTE: this is TWO SIDED not TWO SAMPLES
@@ -220,11 +220,11 @@ class StatController extends Controller {
     }
 
   public function mean($an_array){
-      $sum = (double) 0;
+      $sum =  0;
       for ($index = 0; $index < count($an_array); $index++){
-          $sum = $sum + (double) $an_array[$index];
+          $sum = $sum + floatval($an_array[$index]);
       }
-      return $sum/count($an_array);
+      return floatval($sum)/floatval(count($an_array));
   }
 
 
