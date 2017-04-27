@@ -10,7 +10,7 @@
   <script type="text/javascript" src="{{asset('assets/js/datatable.js')}}"></script>
   <script>
     $(".chzn-select").chosen({allow_single_deselect: true});
-    $('.chzn-select').val({{roomId}}).trigger("chosen:updated");
+    $('.chzn-select').val({{$roomId}}).trigger("chosen:updated");
   </script>
 @endsection
 
@@ -31,7 +31,7 @@
                           <select value={{$roomId}} id="room-choice" class="form-control chzn-select" tabindex="2">
                             @foreach($all_rooms as $room)
 
-                                <option id="{{$room->ID}}">
+                                <option value={{$room->ID}} id="{{$room->ID}}">
                                   Room {{$room->ID}} - {{$room->created_at}}
                                 </option>
 
