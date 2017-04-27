@@ -51,7 +51,7 @@ class RoomController extends Controller {
       $all_rooms = Rooms::all();
 
 
-      return View::make("showRooms", compact("all_rooms", "roomId"))
+      return View::make("showRooms", compact("all_rooms", "roomId"));
 
     }
 

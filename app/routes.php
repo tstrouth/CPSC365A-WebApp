@@ -24,7 +24,7 @@ Route::get('/', function()
 Route::get("/dashboard", function(){
 	return View::make("dashboard");
 });
-Route::get("/showroom/{id?}", "RoomController@showData()");
+Route::get("/showroom/{id?}", "RoomController@showData");
 Route::get("/login", function(){
 	return View::make("login");
 });
