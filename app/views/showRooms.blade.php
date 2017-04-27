@@ -21,7 +21,9 @@
     }
 
     $("#room-choice").change(function(){
+      $('#room_select .chzn-select').trigger("chosen:updated");
       id = $("#room_select .chzn-select").val();
+      console.log(id);
       updateValues(id);
     });
 
@@ -42,6 +44,7 @@
       var five_string = data.five_number[0] + ", " + data.five_number[1] + ", " + data.five_number[2] + ", " + data.five_number[3] + ", " + data.five_number[4];
       $("#five-number").html(five_string);
       $("#data-table").html(data.histo);
+      $("#figure").remove();
       createGraph('#data-table', '.chart');
     });
     updateStatistical(id);
