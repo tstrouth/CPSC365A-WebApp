@@ -97,10 +97,22 @@ z-index: 999999">
                   <span class="link-title">&nbsp;Create Room</span>
               </a>
           </li>
+          <li id="open" class="">
+              <a href="{{route('openrooms')}}">
+
+                  <span class="link-title">&nbsp;View Currently Open Rooms</span>
+              </a>
+          </li>
+          <li id="data" class="">
+              <a href="{{route('viewclosed')}}">
+
+                  <span class="link-title">&nbsp;View Previous Rooms' Data</span>
+              </a>
+          </li>
           <li id="showroom" class="">
               <a href="{{URL::to('showroom')}}">
 
-                  <span class="link-title">&nbsp;View Previous Rooms</span>
+                  <span class="link-title">&nbsp;View Previous Rooms' Statistics</span>
               </a>
           </li>
           <li id="admin" class="">

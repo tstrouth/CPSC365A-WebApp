@@ -8,5 +8,11 @@ $(document).ready(function(){
   }
   else if(t.indexOf("showroom") >0){
     $("#showroom").addClass("active");
-  }
+
+    else if(t.indexOf("viewclosed") > 0){
+      $("#data").addClass("active");
+    }
+    else if(t.indexOf("viewopen") >0){
+      $("#open").addClass("active");
+    }
 });

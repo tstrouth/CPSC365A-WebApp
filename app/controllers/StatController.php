@@ -53,6 +53,8 @@ class StatController extends Controller {
           $paired_data = $this-> find_difference($array1, $array2);
           $return_data = [];
           $return_data["response"] = $this->two_sided_pval($paired_data, $alpha, $null);
+        }else{
+          $return_data["response"] = "Not enough data points per individual!";
         }
       }else if($test == 2){
         $all_responses = [];

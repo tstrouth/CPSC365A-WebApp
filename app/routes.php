@@ -42,11 +42,11 @@ Route::get("/api/response/create", "APIController@createResponse");
 // Rooms
 Route::get("/rooms/create", array("as"=>"createroom", "uses"=>"RoomController@create"));
 Route::post("/rooms/store", "RoomController@store");
-Route::get("/rooms/viewopen", "RoomController@viewOpenRooms");
+Route::get("/rooms/viewopen",array("as"=>"openrooms", "uses"=> "RoomController@viewOpenRooms"));
 Route::get("rooms/close/{roomId}", "RoomController@close");
 Route::get("rooms/deletedata/{roomId}/{responseId}", "RoomController@deleteRoomData");
-//Route::get("rooms/viewclosed", "RoomController@viewClosedRooms");
-//Route::get("rooms/roomdata/{roomId}", "RoomController@viewRoomData");
+Route::get("rooms/viewclosed", array("as"=>"viewclosed", "uses"=>"RoomController@viewClosedRooms"));
+Route::get("rooms/roomdata/{roomId}", "RoomController@viewRoomData");
 
 
 
