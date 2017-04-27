@@ -14,7 +14,7 @@ class User extends Eloquent {
 	protected $primaryKey = 'ID';
 
 	public function type(){
-    return $this->hasMany("UserType", "id", "user_type");
+    return $this->hasOne("UserType", "id", "user_type");
   }
 
 }
