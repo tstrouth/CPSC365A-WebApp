@@ -1,6 +1,6 @@
 // Wait for the DOM to load everything
 $(document).ready(function(){
-
+function startGraph(){
     // Create graph from data table and specify a container for the graph
     createGraph('#data-table', '.chart');
     function createGraph(data, container){
@@ -195,4 +195,5 @@ $(document).ready(function(){
 	//resets graph
 	resetGraph();
     }
+  }
 });
