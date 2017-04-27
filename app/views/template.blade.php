@@ -115,8 +115,15 @@ z-index: 999999">
                   <span class="link-title">&nbsp;View Previous Rooms' Statistics</span>
               </a>
           </li>
-          
+
           @yield("menu_elements")
+
+          <li id="logout" class="">
+              <a href="{{URL::to('logout')}}">
+
+                  <span class="link-title">&nbsp;Logout</span>
+              </a>
+          </li>
       </ul>
       <!-- /#menu -->
     </div>

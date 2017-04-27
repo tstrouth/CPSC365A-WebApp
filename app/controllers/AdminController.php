@@ -6,6 +6,7 @@ class AdminController extends Controller {
     $user = User::find($_COOKIE["stats_id"]);
     if($user->user_type == 3){
       return View::make("admin");
+    }
     else{
       return  Redirect::action("AdminController@loginView");
     }
