@@ -4,7 +4,7 @@ class RoomController extends Controller {
 
     // Open rooms
     public function create() {
-        $tasks = Task::all()->lists('task_name', 'id'); 
+        $tasks = Task::all()->lists('task_name', 'ID');
         return View::make('createRoom', compact('tasks') );
     }
 
@@ -12,39 +12,39 @@ class RoomController extends Controller {
         $newRoom = new Room;
         //$newRoom->created_by = Auth::user()->id; //JOSH TODO
         $newRoom->task_fkey = Input::get('task');
-        echo (Input::get('task'));
-        die(); 
-        $existingKeys = Room::all()->lists('room_code');
+        $existingKeys = Room::where('open', true)->lists('room_code');
         // generate random, unique string for room code
         $uniqueKey = false;
         while(!$uniqueKey) {
-            $key = Str::random(8);
+            $key = Str::random(4);
             $uniqueKey = !in_array($key, $existingKeys);
         }
         $newRoom->room_code = $key;
+        $newRoom->open = 1;
+        $newRoom->created_at = new DateTime();
         $newRoom->save();
         return Redirect::action('RoomController@viewOpenRooms'); // show open rooms
     }
 
     // Close Rooms
     public function viewOpenRooms() {
-        //$rooms = Room::where('created_by', Auth::user()->id)->where('open', 1)->get(); // JOSH TODO
-        $rooms = Room::where('open', 1)->get();
-        $openRooms = [];
-        foreach ($rooms as $currentRoom){
-            $openRooms[$room->id] = 'Created At '.$room->created_at;
+        //$openRooms = Room::where('created_by', Auth::user()->id)->where('open', 1)->get(); // JOSH TODO
+        $openRooms = Room::where('open', 1)->get();
+        //var_dump($openRooms->toArray()); die();
+        foreach($openRooms as $currentRoom){
+            $currentRoom->setAttribute('task', Task::where('id', $currentRoom->task_fkey)->first()->task_name);
         }
         return View::make('closeRooms', compact('openRooms'));
     }
 
-    public function close() {
-        $roomId = Input::get('room');
+    public function close($roomId) {
         $room = Room::where('id', $roomId)->first();
         if ($room != NULL) {
-            $room->delete();
+            $room->open = 0;
+            $room->save();
         }
-
-        return Redirect::action('RoomController@viewOpenRooms');
+        return Redirect::to(URL::to("showroom")."/".$room->ID);
+        // return Redirect::action('RoomController@viewOpenRooms');
     }
 
     // Remove responses from closed rooms
@@ -58,18 +58,30 @@ class RoomController extends Controller {
     }
 
     public function viewRoomData($roomId) {
-        $roomResponses = Response::where('room_fkey', $roomId)->get();
-        foreach($roomResponses as $currentResponse){
-            $currentResponse->setAttribute('responseData', ResponseData::where('response_fkey', $currentResponse->id)->first());
+        $roomResponses = ResponseDB::where('room_fkey', $roomId)->get();
+        //var_dump($roomResponses->toArray()); die(); 
+        $entries = 0;
+
+        if (count($roomResponses) > 0) {
+            $entries = count(ResponseData::where('response_fkey', $roomResponses[0]->id)->get());
+            foreach($roomResponses as $currentResponse){
+                $responseData = ResponseData::where('response_fkey', $currentResponse->id)->get();
+                $currentResponse->setAttribute('data', $responseData); 
+            }
+            return View::make('roomData', compact('roomResponses', 'entries'));
+        } else {
+            // no responses 
+            return Redirect::action('RoomController@viewClosedRooms'); 
         }
-        return View::make('roomData', compact('roomResponses'));
     }
 
-    public function deleteRoomData($roomId, $reponseId) {
-        $currentResponse = Response::where('id', $responseId)->first();
-        $currentData = ResponseData::where('response_fkey', $responseId)->first();
-        $currentResponse->delete();
-        $currentData->delete();
+    public function deleteRoomData($roomId, $responseId) {
+        $response = ResponseDB::where('id', $responseId)->first();
+        $data = ResponseData::where('response_fkey', $responseId)->get();
+        $response->delete();
+        foreach($data as $currentData){
+            $currentData->delete();
+        }
         return Redirect::action('RoomController@viewRoomData', ["roomId"=>$roomId]);
     }
 

@@ -1,17 +1,25 @@
+@extends('template')
 
 
+@section('content')
+    <table>
+        <tr>
+            <th>Task</th>
+            <th>Created At</th>
+	    <th></th>
+        </tr>
+        <tbody>
+            @foreach($openRooms as $currentRoom)
+                <tr>
+                    <td>{{$currentRoom->task}}</td>
+		    <td>{{$currentRoom->created_at->format('d-m-Y h:m')}}</td>
+                    <td>
+                        <a href="{{action('RoomController@close', ['roomId'=>$currentRoom->ID])}}" class="btn btn-danger pull-right" style="margin-top:13px">Close</a>
+                    </td>
+                </tr>
+            @endforeach
+        </tbody>
+        <table
+        </table>
 
-
-    {{Form::open(array('method' => 'post', 'action' => array('RoomController@close'), true))}}
-    <div class="form-group">
-	<div class="row">
-            {{Form::label('room', 'Open Rooms')}}
-            {{Form::select('room', $openRooms, null, ['class'=>'form-control'])}}
-	</div>
-	<div class="row">
-            {{Form::submit('Close Room')}}
-	</div>
-    </div>
-    {{Form::close()}}
-
-
+@endsection
