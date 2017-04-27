@@ -23,9 +23,9 @@
     $.ajax({
       url:"{{route('getStatData', $roomId)}}"
     })
-    .done(function(data)){
+    .done(function(data){
       console.log(data);
-    }
+    });
   }
 
   function updateStatistical(){
@@ -37,9 +37,9 @@
       url:"{{route('getStatTest', $roomId)}}",
       data: JSON.stringify(data_object)
     })
-    .done(function(data)){
+    .done(function(data){
       console.log(data);
-    }
+    });
   }
 
   </script>
