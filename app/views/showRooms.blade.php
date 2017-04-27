@@ -1,5 +1,14 @@
 @extends('template')
+@section("menu_elements")
+  @if($auth==1)
+  <li id="admin" class="">
+      <a href="{{URL::to('admin')}}">
 
+          <span class="link-title">&nbsp;Admin Control</span>
+      </a>
+  </li>
+  @endif
+@endsection
 @section("header_styles")
   <link type="text/css" rel="stylesheet" href="{{asset('assets/vendors/chosen/css/chosen.css')}}"/>
   <link type="text/css" rel="stylesheet" href="{{asset('assets/css/datatable.css')}}"/>

@@ -1,5 +1,14 @@
 @extends('template')
+@section("menu_elements")
+  @if($auth==1)
+  <li id="admin" class="">
+      <a href="{{URL::to('admin')}}">
 
+          <span class="link-title">&nbsp;Admin Control</span>
+      </a>
+  </li>
+  @endif
+@endsection
 @section('content')
  <div class="outer">
   <div class="inner bg-container">
@@ -7,7 +16,7 @@
       <div class="col-12 col-xl-12">
         <div class="card">
           <div class="card-block">
-    
+
 {{Form::open(array('method' => 'post', 'action' => 'RoomController@store'))}}
             <div class="row" style="margin-bottom:0">
               <div class="col-lg-6">

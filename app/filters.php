@@ -13,7 +13,9 @@
 
 App::before(function($request)
 {
-	//
+	View::composers([
+        "AuthComposer"=>["closeRooms", "createRoom", "admin", "dashboard", "roomData", "roomSelect", "showRooms"]
+    ]);
 });
 
 

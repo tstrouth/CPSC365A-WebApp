@@ -115,12 +115,7 @@ z-index: 999999">
                   <span class="link-title">&nbsp;View Previous Rooms' Statistics</span>
               </a>
           </li>
-          <li id="admin" class="">
-              <a href="{{URL::to('admin')}}">
-
-                  <span class="link-title">&nbsp;Admin Control</span>
-              </a>
-          </li>
+          
           @yield("menu_elements")
       </ul>
       <!-- /#menu -->

@@ -1,5 +1,15 @@
 @extends('template')
 
+@section("menu_elements")
+  @if($auth==1)
+  <li id="admin" class="">
+      <a href="{{URL::to('admin')}}">
+
+          <span class="link-title">&nbsp;Admin Control</span>
+      </a>
+  </li>
+  @endif
+@endsection
 
 @section('content')
     <div class="outer">
