@@ -264,7 +264,7 @@ class StatController extends Controller {
       array_push($intervals, $min_val);
       for ($i=0;$i<5;$i++){
           if ($i<4){
-          $return_string .= "<th scope=col>" . $min_val."-".$min_val+$mean . "</th>";
+          $return_string = $return_string .  "<th scope=col>" . $min_val."-".($min_val+$mean) . "</th>";
           $min_val=$min_val+$mean;
           }
           else{

@@ -30,6 +30,7 @@
       $("#five-number").html(five_string);
       $("#data-table").html(data.histo);
       createGraph('#data-table', '.chart');
+      console.log(data);
     });
     updateStatistical();
   }
