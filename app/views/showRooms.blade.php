@@ -30,10 +30,14 @@
   }
 
   function updateStatistical(){
-    var data_object;
-    data_object.alpha = $("#alpha").val();
-    data_object.null = $("#null-mean").val();
-    data_object.test = $("#test-choice").chosen().val();
+    var data_object = {};
+    //data_object.alpha = $("#alpha").val();
+    //data_object.null = $("#null-mean").val();
+    //data_object.test = $("#test-choice").chosen().val();
+    data_object.alpha = 1;
+    data_object.null = 2;
+    data_object.test = 1;
+    
     $.ajax({
       url:"{{route('getStatTest', $roomId)}}",
       data: JSON.stringify(data_object)

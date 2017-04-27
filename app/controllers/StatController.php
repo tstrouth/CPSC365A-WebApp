@@ -7,7 +7,7 @@ class StatController extends Controller {
     $all_responses = [];
     foreach($room_data as $entry){
       foreach($entry->data as $response){
-        $all_responses[$response->ID] = $response->response_data;
+        $all_responses[$response->response_fkey] = $response->response_data;
       }
     }
 
@@ -16,14 +16,20 @@ class StatController extends Controller {
   }
 
   public function getStatTest($id){
+    $null = Input::get("null");
+    $alpha = Input::get("alpha");
+    $test = Input::get("test");
+
     $room_data = ResponseDB::where("room_fkey", $id)->with("data")->get();
     $all_responses = [];
     foreach($room_data as $entry){
       foreach($entry->data as $response){
-        $all_responses[$response->ID] = $response->response_data;
+        $all_responses[$response->response_fkey] = $response->response_data;
       }
     }
-
+    $all_responses[2000] = $null;
+    $all_responses[2001] = $alpha;
+    $all_responses[2002] = $test;
 
 
     return Response::json($all_responses);
