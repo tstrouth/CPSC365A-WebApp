@@ -12,11 +12,11 @@
 */
 
 
-Route::get('/', function()
+Route::get('/', array("before"=>"auth", function()
 {
 	return View::make('dashboard');
-});
-Route::get("/dashboard", array("as"=>"dashboard", function(){
+}));
+Route::get("/dashboard", array("as"=>"dashboard","before"=>"auth", function(){
 	return View::make("dashboard");
 }));
 Route::get("/showroom/{id?}", "RoomController@showData");

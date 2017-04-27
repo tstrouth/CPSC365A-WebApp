@@ -37,9 +37,9 @@ App::after(function($request, $response)
 
 Route::filter('auth', function()
 {
+	$found = false;
 	if(isset($_COOKIE["stats_username"])){
 		$users = User::all();
-		$found = false;
 		foreach($users as $user){
 			$found = Hash::check($user->username, $_COOKIE["stats_username"]);
 			if($found){
