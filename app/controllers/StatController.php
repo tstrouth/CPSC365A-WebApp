@@ -47,8 +47,8 @@ class StatController extends Controller {
           $array1 = [];
           $array2 = [];
           foreach($room_data as $data){
-            $array1[] = $data->data[0];
-            $array2[] = $data->data[1];
+            $array1[] = $data->data[0]->response_data;
+            $array2[] = $data->data[1]->response_data;
           }
           $paired_data = $this-> find_difference($array1, $array2);
           $return_data = [];
