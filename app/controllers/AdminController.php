@@ -37,9 +37,15 @@ class AdminController extends Controller {
 
 
   public function authAdmin($username, $password){
-      $hashedPassword = User::where('username', $username)->where("user_type", "!=", 1)->get();
-      if (Hash::check("password", $hashedPassword)) {
-        return "it worked";
+      $hashedPassword = User::where('username', $username)->where("user_type", "!=", 1)->first();
+      if(count($hashPassword) > 0){
+        $hashPassword = $hashPassword->hashpassword;
+        if (Hash::check($password, $hashedPassword)) {
+          return "it worked";
+        }
+        else {
+          return  Redirect::action("AdminController@loginView")->with("error", "Login Failed");
+        }
       }
       else {
         return  Redirect::action("AdminController@loginView")->with("error", "Login Failed");
