@@ -44,7 +44,7 @@
 
   function updateValues(id){
     $.ajax({
-      url:"{{URL::to('getStatData')}}/" + id
+      url:"{{URL::to('getstatdata')}}/" + id
     })
     .done(function(data){
       $("#mean").html(data.mean);
@@ -69,7 +69,7 @@
     // data_object.test = 1;
 
     $.ajax({
-      url:"../getstattest/"+id,
+      url:"{{URL::to('getstattest')}}/"+id,
       data: data_object
     })
     .done(function(data){
