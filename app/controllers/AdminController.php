@@ -2,6 +2,11 @@
 
 class AdminController extends Controller {
 
+  public function loginView(){
+    $error = Session::get("error");
+    return View::make("login", compact('error'));
+  }
+
   public function login(){
     $username = Input::get("username");
     $password = Input::get("password");
@@ -12,33 +17,26 @@ class AdminController extends Controller {
   public function createAdmin(){
     $username = Input::get("username");
     $password = Input::get("password");
+    $type = Input::get("user-type");
     $hashpassword = Hash::make($password);
 
     //enter user into database
     $admin = new User;
     $admin->username = $username;
-    $admin->user_type = ;//What is the integer that should be added
+    $admin->user_type = $type;//What is the integer that should be added
     $admin->hashpassword = $hashpassword;
     $admin->save();
   }
 
-  public function addProfessor(){
 
-  }
-  
-  public function deleteProfessor(){
-
-  }
-
-  
   public function authAdmin($username, $password){
-      $hashedPassword = User::where('username', $username)->get();
+      $hashedPassword = User::where('username', $username)->where("user_type", "!=", 1)->get();
       if (Hash::check($password, $hashedPassword) {
-          //Redirect
+        echo "We worked";
       }
       else {
-          //Display error
+          Redirect::action("AdminController@loginView")->with("error", "Login Failed");
       }
   }
- 
+
 }

@@ -25,11 +25,9 @@ Route::get("/dashboard", function(){
 	return View::make("dashboard");
 });
 Route::get("/showroom/{id?}", "RoomController@showData");
-Route::get("/login", function(){
-	return View::make("login");
-});
-Route::post("new_admin", "AdminController@createAdmin");
+Route::get("/login", "AdminController@loginView");
 Route::post("/login_auth", "AdminController@login");
+Route::post("new_admin", "AdminController@createAdmin");
 
 Route::get("/getstatdata/{id}", array("as"=>"getStatData", "uses"=>"StatController@getData"));
 Route::get("/getstattest/{id}", array("as"=>"getStatTest", "uses"=>"StatController@getStatTest"));
