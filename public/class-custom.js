@@ -3,7 +3,7 @@ $(document).ready(function(){
   if(t.indexOf("admin") > 0){
     $("#admin").addClass("active");
   }
-  else if(t.indexOf("createroom") > 0){
+  else if(t.indexOf("create") > 0){
     $("#createroom").addClass("active");
   }
   else if(t.indexOf("showroom") >0){
