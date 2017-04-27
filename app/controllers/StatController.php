@@ -186,10 +186,10 @@ class StatController extends Controller {
     }
 
     public function std_dev($an_array){
-        $sum = (double) 0;
+        $sum =  0;
         $mean = $this->mean($an_array);
         for ($index = 0; $index < count($an_array); $index++) {
-            $sum = $sum + ((double) $an_array[$index] - $mean)**2;
+            $sum = $sum + ( floatval($an_array[$index]) - $mean)**2;
         }
         return (sqrt((floatval($sum)) /floatval((count($an_array) - 1))));
     }
@@ -229,13 +229,13 @@ class StatController extends Controller {
 
 
   public function findMedian($anArray){
-      $median = (double) 0;
+      $median = 0;
       $half = count($anArray) / 2;
       if (count($anArray)%2 == 0){
-          $median = (double) ($anArray[$half] + $anArray[$half - 1]) / 2;
+          $median =  floatval(($anArray[$half] + $anArray[$half - 1])) / 2;
       }
       else{
-          $median = (double) $anArray[$half];
+          $median = floatval($anArray[$half]);
       }
       return $median;
   }
