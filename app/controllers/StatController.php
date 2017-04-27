@@ -186,10 +186,10 @@ class StatController extends Controller {
     }
 
     public function std_dev($an_array){
-        $sum = 0;
+        $sum = (double) 0;
         $mean = $this->mean($an_array);
         for ($index = 0; $index < count($an_array); $index++) {
-            $sum = $sum + ($an_array[$index] - $mean)**2;
+            $sum = $sum + ((double) $an_array[$index] - $mean)**2;
         }
         return (sqrt($sum /(count($an_array) - 1)));
     }
@@ -220,9 +220,9 @@ class StatController extends Controller {
     }
 
   public function mean($an_array){
-      $sum = 0;
+      $sum = (double) 0;
       for ($index = 0; $index < count($an_array); $index++){
-          $sum = $sum + $an_array[$index];
+          $sum = $sum + (double) $an_array[$index];
       }
       return $sum/count($an_array);
   }
