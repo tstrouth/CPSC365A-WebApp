@@ -10,9 +10,29 @@ class StatController extends Controller {
         $all_responses[$response->ID] = $response->response_data;
       }
     }
+    if(count($all_responses) > 0){
+      $mean = $this->mean($all_responses);
+      $standard_dev = $this->std_dev($all_responses);
+      $median = $this->findMedian($all_responses);
+      $five_number = $this->fiveNumber($all_responses);
+      $histo = BuildHistogram($all_responses);
+    }else{
+      $mean = 0;
+      $standard_dev = 0;
+      $median = 0;
+      $five_number = 0;
+      $histo = "";
+    }
+
+    $return_array = [];
+    $return_array["mean"] = $mean;
+    $return_array["std_dev"] = $standard_dev;
+    $return_array["median"] = $median;
+    $return_array["five_number"] = $five_number;
+    $return_array["histo"] = $histo;
 
 
-    return Response::json($all_responses);
+    return Response::json($return_array);
   }
 
   public function getStatTest($id){
@@ -223,7 +243,7 @@ class StatController extends Controller {
       return $fiveNumber;
   }
 
-  public function BuildHistogram()
+  public function BuildHistogram($draw_data)
   {
       $return_string = "";
       $return_string .= "<thead><tr><td>&nbsp;</td>";
