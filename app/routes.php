@@ -18,7 +18,7 @@ Route::get('/', function()
 });
 Route::get("/dashboard", array("as"=>"dashboard", function(){
 	return View::make("dashboard");
-});
+}));
 Route::get("/showroom/{id?}", "RoomController@showData");
 Route::get("/login", "AdminController@loginView");
 Route::post("/login_auth", "AdminController@login");
