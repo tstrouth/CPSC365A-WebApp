@@ -15,23 +15,25 @@
     $('#room_select .chzn-select').val({{$roomId}}).trigger("chosen:updated");
 
   $(document).ready(function(){
-    if({{$roomId}} > 0){
-      updateValues();
+    var id = {{$roomId}};
+    if(id > 0){
+      updateValues(id);
     }
 
     $("#room-choice").change(function(){
-      console.log("change");
+      id = $("#room_select .chzn-select").val();
+      updateValues(id);
     });
 
     $("#updatebtn").click(function(){
-      updateStatistical();
+      updateStatistical(id);
     });
 
   });
 
-  function updateValues(){
+  function updateValues(id){
     $.ajax({
-      url:"{{route('getStatData', $roomId)}}"
+      url:"{{route('getStatData')}}/" + id
     })
     .done(function(data){
       $("#mean").html(data.mean);
@@ -42,10 +44,10 @@
       $("#data-table").html(data.histo);
       createGraph('#data-table', '.chart');
     });
-    updateStatistical();
+    updateStatistical(id);
   }
 
-  function updateStatistical(){
+  function updateStatistical(id){
     var data_object = {};
     data_object.alpha = $("#alpha").val();
     data_object.null = $("#null-mean").val();
@@ -55,7 +57,7 @@
     // data_object.test = 1;
 
     $.ajax({
-      url:"{{route('getStatTest', $roomId)}}",
+      url:"{{route('getStatTest')}}/"+id,
       data: data_object
     })
     .done(function(data){

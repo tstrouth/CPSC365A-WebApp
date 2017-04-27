@@ -48,7 +48,7 @@ class RoomController extends Controller {
     }
 
     public function showData($roomId=-1){
-      $all_rooms = Room::all();
+      $all_rooms = Room::where('open', 0)->get();
 
 
       return View::make("showRooms", compact("all_rooms", "roomId"));
