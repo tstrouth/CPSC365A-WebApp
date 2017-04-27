@@ -7,7 +7,7 @@ class AuthComposer{
       $users = User::all();
       $found = false;
       foreach($users as $user){
-        $found = Hask::check($user->username, $_COOKIE["stats_username"]);
+        $found = Hash::check($user->username, $_COOKIE["stats_username"]);
         if($found){
           $auth = 1;
           break;
