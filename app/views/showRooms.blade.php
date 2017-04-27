@@ -10,7 +10,7 @@
   <script type="text/javascript" src="{{asset('assets/js/datatable.js')}}"></script>
   <script>
     $(".chzn-select").chosen({allow_single_deselect: true});
-    $('.chzn-select').val({{$roomId}}).trigger("chosen:updated");
+    $('#room_select .chzn-select').val({{$roomId}}).trigger("chosen:updated");
 
 
   $(document).ready(function(){
@@ -24,7 +24,11 @@
       url:"{{route('getStatData', $roomId)}}"
     })
     .done(function(data){
-      console.log(data);
+      $("#mean").html(data.mean);
+      $("#std-dev").html(data.std_dev);
+      $("#median").html(data.median);
+      $("#five-number").html(data.five_number[0] + ", " + data.five_number[1] + ", " data.five_number[2] + ", " + data.five_number[3] + ", " + data.five_number[4]);
+      $("#data-table").html(data.histo);
     });
     updateStatistical();
   }
@@ -54,7 +58,7 @@
 @section("content")
 
 <!--Room Selection -->
-<div class="outer">
+<div class="outer" id="room_select">
     <div class="inner bg-container">
       <div class="row">
         <div class="col-12 col-xl-12">
