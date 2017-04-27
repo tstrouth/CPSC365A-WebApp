@@ -7,7 +7,7 @@ class StatController extends Controller {
     $all_responses = [];
     foreach($room_data as $entry){
       foreach($entry->data as $response){
-        $all_responses[$response->response_fkey] = $response->response_data;
+        $all_responses[$response->ID] = $response->response_data;
       }
     }
 
@@ -24,7 +24,7 @@ class StatController extends Controller {
     $all_responses = [];
     foreach($room_data as $entry){
       foreach($entry->data as $response){
-        $all_responses[$response->response_fkey] = $response->response_data;
+        $all_responses[$response->ID] = $response->response_data;
       }
     }
     $all_responses[2000] = $null;

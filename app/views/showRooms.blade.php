@@ -37,10 +37,10 @@
     data_object.alpha = 1;
     data_object.null = 2;
     data_object.test = 1;
-    
+
     $.ajax({
       url:"{{route('getStatTest', $roomId)}}",
-      data: JSON.stringify(data_object)
+      data: data_object
     })
     .done(function(data){
       console.log(data);
