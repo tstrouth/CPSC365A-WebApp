@@ -14,10 +14,10 @@ body
     padding:0 !important;
 }
 
-.graph {
+/*.graph {
     height: 242px !important;
     overflow: hidden;
-}
+}*/
 .outer{
     margin-top: 0;
 }

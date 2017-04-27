@@ -3,6 +3,8 @@
 @section("header_styles")
   <link type="text/css" rel="stylesheet" href="{{asset('assets/vendors/chosen/css/chosen.css')}}"/>
   <link type="text/css" rel="stylesheet" href="{{asset('assets/css/datatable.css')}}"/>
+
+
 @endsection
 
 @section("footer_scripts")
