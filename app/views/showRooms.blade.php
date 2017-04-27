@@ -27,10 +27,12 @@
                   <div class="row">
                       <div class="col-lg-4 input_field_sections">
                           <h3>Previous Room Choice</h3>
-                          <select id="room-choice" class="form-control chzn-select" tabindex="2">
-                            <option>
-                              Room1
-                            </option>
+                          <select value={{$roomId}} id="room-choice" class="form-control chzn-select" tabindex="2">
+                            @foreach($all_rooms as $room)
+                                <option id="{{$room->ID}}">
+                                  Room {{$room->ID}} - {{$room->created_at}}
+                                </option>
+                            @endforeach
                           </select>
                       </div>
                   </div>

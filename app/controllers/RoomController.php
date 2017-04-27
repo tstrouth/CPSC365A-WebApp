@@ -47,6 +47,19 @@ class RoomController extends Controller {
         // return Redirect::action('RoomController@viewOpenRooms');
     }
 
+    public function showData($roomId=-1){
+      $all_rooms = Rooms::all();
+
+
+      return View::make("showRooms", compact("all_rooms", "roomId"))
+
+    }
+
+
+
+
+
+
     // Remove responses from closed rooms
     public function viewClosedRooms() {
         $tasks = Task::all()->lists('task_name', 'id');
@@ -59,19 +72,19 @@ class RoomController extends Controller {
 
     public function viewRoomData($roomId) {
         $roomResponses = ResponseDB::where('room_fkey', $roomId)->get();
-        //var_dump($roomResponses->toArray()); die(); 
+        //var_dump($roomResponses->toArray()); die();
         $entries = 0;
 
         if (count($roomResponses) > 0) {
             $entries = count(ResponseData::where('response_fkey', $roomResponses[0]->id)->get());
             foreach($roomResponses as $currentResponse){
                 $responseData = ResponseData::where('response_fkey', $currentResponse->id)->get();
-                $currentResponse->setAttribute('data', $responseData); 
+                $currentResponse->setAttribute('data', $responseData);
             }
             return View::make('roomData', compact('roomResponses', 'entries'));
         } else {
-            // no responses 
-            return Redirect::action('RoomController@viewClosedRooms'); 
+            // no responses
+            return Redirect::action('RoomController@viewClosedRooms');
         }
     }
 
