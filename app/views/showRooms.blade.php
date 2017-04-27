@@ -1,41 +1,131 @@
 @extends('template')
 
+@section("header_styles")
+  <link type="text/css" rel="stylesheet" href="{{asset('assets/vendors/chosen/css/chosen.css')}}"/>
+  <link type="text/css" rel="stylesheet" href="{{asset('assets/css/datatable.css')}}"/>
+@endsection
+
+@section("footer_scripts")
+  <script type="text/javascript" src="{{asset('assets/vendors/chosen/js/chosen.jquery.js')}}"></script>
+  <script type="text/javascript" src="{{asset('assets/js/datatable.js')}}"></script>
+  <script>
+    $(".chzn-select").chosen({allow_single_deselect: true});
+  </script>
+@endsection
+
+
 @section("content")
-<div class="row">
 
-<div class="card-block seclect_form">
-    <form class="form-horizontal">
-        <div class="row">
-            <div class="col-lg-4 input_field_sections">
-                <h5>Previous Room Choice</h5>
-                <select class="form-control chzn-select" tabindex="2">
-                  <option>
-                    Room1
-                  </option>
-                </select>
+<!--Room Selection -->
+<div class="outer">
+    <div class="inner bg-container">
+      <div class="row">
+        <div class="col-12 col-xl-12">
+          <div class="card">
+            <div class="card-block seclect_form">
+              <form class="form-horizontal">
+                  <div class="row">
+                      <div class="col-lg-4 input_field_sections">
+                          <h3>Previous Room Choice</h3>
+                          <select id="room-choice" class="form-control chzn-select" tabindex="2">
+                            <option>
+                              Room1
+                            </option>
+                          </select>
+                      </div>
+                  </div>
+              </form>
             </div>
+          </div>
         </div>
-    </form>
-</div>
+      </div>
+    </div>
+  </div>
+
+<!--Histogram/Stat Tests -->
+<div class="outer">
+  <div class="inner bg-container">
+    <div class="row">
+      <div class="col-12 col-xl-6">
+        <div class="card">
+          <div class="card-header bg-white">
+              Statistical Tests
+          </div>
+          <div class="card-block">
+            <div class="row">
+              <div class="col-lg-12">
+                <h5>Test Choice</h5>
+                <select name="test-choice" id="test-choice" class="form-control chzn-select" tabindex="2">
+                  <option value=1>Matched Pairs</option>
+                  <option value=2>Two sided-One Sample</option>
+                </select>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-6">
+                <h5>Alpha:</h5>
+                <input type="float" class="form-control" id="alpha" name="alpha" value=0 />
+              </div>
+              <div class="col-lg-6">
+                <h5>Null Mean:</h5>
+                <input type="number" class="form-control" id="null-mean" name="null-mean" value=0 />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-12">
+                <button class="btn btn-primary pull-right" style="margin-right:0">Update Values</button>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-12">
+                <h5 >Test Statistic: <span id="t-statistic">#</span></h5>
+                <h5 >Confidence Interval: <span id="c-interval">#</span></h5>
+                <h5 >P value: <span id="p-value">#</span></h5>
+                <h5 >Reject/OrPass: <span id="reject-pass">#</span></h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-xl-6">
+        <div class="card">
+          <div class="card-header bg-white">
+              Histogram
+          </div>
+          <div class="card-block">
+            <div class="row">
+              <div class="col-lg-12">
+                <table id="data-table" border="1" cellpadding="10" cellspacing="0">
+
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
-<div class="row">
-  <div class="card-block">
+<div class="outer">
+  <div class="inner bg-container">
     <div class="row">
-      <div class="col-lg-4">
-        <h5>Alpha:</h5>
-        <input type="text" class="form-control" name="default"
-               value=""/>
-        <h5>Null Mean:</h5>
-        <input type="text" class="form-control" name="default"
-               value="Default text"/>
-        <h5>Test Statistic: #</h5>
-        <h5>Confidence Interval: #</h5>
-        <h5>P value: #</h5>
-        <h5>Reject/OrPass</h5>
-      </div>
-      <div class="col-lg-8">
-        
+      <div class="col-12 col-xl-12">
+        <div class="card">
+          <div class="card-header bg-white">
+              Basic Information
+          </div>
+          <div class="card-block">
+            <div class="row">
+              <div class="col-lg-12">
+                <h5>Mean: <span id="mean">#</span></h5>
+                <h5>Standard Deviation: <span id="std-dev">#</span></h5>
+                <h5>Median: <span id="median">#</span></h5>
+                <h5>Five Number: <span id="five-number">#</span></h5>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>

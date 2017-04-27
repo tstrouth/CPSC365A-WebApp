@@ -12,6 +12,6 @@ class ResponseData extends Eloquent {
 
 	public $timestamps = false;
 
-	protected $primaryKey = 'id';
+	protected $primaryKey = 'ID';
 
 }

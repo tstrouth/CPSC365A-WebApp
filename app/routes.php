@@ -32,9 +32,6 @@ Route::get("/showroom/{id?}", function($id=-1){
 	return View::make("showRooms");
 });
 
-Route::get("/histogram", "histogramController@whateveryouwant");
-
-
 Route::get("/login", function(){
 	return View::make("login");
 });
