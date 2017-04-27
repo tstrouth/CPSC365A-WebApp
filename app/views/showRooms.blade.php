@@ -26,6 +26,7 @@
     .done(function(data){
       console.log(data);
     });
+    updateStatistical();
   }
 
   function updateStatistical(){

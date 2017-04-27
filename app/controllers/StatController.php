@@ -4,14 +4,29 @@ class StatController extends Controller {
 
   public function getData($id){
     $room_data = ResponseDB::where("room_fkey", $id)->with("data")->get();
+    $all_responses = [];
+    foreach($room_data as $entry){
+      foreach($entry->data as $response){
+        $all_responses[$response->ID] = $response->response_data;
+      }
+    }
 
-    return Response::json($room_data);
+
+    return Response::json($all_responses);
   }
 
   public function getStatTest($id){
     $room_data = ResponseDB::where("room_fkey", $id)->with("data")->get();
+    $all_responses = [];
+    foreach($room_data as $entry){
+      foreach($entry->data as $response){
+        $all_responses[$response->ID] = $response->response_data;
+      }
+    }
 
-    return Response::json($room_data);
+
+
+    return Response::json($all_responses);
   }
 
 
