@@ -166,14 +166,6 @@ class StatController extends Controller {
       return $sum/count($an_array);
   }
 
-  public function std_dev($an_array){
-      $sum = 0;
-      $mean = mean($an_array);
-      for ($index = 0; $index < count($an_array); $index++) {
-          $sum = $sum + ($an_array[$index] - $mean)**2;
-      }
-      return (sqrt($sum /(count($an_array) - 1)));
-  }
 
   public function findMedian($anArray){
       $median = (double) 0;
@@ -184,7 +176,7 @@ class StatController extends Controller {
       else{
           $median = (double) $anArray[$half];
       }
-      return $median
+      return $median;
   }
 
   public function fiveNumber($anArray){
@@ -230,11 +222,11 @@ class StatController extends Controller {
       array_push($intervals, $min_val);
       for ($i=0;$i<5;$i++){
           if ($i<4){
-          $return_string .= "<th scope=col>" . $min_val,"-",$min_val+$mean . "</th>";
+          $return_string .= "<th scope=col>" . $min_val."-".$min_val+$mean . "</th>";
           $min_val=$min_val+$mean;
           }
           else{
-          $return_string .= "<th scope=col>" . $min_val,"+" . "</th>";
+          $return_string .= "<th scope=col>" . $min_val."+" . "</th>";
           }
           array_push($intervals, $min_val);
       }
