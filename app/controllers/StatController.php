@@ -15,7 +15,7 @@ class StatController extends Controller {
       $standard_dev = $this->std_dev($all_responses);
       $median = $this->findMedian($all_responses);
       $five_number = $this->fiveNumber($all_responses);
-      $histo = BuildHistogram($all_responses);
+      $histo = $this->BuildHistogram($all_responses);
     }else{
       $mean = 0;
       $standard_dev = 0;
