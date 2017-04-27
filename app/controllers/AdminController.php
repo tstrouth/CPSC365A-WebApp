@@ -39,9 +39,11 @@ class AdminController extends Controller {
   public function authAdmin($username, $password){
       $hashedPassword = User::where('username', $username)->where("user_type", "!=", 1)->first();
       if(count($hashedPassword) > 0){
+        $id = $hashedPassword->ID;
         $hashedPassword = $hashedPassword->hashpassword;
         if (Hash::check($password, $hashedPassword)) {
           setcookie("stats_username", Hash::make($username), time()+60*60);
+          setcookie("stats_id", $id, time()+60*60);
           return Redirect::route("dashboard");
         }
         else {

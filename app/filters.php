@@ -37,16 +37,20 @@ App::after(function($request, $response)
 
 Route::filter('auth', function()
 {
-	if (Auth::guest())
-	{
-		if (Request::ajax())
-		{
-			return Response::make('Unauthorized', 401);
+	if(isset($_COOKIE["stats_username"])){
+		$users = User::all();
+		$found = false;
+		foreach($users as $user){
+			$found = Hash::check($user->username, $_COOKIE["stats_username"]);
+			if($found){
+				$auth = 1;
+				break;
+			}
 		}
-		else
-		{
-			return Redirect::guest('login');
-		}
+	}
+
+	if(!$found){
+		return Redirect::action("AdminController@loginView");
 	}
 });
 
