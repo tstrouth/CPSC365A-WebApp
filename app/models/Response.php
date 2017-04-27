@@ -1,8 +1,10 @@
 <?php
 
+use Illuminate\Database\Eloquent\SoftDeletingTrait;
+
 class ResponseDB extends Eloquent {
 
-
+    use SoftDeletingTrait;
 
 	/**
 	 * The database table used by the model.

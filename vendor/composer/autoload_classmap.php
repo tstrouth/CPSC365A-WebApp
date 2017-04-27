@@ -16,6 +16,7 @@ return array(
     'ResponseDB' => $baseDir . '/app/models/Response.php',
     'ResponseData' => $baseDir . '/app/models/ResponseData.php',
     'Room' => $baseDir . '/app/models/Room.php',
+    'RoomController' => $baseDir . '/app/controllers/RoomController.php',
     'SessionHandlerInterface' => $vendorDir . '/symfony/http-foundation/Resources/stubs/SessionHandlerInterface.php',
     'StatController' => $baseDir . '/app/controllers/StatController.php',
     'Task' => $baseDir . '/app/models/Task.php',

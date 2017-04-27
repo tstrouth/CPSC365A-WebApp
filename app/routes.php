@@ -46,5 +46,18 @@ Route::get("/api/room/show/{code}", "APIController@getRoom");
 Route::get("/api/response/create", "APIController@createResponse");
 
 
+// Rooms
+Route::get("/rooms/create", "RoomController@create");
+Route::post("/rooms/store", "RoomController@store");
+Route::get("/rooms/viewopen", "RoomController@viewOpenRooms");
+Route::get("rooms/close/{roomId}", "RoomController@close");
+Route::get("rooms/viewclosed", "RoomController@viewClosedRooms");
+Route::get("rooms/roomdata/{roomId}", "RoomController@viewRoomData");
+
+
+
 Route::get("/hypothesis", "StatController@hypoTestView");
 Route::post("/hypothesis/test", "StatController@hypoTest");
+
+Route::get("rooms/deletedata/{roomId}/{responseId}", "RoomController@deleteRoomData"); 
+
