@@ -3,7 +3,12 @@
 class AdminController extends Controller {
 
   public function adminDashboard(){
-    return View::make("admin");
+    $user = User::find($_COOKIE["stats_id"]);
+    if($user->user_type == 3){
+      return View::make("admin");
+    else{
+      return  Redirect::action("AdminController@loginView");
+    }
   }
 
   public function loginView(){
@@ -20,19 +25,24 @@ class AdminController extends Controller {
 
 
   public function createAdmin(){
-    $username = Input::get("username");
-    $password = Input::get("password");
-    $type = Input::get("user-type");
-    $hashpassword = Hash::make($password);
+    $user = User::find($_COOKIE["stats_id"]);
+    if($user->user_type == 3){
+      $username = Input::get("username");
+      $password = Input::get("password");
+      $type = Input::get("user-type");
+      $hashpassword = Hash::make($password);
 
-    //enter user into database
-    $admin = new User;
-    $admin->username = $username;
-    $admin->user_type = $type;//What is the integer that should be added
-    $admin->hashpassword = $hashpassword;
-    $admin->save();
+      //enter user into database
+      $admin = new User;
+      $admin->username = $username;
+      $admin->user_type = $type;//What is the integer that should be added
+      $admin->hashpassword = $hashpassword;
+      $admin->save();
 
-    return Redirect::action("AdminController@adminDashboard");
+      return Redirect::action("AdminController@adminDashboard");
+    }else{
+      return  Redirect::action("AdminController@loginView");
+    }
   }
 
 
@@ -53,6 +63,13 @@ class AdminController extends Controller {
       else {
         return  Redirect::action("AdminController@loginView")->with("error", "Login Failed");
       }
+  }
+
+  public function logout(){
+    setcookie("stats_username", "", time()-60*60);
+    setcookie("stats_id", "", time()-60*60);
+
+    return  Redirect::action("AdminController@loginView");
   }
 
 }

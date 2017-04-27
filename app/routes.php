@@ -24,6 +24,7 @@ Route::get("/showroom/{id?}", "RoomController@showData");
 
 Route::get("/login", "AdminController@loginView");
 Route::post("/login_auth", "AdminController@login");
+Route::get("/logout", "AdminController@logout");
 Route::get("/admin", array("before"=>"auth", "uses"=>"AdminController@adminDashboard"));
 Route::post("new_admin", array("before"=>"auth", "uses"=>"AdminController@createAdmin"));
 
