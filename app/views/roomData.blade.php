@@ -8,7 +8,7 @@
   <div class="col-12  col-xl-12">
     <div class="card">
       <div class="card-header bg-white">
-          Current Rooms
+          Data from Room
       </div>
       <div class="card-block">
 <div class="table-responsive m-t-35">
