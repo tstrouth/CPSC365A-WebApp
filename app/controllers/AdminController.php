@@ -31,7 +31,7 @@ class AdminController extends Controller {
 
   public function authAdmin($username, $password){
       $hashedPassword = User::where('username', $username)->where("user_type", "!=", 1)->get();
-      if (Hash::check($password, $hashedPassword) {
+      if (Hash::check($password, $hashedPassword)) {
         echo "We worked";
       }
       else {
