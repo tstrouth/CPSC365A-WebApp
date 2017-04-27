@@ -12,7 +12,14 @@
 @section("header_styles")
   <link type="text/css" rel="stylesheet" href="{{asset('assets/vendors/chosen/css/chosen.css')}}"/>
   <link type="text/css" rel="stylesheet" href="{{asset('assets/css/datatable.css')}}"/>
-
+  <style>
+  .bars{
+    margin-left:25px;
+  }
+  .y-axis li span{
+    margin:-10px 0 0 -40px;
+  }
+  </style>
 
 @endsection
 
