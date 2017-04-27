@@ -27,7 +27,8 @@
       $("#mean").html(data.mean);
       $("#std-dev").html(data.std_dev);
       $("#median").html(data.median);
-      $("#five-number").html(data.five_number[0] + ", " + data.five_number[1] + ", " data.five_number[2] + ", " + data.five_number[3] + ", " + data.five_number[4]);
+      var five_string = data.five_number[0] + ", " + data.five_number[1] + ", " data.five_number[2] + ", " + data.five_number[3] + ", " + data.five_number[4];
+      $("#five-number").html(five_string);
       $("#data-table").html(data.histo);
     });
     updateStatistical();
