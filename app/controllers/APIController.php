@@ -39,7 +39,7 @@ class APIController extends Controller {
     }
   }
 
-  public function createResponse(Request $request){
+  public function createResponse(){
     $room_fkey = Input::get("room_fkey");
     $user_fkey = Input::get("user_fkey");
     $room = Room::find($room_fkey);
@@ -59,7 +59,7 @@ class APIController extends Controller {
     $response->task_fkey = $room->task_fkey;
     $response->save();
 
-    $data = floatval($request->getContent());
+    $data = floatval(Request::instance()->getContent());
     if(is_array($data)){
       foreach($data as $d){
         $new_response = new ResponseData;
