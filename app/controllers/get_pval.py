@@ -1,8 +1,11 @@
 #given a test statistic and degrees of freedom will return a probability
-import sys
 from scipy import stats
-import numpy as np
-test_stat = float(sys.argv[1])
+import sys
+#takes the first argument after file name which should be test stat 
+t_stat = float(sys.argv[1])
+#following test stat is degrees of freedom
 df = float(sys.argv[2])
-pval = stats.t.sf(np.abs(test_stat), df)*2
+#returns two sided p-val Pr(abs(t) > t_stat
+pval = stats.t.sf(abs(t_stat), df)*2
+
 print(pval)
